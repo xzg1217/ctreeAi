@@ -1,0 +1,45 @@
+@use '@styles/variables.scss' as *;
+
+.home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 20px;
+}
+.home-header{
+    background-color: rgba(239,240,243,.6);
+    //backdrop-filter: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 500px;
+    width: calc(100% - 80px);
+    max-width: 1296px;
+    height: calc(56px - 24px);
+}
+
+.home-header-left{
+    display: flex;
+    gap:24px;
+    align-items: center;
+}
+
+.home-header-left-logo{
+    height: 20px;
+}
+
+.home-header-left-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.96);
+}
