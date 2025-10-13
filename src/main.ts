@@ -15,6 +15,7 @@ import '@icons/system/iconfont.css'                 // 系统图标
 import '@utils/sys/console.ts'                      // 控制台输出内容
 import { setupGlobDirectives } from './directives'
 import { setupErrorHandle } from './utils/sys/error-handle'
+import 'uno.css'
 
 document.addEventListener(
   'touchstart',

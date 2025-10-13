@@ -96,6 +96,10 @@ async function handleRouteGuard(
     return
   }
 
+  console.log('to.path', to.path)
+  console.log(isRouteRegistered.value)
+  console.log(handleRootPathRedirect(to, next))
+
   // 处理根路径跳转到首页
   if (userStore.isLogin && isRouteRegistered.value && handleRootPathRedirect(to, next)) {
     return

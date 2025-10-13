@@ -7,7 +7,7 @@ export enum RoutesAlias {
   Login = '/auth/login', // 登录
   Register = '/auth/register', // 注册
   ForgetPassword = '/auth/forget-password', // 忘记密码
-  Home = '/home', // 首页
+  Home = '/', // 首页
 
   // 异常页面
   Exception403 = '/exception/403', // 403

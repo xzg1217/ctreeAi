@@ -10,6 +10,8 @@ import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // import { visualizer } from 'rollup-plugin-visualizer'
 
+import UnoCss from 'unocss/vite';
+
 export default ({ mode }: { mode: string }) => {
   const root = process.cwd()
   const env = loadEnv(mode, root)
@@ -68,6 +70,9 @@ export default ({ mode }: { mode: string }) => {
     },
     plugins: [
       vue(),
+      //unocss
+      UnoCss({ configFile: './uno.config.js' }),
+
       // 自动按需导入 API
       AutoImport({
         imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
@@ -107,7 +112,9 @@ export default ({ mode }: { mode: string }) => {
     ],
     // 依赖预构建
     optimizeDeps: {
-      include: ['element-plus/es/components/*/style/css']
+      include: [
+        'element-plus/es/components/*/style/css'
+      ]
     },
     css: {
       preprocessorOptions: {
