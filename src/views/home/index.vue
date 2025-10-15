@@ -847,13 +847,13 @@
                   </li>
                   <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/pricing">价格</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white"
-                      href="/zh-CN/whats-new">新功能</a></li>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/whats-new">新功能</a>
+                  </li>
                   <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/blog">博客</a></li>
                   <li><a target="_blank" class="text-(--art-text-muted) hover:text-white"
                       href="https://community.sider.ai/">社区</a></li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white"
-                      href="/zh-CN/partners">合作伙伴</a></li>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/partners">合作伙伴</a>
+                  </li>
                   <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/affiliate">联盟</a>
                   </li>
                   <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/invite">邀请</a>
@@ -931,7 +931,10 @@
                 class="hover:text-text-white-1" href="/zh-CN/policies/terms">使用条款</a>
               <div class="bg-[rgba(214,218,255,0.10)] w-[1px] h-[20px]"></div><a class="hover:text-text-white-1"
                 href="/zh-CN/policies/privacy">隐私政策</a>
-            </div><button
+            </div>
+            <a-dropdown :trigger="['click']"  placement="topLeft">
+              <a class="ant-dropdown-link" @click.prevent>
+                <button
               class="flex items-center px-3 py-1.5 gap-2 text-sm text-[#D6DAFF8F] rounded-[8px] bg-[#1E1F2B00] transition-all hover:bg-[#72768B29]"><svg
                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
                 <g stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2"
@@ -955,6 +958,21 @@
                 <path d="M2.25 4.125L6 7.875L9.75 4.125" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round"></path>
               </svg></button>
+              </a>
+              <template #overlay>
+                <a-menu>
+                  <a-menu-item key="0">
+                    <a href="http://www.alipay.com/">1st menu item</a>
+                  </a-menu-item>
+                  <a-menu-item key="1">
+                    <a href="http://www.taobao.com/">2nd menu item</a>
+                  </a-menu-item>
+                  <a-menu-divider />
+                  <a-menu-item key="3">3rd menu item</a-menu-item>
+                </a-menu>
+              </template>
+            </a-dropdown>
+           
           </div>
         </div>
       </div>
