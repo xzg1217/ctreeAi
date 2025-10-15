@@ -11,19 +11,19 @@
 
 .home-header {
     background-color: rgba(239, 240, 243, .6);
-    //backdrop-filter: 40px;
-
+    --tw-backdrop-blur: blur(40px);
     padding: 12px;
     position: fixed;
     top: 16px;
     left: 50%;
     transform: translateX(-50%);
     border-radius: calc(56px / 2);
-    z-index: 10;
+    z-index: 100;
     width: calc(100% - 80px);
     max-width: 1296px;
     min-height: calc(56px - 24px);
     transition: height 0.3s ease-in-out;
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .home-header-tab {
@@ -196,7 +196,7 @@
 
 .blur-text {
     font-weight: bold;
-   
+
 }
 
 
@@ -281,7 +281,8 @@
 
 .search-textarea {
     scrollbar-width: none;
-    height: 44px;
+    height: 62px;
+    line-height: 40px;
 }
 
 .hero-text {
@@ -290,27 +291,42 @@
 
 // 箭头上下跳动动画 - 停顿1秒后跳动两下
 @keyframes bounce-arrow {
-    0%, 33% {
-        transform: translateY(0); /* 停顿1秒 */
+
+    0%,
+    33% {
+        transform: translateY(0);
+        /* 停顿1秒 */
     }
+
     42% {
-        transform: translateY(6px); /* 第一次向上跳动 */
+        transform: translateY(6px);
+        /* 第一次向上跳动 */
     }
+
     50% {
-        transform: translateY(0); /* 第一次回落 */
+        transform: translateY(0);
+        /* 第一次回落 */
     }
+
     58% {
-        transform: translateY(6px); /* 第二次向上跳动 */
+        transform: translateY(6px);
+        /* 第二次向上跳动 */
     }
+
     66% {
-        transform: translateY(0); /* 第二次回落 */
+        transform: translateY(0);
+        /* 第二次回落 */
     }
-    66%, 100% {
-        transform: translateY(0); /* 等待下次循环 */
+
+    66%,
+    100% {
+        transform: translateY(0);
+        /* 等待下次循环 */
     }
 }
 
 .bounce-arrow-icon {
     display: inline-block;
-    animation: bounce-arrow 4s ease-in-out infinite; /* 延长动画周期到3秒 */
+    animation: bounce-arrow 4s ease-in-out infinite;
+    /* 延长动画周期到3秒 */
 }

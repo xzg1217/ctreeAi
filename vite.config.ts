@@ -9,8 +9,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import ElementPlus from 'unplugin-element-plus/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // import { visualizer } from 'rollup-plugin-visualizer'
+import { AntDesignVueResolver } from 'unplugin-vue-components/resolvers';
 
-import UnoCss from 'unocss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 export default ({ mode }: { mode: string }) => {
   const root = process.cwd()
@@ -70,9 +71,7 @@ export default ({ mode }: { mode: string }) => {
     },
     plugins: [
       vue(),
-      //unocss
-      UnoCss({ configFile: './uno.config.js' }),
-
+      tailwindcss(),
       // 自动按需导入 API
       AutoImport({
         imports: ['vue', 'vue-router', '@vueuse/core', 'pinia'],
@@ -86,7 +85,9 @@ export default ({ mode }: { mode: string }) => {
       // 自动按需导入组件
       Components({
         dts: 'src/types/components.d.ts',
-        resolvers: [ElementPlusResolver()]
+        resolvers: [ElementPlusResolver(), AntDesignVueResolver({
+          importStyle: false, // css in js
+        }),]
       }),
       // 按需定制主题配置
       ElementPlus({

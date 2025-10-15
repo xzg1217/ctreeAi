@@ -12,10 +12,13 @@ import '@styles/theme-animation.scss'               // 主题切换动画
 import '@styles/el-dark.scss'                       // Element 暗黑主题
 import '@styles/dark.scss'                          // 系统主题
 import '@icons/system/iconfont.css'                 // 系统图标
+import '@styles/tailwind.css'                      // Tailwind CSS
+
 import '@utils/sys/console.ts'                      // 控制台输出内容
 import { setupGlobDirectives } from './directives'
 import { setupErrorHandle } from './utils/sys/error-handle'
-import 'uno.css'
+import 'ant-design-vue/dist/reset.css';
+
 
 document.addEventListener(
   'touchstart',
