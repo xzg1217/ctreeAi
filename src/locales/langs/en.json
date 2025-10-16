@@ -288,5 +288,110 @@
     "zebra": "Zebra",
     "border": "Border",
     "headerBackground": "Header BG"
+  },
+  "home": {
+    "nav": {
+      "chat": "Chat",
+      "wisebase": "Wisebase",
+      "tools": "Tools",
+      "extension": "Extension",
+      "app": "App",
+      "pricing": "Pricing"
+    },
+    "buttons": {
+      "addToChrome": "Add to Chrome",
+      "login": "Login",
+      "freeStart": "Free Start",
+      "getExtension": "Get Extension"
+    },
+    "titles": {
+      "deepResearchMinutes": "Deep Research in Minutes",
+      "aiResearchSimulation": "AI Automatically Simulates Human Research: Smart Highlighting, Instant Notes, Visual Reports",
+      "unprecedentedResearch": "Unprecedented Research Experience",
+      "deepResearchAgent": "Deep Research Agent",
+      "aiTakesResearchWork": "AI takes on the heavy work of research, allowing you to focus on what truly matters",
+      "aiResearchWorkload": "AI takes on the heavy work of research, allowing you to focus on what truly matters",
+      "oneClickVisualReport": "One-Click Visual Interactive Report Generation",
+      "allInOneBrowserAssistant": "All-in-One Browser Research Assistant",
+      "smarterResearchAnywhere": "Smarter research anytime, anywhere, powerful AI tools at your fingertips",
+      "smartResearchAnytime": "Smarter research anytime, anywhere, powerful AI tools at your fingertips",
+      "smartReadingTool": "Smart Reading Tool, Deep Research on Webpages and Files",
+      "buildYourKnowledgeBase": "Build Your Knowledge Base Wisebase",
+      "siderHelpsYouGrow": "Sider Helps You Grow Limitlessly"
+    },
+    "features": {
+      "smartSearchFilter": "Intelligently search and filter the most relevant resources",
+      "intelligentSearch": "Intelligently search and filter the most relevant resources",
+      "autoHighlightNotes": "Automatically highlight key information and record inspirational notes",
+      "highlightNotes": "Automatically highlight key information and record inspirational notes",
+      "autoGenerateReport": "Automatically generate detailed reports with citations",
+      "detailedReport": "Automatically generate detailed reports with citations",
+      "visualReport": "One-Click Visual Interactive Report Generation",
+      "instantSummarizeWeb": "Instantly summarize webpages or YouTube videos",
+      "quickSummary": "Instantly summarize webpages or YouTube videos",
+      "explainHighlightedText": "Explain highlighted text without interrupting your reading flow",
+      "explainHighlight": "Explain highlighted text without interrupting your reading flow",
+      "oneClickTranslateWeb": "One-click webpage translation with bilingual comparison, supporting over 50 languages",
+      "saveResearchFindings": "Save and organize research reports, web discoveries, and chat content to Wisebase: a continuously evolving, increasingly personalized knowledge base that understands you better.",
+      "uploadPrivateFiles": "Upload private files for AI deep analysis",
+      "chatWithAIModels": "Chat with cutting-edge AI models for deep insights",
+      "writeBasedOnNotes": "Write based on notes"
+    },
+    "stats": {
+      "tenMillionPlus": "10 Million+",
+      "oneHundredThousandPlus": "100 Thousand+",
+      "activeUsers": "Active Users",
+      "fiveStarReviews": "Five-Star Reviews"
+    },
+    "appNames": {
+      "wisebase": "Wisebase",
+      "deepResearch": "Deep Research",
+      "scholarResearch": "Scholar Research",
+      "mathSolver": "Math Solver",
+      "recNote": "Rec Note",
+      "audioToText": "Audio To Text",
+      "gamifiedLearning": "Gamified Learning",
+      "interactiveReading": "Interactive Reading",
+      "chatPDF": "ChatPDF"
+    },
+    "platforms": {
+      "ios": "iOS",
+      "android": "Android",
+      "mac": "Mac OS",
+      "windows": "Windows"
+    },
+    "footer": {
+      "slogan": "Learn faster, think deeper, grow smarter with Sider.",
+      "siderLearning": "Learn faster, think deeper, grow smarter with Sider.",
+      "categories": {
+        "products": "Products",
+        "applications": "Applications",
+        "wisebase": "Wisebase",
+        "tools": "Tools"
+      },
+      "applications": {
+        "extension": "Extension"
+      },
+      "wisebase": {
+        "wisebase": "Wisebase",
+        "deepResearch": "Deep Research",
+        "scholarResearch": "Scholar Research",
+        "mathSolver": "Math Solver",
+        "recNote": "Rec Note",
+        "audioToText": "Audio To Text",
+        "gamifiedLearning": "Gamified Learning",
+        "interactiveReading": "Interactive Reading",
+        "chatpdf": "ChatPDF"
+      },
+      "tools": {
+        "webCreator": "Website Generator",
+        "aiSlides": "AI PPT",
+        "aiWriter": "AI Writer",
+        "videoShortener": "Video Shortener"
+      }
+    },
+    "placeholders": {
+      "researchTopic": "What topic do you want to research?"
+    }
   }
 }

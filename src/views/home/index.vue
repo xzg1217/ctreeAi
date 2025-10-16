@@ -18,18 +18,18 @@
         </div>
         <div class="home-header-right">
           <a
-            class="font-size-[12px] flex gap-2 items-center add-chrome px-3 py-1.5 rounded-[999px] cursor-pointer hover:bg-gray-200">
+              class="font-size-[12px] flex gap-2 items-center add-chrome px-3 py-1.5 rounded-[999px] cursor-pointer hover:bg-gray-200">
 
-            <i class="iconfont-sys iconsys-add-plus font-size-[12px]"></i>
+              <i class="iconfont-sys iconsys-add-plus font-size-[12px]"></i>
 
-            添加到Chrome
-          </a>
+              {{ t('home.buttons.addToChrome') }}
+            </a>
 
           <!-- 登录 -->
           <a
             class="font-normal-14 flex gap-2 items-center login px-3 py-1.5 rounded-[999px] cursor-pointer bg-black text-white">
 
-            登录
+            {{ t('home.buttons.login') }}
           </a>
         </div>
       </div>
@@ -61,7 +61,7 @@
           class="slogan transform-gpu scale-[100%] translate-y-[50%] text-center text-[42px] sm:text-[68px] lg:text-[80px] leading-[1.3] font-semibold hero-slogan">
           <p class="blur-text"><span class="animate-in-down first-word animated-text">Deep<!-- -->&nbsp;</span><span
               class="animate-in-down second-word animated-text">Research<!-- -->&nbsp;</span><span
-              class="animate-in-down third-word animated-text">仅需数分钟<!-- -->&nbsp;</span><span
+              class="animate-in-down third-word animated-text">{{ t('home.titles.deepResearchMinutes').replace('Deep Research ','') }}<!-- -->&nbsp;</span><span
               style="display: inline-block; will-change: transform, filter, opacity; filter: blur(0px); opacity: 1; transform: none;"></span>
           </p>
         </h1>
@@ -69,12 +69,12 @@
           class="w-full max-w-[720px] mt-2 gsap-fade-in transform-gpu scale-75 opacity-0 animate-content content-container">
           <div class="w-fit mx-auto text-center">
             <div class="text-[16px] sm:text-[20px] font-normal leading-[1.33] text-color-text-primary-3 hero-text">
-              AI自动模拟人类研究：智能高亮、即时笔记、可视化报告
+              {{ t('home.titles.aiResearchSimulation') }}
             </div>
           </div>
           <div
             class="relative w-full my-10 md:my-12 bg-gray-50 hover:bg-gray-100 focus-within:!bg-white backdrop-blur-[20px] text-color-text-primary-4 rounded-[32px] border border-[rgba(107,107,118,0.02)] border-solid focus-within:!border-color-grey-line2-hover focus-within:shadow-[0_0_0_4px_#72768B0F] transition-colors">
-            <textarea rows="1" placeholder="您想研究什么主题？" v-model="searchText"
+            <textarea rows="1" :placeholder="t('home.placeholders.researchTopic')" v-model="searchText"
               class="w-full box-border max-h-36 ps-6 py-2.5 my-[10px] pe-16 text-color-text-primary-1 block bg-transparent border-none outline-none resize-none text-base search-textarea "
               maxlength="200"></textarea>
             <button :disabled="searchText.length === 0"
@@ -95,12 +95,12 @@
               <p class="text-xs opacity-60">编辑推荐</p>
             </li>
             <li>
-              <h3 class="flex items-center gap-1 text-base font-bold">1000万+</h3>
-              <p class="text-xs opacity-60">活跃用户</p>
+              <h3 class="flex items-center gap-1 text-base font-bold">{{ t('home.stats.tenMillionPlus') }}</h3>
+              <p class="text-xs opacity-60">{{ t('home.stats.activeUsers') }}</p>
             </li>
             <li>
-              <h3 class="text-base font-bold">10万+</h3>
-              <p class="text-xs opacity-60">五星好评</p>
+              <h3 class="text-base font-bold">{{ t('home.stats.oneHundredThousandPlus') }}</h3>
+              <p class="text-xs opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
             </li>
           </ul>
           <div
@@ -138,7 +138,7 @@
         <h3
           class="s2-title-1 transform-gpu scale-100 top-1/2 -translate-y-1/2 opacity-100 absolute px-5 left-0 right-0 text-white! font-semibold! leading-tight w-max!"
           style="transform: translate(-50%, -50%) translateY(0); left: 50%; opacity: 1;">
-          前所未有的研究体验</h3>
+          {{ t('home.titles.unprecedentedResearch') }}</h3>
         <h3
           class="s2-title-2 absolute left-0 right-0 top-1/2 text-white! font-semibold! leading-tight text-center px-5 transition-all duration-300 w-[max-content] "
           style="transform: translate(-50%, -50%) translateY(0); left: 50%; opacity: 0;">
@@ -153,8 +153,8 @@
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">Deep Research 智能体</h2>
-              <p class="text-xl opacity-60 leading-normal">AI承担研究的繁重工作，让您专注于真正重要的事</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.deepResearchAgent') }}</h2>
+              <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research">免费开始<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
@@ -171,8 +171,8 @@
           style="--position:0%;--tr:0%;--img-tr:0%">
           <div class="relative block md:hidden text-left mb-14 w-full">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">Deep Research 智能体</h2>
-              <p class="text-xl opacity-60 leading-normal">AI承担研究的繁重工作，让您专注于真正重要的事</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.deepResearchAgent') }}</h2>
+              <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research">免费开始<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
@@ -190,7 +190,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(253_100%_62%/1)] to-[hsla(252_100%_75%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    智能搜索并筛选最相关的资源</h3>
+                    {{ t('home.features.intelligentSearch') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -211,7 +211,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(216_100%_60%/1)] to-[hsla(218_100%_75%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    自动高亮关键信息，记录启发性笔记</h3>
+                    {{ t('home.features.highlightNotes') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -232,7 +232,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(161_69%_41%/1)] to-[hsla(161_56%_53%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    自动生成详尽且带引用的报告</h3>
+                    {{ t('home.features.detailedReport') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -253,7 +253,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(249_11%_31%/1)] to-[hsla(250_9%_52%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    一键生成可视化交互式报告</h3>
+                    {{ t('home.features.visualReport') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -278,8 +278,8 @@
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">全能浏览器调研助手</h2>
-              <p class="text-xl opacity-60">随时随地更智能地研究，强大的AI工具触手可及</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.allInOneBrowserAssistant') }}</h2>
+              <p class="text-xl opacity-60">{{ t('home.titles.smartResearchAnytime') }}</p>
               <div class="mt-4 md:mt-8">
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
@@ -293,7 +293,7 @@
                 </ul><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6">获取扩展程序<svg
+                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6">{{ t('home.buttons.getExtension') }}<svg
                     width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.54708 8.75977C4.29855 8.75977 4.09708 8.96124 4.09708 9.20977C4.09708 9.45829 4.29855 9.65977 4.54708 9.65977L7.70333 9.65977L2.53183 14.8313C2.35609 15.007 2.35609 15.2919 2.53183 15.4677C2.70756 15.6434 2.99249 15.6434 3.16822 15.4677L8.33972 10.2962V13.4524C8.33972 13.7009 8.54119 13.9024 8.78972 13.9024C9.03825 13.9024 9.23972 13.7009 9.23972 13.4524L9.23972 9.60977C9.23972 9.14032 8.85916 8.75977 8.38972 8.75977L4.54708 8.75977Z"
@@ -308,8 +308,8 @@
           style="--position:0%;--tr:0%;--img-tr:0%">
           <div class="relative block md:hidden text-left mb-14 w-full">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">全能浏览器调研助手</h2>
-              <p class="text-xl opacity-60">随时随地更智能地研究，强大的AI工具触手可及</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.allInOneBrowserAssistant') }}</h2>
+              <p class="text-xl opacity-60">{{ t('home.titles.smartResearchAnytime') }}</p>
               <div class="mt-4 md:mt-8">
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
@@ -323,7 +323,7 @@
                 </ul><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6">获取扩展程序<svg
+                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6">{{ t('home.buttons.getExtension') }}<svg
                     width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.54708 8.75977C4.29855 8.75977 4.09708 8.96124 4.09708 9.20977C4.09708 9.45829 4.29855 9.65977 4.54708 9.65977L7.70333 9.65977L2.53183 14.8313C2.35609 15.007 2.35609 15.2919 2.53183 15.4677C2.70756 15.6434 2.99249 15.6434 3.16822 15.4677L8.33972 10.2962V13.4524C8.33972 13.7009 8.54119 13.9024 8.78972 13.9024C9.03825 13.9024 9.23972 13.7009 9.23972 13.4524L9.23972 9.60977C9.23972 9.14032 8.85916 8.75977 8.38972 8.75977L4.54708 8.75977Z"
@@ -339,7 +339,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(30_98%_52%/1)] to-[hsla(35_95%_66%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    秒速总结网页或 YouTube 视频</h3>
+                    {{ t('home.features.quickSummary') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -360,7 +360,7 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(159_58%_46%/1)] to-[hsla(159_58%_46%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    解释高亮文本，无需中断阅读流程</h3>
+                    {{ t('home.features.explainHighlight') }}</h3>
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -554,7 +554,7 @@
                   <path
                     d="M26.294 11.122c-1.894-2.635-4.849-2.998-5.902-3.04-2.513-.243-4.906 1.406-6.18 1.406s-3.24-1.373-5.325-1.337c-2.74.038-5.265 1.513-6.678 3.847-2.848 4.692-.729 11.644 2.045 15.45 1.357 1.865 2.974 3.958 5.096 3.883 2.045-.077 2.82-1.258 5.287-1.258 2.473 0 3.167 1.258 5.33 1.22 2.2-.039 3.595-1.9 4.94-3.77 1.558-2.162 2.198-4.252 2.236-4.36-.05-.021-4.288-1.564-4.332-6.203-.04-3.881 3.332-5.744 3.484-5.838zM20.426.666c-1.624.064-3.59 1.027-4.756 2.32-1.044 1.151-1.85 2.985-1.605 4.746 1.814.134 3.554-.874 4.682-2.173 1.126-1.293 1.886-3.096 1.679-4.893">
                   </path>
-                </svg></span><span class="text-xs md:text-sm">iOS</span></a>
+                </svg></span><span class="text-xs md:text-sm">{{ t('home.platforms.ios') }}</span></a>
             <div
               class="absolute w-[120px] h-[120px] left-1/2 transform -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20">
               <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -580,7 +580,7 @@
                   <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M3.71.968a1.09 1.09 0 0 1 1.526.218L8.298 5.27A15.9 15.9 0 0 1 16 3.297c2.792 0 5.417.715 7.702 1.972l3.062-4.083a1.09 1.09 0 0 1 1.745 1.31l-2.967 3.956C29.462 9.368 32 14.036 32 19.297c0 1.117-.958 1.953-2.076 1.953H2.076C.958 21.25 0 20.414 0 19.297c0-5.261 2.539-9.929 6.458-12.845L3.491 2.496A1.09 1.09 0 0 1 3.709.968m6.472 12.51a1.455 1.455 0 1 1-2.91 0 1.455 1.455 0 0 1 2.91 0m13.09 1.454a1.455 1.455 0 1 0 0-2.91 1.455 1.455 0 0 0 0 2.91">
                   </path>
-                </svg></span><span class="text-xs md:text-sm">Android</span></a>
+                </svg></span><span class="text-xs md:text-sm">{{ t('home.platforms.android') }}</span></a>
             <div
               class="absolute w-[120px] h-[120px] left-1/2 transform -translate-x-1/2 top-full mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-20">
               <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -644,7 +644,7 @@
               </linearGradient>
             </defs>
           </svg>
-          <p class="text-(--art-text-muted) mt-8!">通过Sider更快学习、更深入思考、更聪明成长。</p>
+          <p class="text-(--art-text-muted) mt-8!">{{ t('home.footer.siderLearning') }}</p>
           <div class="flex gap-4 mt-4"><a
               class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
               target="_blank" href="/zh-CN/contact"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
@@ -721,63 +721,63 @@
         </div>
         <div class="flex gap-[60px] text-white flex-wrap">
           <div>
-            <div class="text-base font-medium pb-4 border-b border-[rgba(214,218,255,0.10)] mb-4">产品</div>
+            <div class="text-base font-medium pb-4 border-b border-[rgba(214,218,255,0.10)] mb-4">{{ t('home.footer.categories.products') }}</div>
             <div class="flex gap-[60px] flex-wrap">
               <div class="text-sm">
-                <div class="font-medium mb-4">应用</div>
+                <div class="font-medium mb-4">{{ t('home.footer.categories.applications') }}</div>
                 <ul class="flex flex-col gap-y-4 gap-x-4">
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/extensions">扩展程序</a></li>
+                      href="/zh-CN/extensions">{{ t('home.footer.applications.extension') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/apps/ios">iOS</a></li>
+                      href="/zh-CN/apps/ios">{{ t('home.platforms.ios') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/apps/android">Android</a></li>
+                      href="/zh-CN/apps/android">{{ t('home.platforms.android') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/apps/mac">Mac OS</a></li>
+                      href="/zh-CN/apps/mac">{{ t('home.platforms.mac') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/apps/windows">Windows</a></li>
+                      href="/zh-CN/apps/windows">{{ t('home.platforms.windows') }}</a></li>
                 </ul>
               </div>
               <div class="text-sm">
-                <div class="font-medium mb-4">Wisebase</div>
+                <div class="font-medium mb-4">{{ t('home.footer.categories.wisebase') }}</div>
                 <ul class="flex-col grid grid-cols-2 gap-4">
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase">Wisebase</a></li>
+                      href="/wisebase">{{ t('home.footer.wisebase.wisebase') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/deep-research">Deep Research</a></li>
+                      href="/wisebase/deep-research">{{ t('home.footer.wisebase.deepResearch') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/scholar-research">Scholar Research</a></li>
+                      href="/wisebase/scholar-research">{{ t('home.footer.wisebase.scholarResearch') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/math-solver">Math Solver</a></li>
+                      href="/wisebase/math-solver">{{ t('home.footer.wisebase.mathSolver') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white"
-                      title="Rec Note" href="/zh-CN/rec-note">Rec Note</a><span
+                      title="Rec Note" href="/zh-CN/rec-note">{{ t('home.footer.wisebase.recNote') }}</a><span
                       class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                   </li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/audio-to-text">Audio To Text</a></li>
+                      href="/wisebase/audio-to-text">{{ t('home.footer.wisebase.audioToText') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/gamification">Gamified Learning</a></li>
+                      href="/wisebase/gamification">{{ t('home.footer.wisebase.gamifiedLearning') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/wisebase/interactive-reading">Interactive Reading</a></li>
+                      href="/wisebase/interactive-reading">{{ t('home.footer.wisebase.interactiveReading') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/chatpdf">ChatPDF</a></li>
+                      href="/zh-CN/chatpdf">{{ t('home.footer.wisebase.chatpdf') }}</a></li>
                 </ul>
               </div>
               <div class="text-sm">
-                <div class="font-medium mb-4">工具</div>
+                <div class="font-medium mb-4">{{ t('home.footer.categories.tools') }}</div>
                 <ul class="flex-col grid grid-cols-2 gap-4">
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/agents/web-creator">网站生成器</a><span
+                      href="/agents/web-creator">{{ t('home.footer.tools.webCreator') }}</a><span
                       class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                   </li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/agents/ai-slides">AI PPT</a><span
+                      href="/agents/ai-slides">{{ t('home.footer.tools.aiSlides') }}</a><span
                       class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                   </li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/agents/ai-writer">写作大师</a></li>
+                      href="/agents/ai-writer">{{ t('home.footer.tools.aiWriter') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/video/ai-video-shortener">智简视频</a></li>
+                      href="/zh-CN/create/video/ai-video-shortener">{{ t('home.footer.tools.videoShortener') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
                       href="/zh-CN/create/video/sora-video-downloader">Sora 视频下载器</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
@@ -953,7 +953,8 @@
                     <path fill="#fff" d="M0 0h16v16H0z"></path>
                   </clipPath>
                 </defs>
-              </svg>中文(简体)<!-- --> <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+              </svg>{{ languages.find((lang) => lang.code === locale).name }} <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+
                 xmlns="http://www.w3.org/2000/svg">
                 <path d="M2.25 4.125L6 7.875L9.75 4.125" stroke="currentcolor" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round"></path>
@@ -961,14 +962,14 @@
               </a>
               <template #overlay>
                 <a-menu>
-                  <a-menu-item key="0">
-                    <a href="http://www.alipay.com/">1st menu item</a>
+                  <a-menu-item 
+                    v-for="lang in languages" 
+                    :key="lang.key"
+                    @click="changeLanguage(lang.code)"
+                    :class="{ 'text-primary': locale === lang.code }"
+                  >
+                    {{ lang.name }}
                   </a-menu-item>
-                  <a-menu-item key="1">
-                    <a href="http://www.taobao.com/">2nd menu item</a>
-                  </a-menu-item>
-                  <a-menu-divider />
-                  <a-menu-item key="3">3rd menu item</a-menu-item>
                 </a-menu>
               </template>
             </a-dropdown>
@@ -983,76 +984,91 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { ColorBgCanvas } from '../../../colorbgcanvas-example.js'
+import { useI18n } from "vue-i18n";
+import { LanguageEnum } from '../../enums/appEnum';
 
+const { locale, t } = useI18n();
+
+// 语言列表数据
+const languages = [
+  { key: LanguageEnum.ZH, name: '中文(简体)', code: 'zh' },
+  { key: LanguageEnum.EN, name: 'English', code: 'en' }
+];
+
+// 切换语言函数
+const changeLanguage = (langCode: string) => {
+  locale.value = langCode;
+  // 可以在这里添加语言切换后的其他逻辑，如存储当前语言设置等
+};
 const menus = ref([
   {
-    name: '聊天',
+    name: t('home.nav.chat'),
     path: '/'
   },
   {
-    name: 'Wisebase',
+    name: t('home.nav.wisebase'),
     path: '/wisebase',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: '工具',
+    name: t('home.nav.tools'),
     path: '/wisebase/agent',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: '扩展程序',
+    name: t('home.nav.extension'),
     path: '/setting'
   },
   {
-    name: '应用',
+    name: t('home.nav.app'),
     path: '/setting',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: '价格',
+    name: t('home.nav.pricing'),
     path: '/setting'
   }
 ])
 
 const wbData = ref([
   {
-    name: 'Wisebase',
+    name: t('home.appNames.wisebase'),
     path: '/wisebase'
   },
   {
-    name: 'Deep Research',
+    name: t('home.appNames.deepResearch'),
     path: '/wisebase'
   },
   {
-    name: 'Scholar Research',
+    name: t('home.appNames.scholarResearch'),
     path: '/wisebase'
   },
   {
-    name: 'Math Solver',
+    name: t('home.appNames.mathSolver'),
     path: '/wisebase'
   },
   {
-    name: 'Rec Note',
+    name: t('home.appNames.recNote'),
     path: '/wisebase',
     isNew: true
   },
   {
-    name: 'Audio To Text',
+    name: t('home.appNames.audioToText'),
     path: '/wisebase'
   },
   {
-    name: 'Gamified Learning',
+    name: t('home.appNames.gamifiedLearning'),
     path: '/wisebase'
   },
   {
-    name: 'Interactive Reading',
+    name: t('home.appNames.interactiveReading'),
     path: '/wisebase'
   },
   {
-    name: 'ChatPDF',
+    name: t('home.appNames.chatPDF'),
     path: '/wisebase'
   },
 ])

@@ -288,5 +288,110 @@
     "zebra": "斑马纹",
     "border": "边框",
     "headerBackground": "表头背景"
+  },
+  "home": {
+    "nav": {
+      "chat": "聊天",
+      "wisebase": "Wisebase",
+      "tools": "工具",
+      "extension": "扩展程序",
+      "app": "应用",
+      "pricing": "价格"
+    },
+    "buttons": {
+      "addToChrome": "添加到Chrome",
+      "login": "登录",
+      "freeStart": "免费开始",
+      "getExtension": "获取扩展程序"
+    },
+    "titles": {
+      "deepResearchMinutes": "Deep Research 仅需数分钟",
+      "aiResearchSimulation": "AI自动模拟人类研究：智能高亮、即时笔记、可视化报告",
+      "unprecedentedResearch": "前所未有的研究体验",
+      "deepResearchAgent": "Deep Research 智能体",
+      "aiTakesResearchWork": "AI承担研究的繁重工作，让您专注于真正重要的事",
+      "aiResearchWorkload": "AI承担研究的繁重工作，让您专注于真正重要的事",
+      "oneClickVisualReport": "一键生成可视化交互式报告",
+      "allInOneBrowserAssistant": "全能浏览器调研助手",
+      "smarterResearchAnywhere": "随时随地更智能地研究，强大的AI工具触手可及",
+      "smartResearchAnytime": "随时随地更智能地研究，强大的AI工具触手可及",
+      "smartReadingTool": "智能阅读工具，深入研究网页与文件",
+      "buildYourKnowledgeBase": "打造您的知识库 Wisebase",
+      "siderHelpsYouGrow": "Sider 助您成长无限"
+    },
+    "features": {
+      "smartSearchFilter": "智能搜索并筛选最相关的资源",
+      "intelligentSearch": "智能搜索并筛选最相关的资源",
+      "autoHighlightNotes": "自动高亮关键信息，记录启发性笔记",
+      "highlightNotes": "自动高亮关键信息，记录启发性笔记",
+      "autoGenerateReport": "自动生成详尽且带引用的报告",
+      "detailedReport": "自动生成详尽且带引用的报告",
+      "visualReport": "一键生成可视化交互式报告",
+      "instantSummarizeWeb": "秒速总结网页或 YouTube 视频",
+      "quickSummary": "秒速总结网页或 YouTube 视频",
+      "explainHighlightedText": "解释高亮文本，无需中断阅读流程",
+      "explainHighlight": "解释高亮文本，无需中断阅读流程",
+      "oneClickTranslateWeb": "一键翻译网页，支持双语对照，50多种语言",
+      "saveResearchFindings": "将研究报告、网络发现、聊天内容保存并整理到Wisebase: 一个持续进化，越来越懂您的专属知识库。",
+      "uploadPrivateFiles": "上传私有文件，AI进行深度分析",
+      "chatWithAIModels": "与前沿AI模型聊天，获取深度见解",
+      "writeBasedOnNotes": "基于笔记进行写作"
+    },
+    "stats": {
+      "tenMillionPlus": "1000万+",
+      "oneHundredThousandPlus": "10万+",
+      "activeUsers": "活跃用户",
+      "fiveStarReviews": "五星好评"
+    },
+    "appNames": {
+      "wisebase": "Wisebase",
+      "deepResearch": "Deep Research",
+      "scholarResearch": "Scholar Research",
+      "mathSolver": "Math Solver",
+      "recNote": "Rec Note",
+      "audioToText": "Audio To Text",
+      "gamifiedLearning": "Gamified Learning",
+      "interactiveReading": "Interactive Reading",
+      "chatPDF": "ChatPDF"
+    },
+    "platforms": {
+      "ios": "iOS",
+      "android": "Android",
+      "mac": "Mac OS",
+      "windows": "Windows"
+    },
+    "footer": {
+      "slogan": "通过Sider更快学习、更深入思考、更聪明成长。",
+      "siderLearning": "通过Sider更快学习、更深入思考、更聪明成长。",
+      "categories": {
+        "products": "产品",
+        "applications": "应用",
+        "wisebase": "Wisebase",
+        "tools": "工具"
+      },
+      "applications": {
+        "extension": "扩展程序"
+      },
+      "wisebase": {
+        "wisebase": "Wisebase",
+        "deepResearch": "Deep Research",
+        "scholarResearch": "Scholar Research",
+        "mathSolver": "Math Solver",
+        "recNote": "Rec Note",
+        "audioToText": "Audio To Text",
+        "gamifiedLearning": "Gamified Learning",
+        "interactiveReading": "Interactive Reading",
+        "chatpdf": "ChatPDF"
+      },
+      "tools": {
+        "webCreator": "网站生成器",
+        "aiSlides": "AI PPT",
+        "aiWriter": "写作大师",
+        "videoShortener": "智简视频"
+      }
+    },
+    "placeholders": {
+      "researchTopic": "您想研究什么主题？"
+    }
   }
 }
