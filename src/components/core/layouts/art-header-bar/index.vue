@@ -80,7 +80,7 @@
         </div>
         <!-- 语言 -->
         <div class="btn-box" v-if="shouldShowLanguage">
-          <ElDropdown @command="changeLanguage" popper-class="langDropDownStyle">
+          <ElDropdown @command="localChangeLanguage" popper-class="langDropDownStyle">
             <div class="btn language-btn">
               <i class="iconfont-sys">&#xe611;</i>
             </div>
@@ -336,10 +336,12 @@
    * 切换系统语言
    * @param {LanguageEnum} lang - 目标语言类型
    */
-  const changeLanguage = (lang: LanguageEnum): void => {
+  import { changeLanguage } from '@/locales';
+  
+  // 重新定义局部changeLanguage函数，保持reload逻辑
+  const localChangeLanguage = (lang: LanguageEnum): void => {
     if (locale.value === lang) return
-    locale.value = lang
-    userStore.setLanguage(lang)
+    changeLanguage(lang)
     reload(50)
   }
 

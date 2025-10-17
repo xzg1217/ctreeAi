@@ -289,12 +289,8 @@
 
   // 切换语言
   const { locale } = useI18n()
+  import { changeLanguage } from '@/locales'
 
-  const changeLanguage = (lang: LanguageEnum) => {
-    if (locale.value === lang) return
-    locale.value = lang
-    userStore.setLanguage(lang)
-  }
 </script>
 
 <style lang="scss" scoped>

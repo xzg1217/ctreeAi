@@ -10,7 +10,7 @@
           <div class="home-header-left-menu">
             <div class="home-header-left-menu-item flex gap-1 items-center align-center" v-for="(item, index) in menus"
               :key="item.path" @mouseenter="handleMouseEnter(index)">
-              <p class="">{{ item.name }}</p>
+              <p class="">{{ t(item.name) }}</p>
               <i class="iconfont-sys font-size-[12px]"
                 :class="[item.icon, { 'rotate-icon': hoveredIndex === index }]"></i>
             </div>
@@ -53,7 +53,7 @@
     <div class="relative w-full h-screen h-svh min-h-[600px]">
       <div class="fade-in absolute inset-0 opacity-60 fade-in-bg">
         <div id=":R177puaqfja:" class="h-full canvas-container">
-          <canvas width="100%" height="1271" id="colorbgcanvas" class="colorbgcanvas"></canvas>
+          <canvas width="100%" height="1271" id="colorbgcanvas-0" class="colorbgcanvas"></canvas>
         </div>
       </div>
       <div class="flex flex-col items-center justify-center w-full h-full px-5">
@@ -92,7 +92,8 @@
           <ul class="flex items-center justify-center gap-5 text-text-primary-2 w-full md:w-auto">
             <li>
               <h3 class="text-base font-bold">2025</h3>
-              <p class="text-xs opacity-60">编辑推荐</p>
+              <p class="text-xs opacity-60">{{ t('home.features.recommend') }}</p>
+
             </li>
             <li>
               <h3 class="flex items-center gap-1 text-base font-bold">{{ t('home.stats.tenMillionPlus') }}</h3>
@@ -110,11 +111,13 @@
             <a href="https://app.arcade.software/share/X4F2JwLx3SewOIa9GDGd" target="_blank"
               class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-solid text-[var(--color-text-primary-3)] hover:bg-gray-100 hover:text-black no-underline">
               <i class="iconfont-sys font-size-[20px] iconsys-shuju"></i>
-              查看演示</a>
+              {{ t('home.features.viewDemo') }}</a>
+
             <a
               class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-solid text-[var(--color-text-primary-3)] hover:bg-gray-100 hover:text-black no-underline">
               <i class="iconfont-sys font-size-[20px] iconsys-shuju"></i>
-              了解 Sider 5.0</a>
+              {{ t('home.features.learn') }} Sider 5.0</a>
+
           </div>
         </div>
       </div>
@@ -123,7 +126,7 @@
     <!-- 第三模块 -->
     <div class="mt-[-80px] relative w-full h-[200vh]">
       <div class="text-base flex justify-center font-size-[12px]"> <i
-          class="iconfont-sys font-size-[12px] iconsys-xia mr-2 bounce-arrow-icon"></i> 了解更多</div>
+          class="iconfont-sys font-size-[12px] iconsys-xia mr-2 bounce-arrow-icon"></i> {{ t('home.features.learnMore') }}</div>
       <!-- 滚动区 -->
       <div
         class="s2-card w-full relative aspect-square xs:aspect-[16/9] lg:aspect-[16/6] xl:aspect-[16/6] text-center text-[32px] sm:text-[68px] lg:text-[92px]">
@@ -131,8 +134,8 @@
           class="s2-card-bg from-hide origin-center top-0 left-0 w-full h-full absolute bg-[#5b59c9] rounded-2xl md:rounded-3xl overflow-hidden"
           style="translate: none; rotate: none; scale: none; opacity: 1; transform: scale(1, 1);">
           <div id=":R1m97puaqfja:" class="w-full h-full" style="position: relative;">
-            <canvas width="1568" height="588" id="colorbgcanvas"
-              style="width: 1568px; height: 588px; position: absolute; top: 0px; left: 0px; z-index: 0;"></canvas>
+            <canvas width="1568" height="588" id="colorbgcanvas-1"
+              style="position: absolute; top: 0px; left: 0px; z-index: 0;"></canvas>
           </div>
         </div>
         <h3
@@ -142,7 +145,7 @@
         <h3
           class="s2-title-2 absolute left-0 right-0 top-1/2 text-white! font-semibold! leading-tight text-center px-5 transition-all duration-300 w-[max-content] "
           style="transform: translate(-50%, -50%) translateY(0); left: 50%; opacity: 0;">
-          更快速、更深入、更智能</h3>
+          {{ t('home.features.gFast') }}</h3>
       </div>
     </div>
 
@@ -157,7 +160,7 @@
               <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
-                  href="/wisebase/deep-research">免费开始<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                  href="/wisebase/deep-research">{{ t('home.buttons.freeStart') }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.54708 8.75977C4.29855 8.75977 4.09708 8.96124 4.09708 9.20977C4.09708 9.45829 4.29855 9.65977 4.54708 9.65977L7.70333 9.65977L2.53183 14.8313C2.35609 15.007 2.35609 15.2919 2.53183 15.4677C2.70756 15.6434 2.99249 15.6434 3.16822 15.4677L8.33972 10.2962V13.4524C8.33972 13.7009 8.54119 13.9024 8.78972 13.9024C9.03825 13.9024 9.23972 13.7009 9.23972 13.4524L9.23972 9.60977C9.23972 9.14032 8.85916 8.75977 8.38972 8.75977L4.54708 8.75977Z"
@@ -175,7 +178,7 @@
               <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
-                  href="/wisebase/deep-research">免费开始<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                  href="/wisebase/deep-research">{{ t('home.buttons.freeStart') }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.54708 8.75977C4.29855 8.75977 4.09708 8.96124 4.09708 9.20977C4.09708 9.45829 4.29855 9.65977 4.54708 9.65977L7.70333 9.65977L2.53183 14.8313C2.35609 15.007 2.35609 15.2919 2.53183 15.4677C2.70756 15.6434 2.99249 15.6434 3.16822 15.4677L8.33972 10.2962V13.4524C8.33972 13.7009 8.54119 13.9024 8.78972 13.9024C9.03825 13.9024 9.23972 13.7009 9.23972 13.4524L9.23972 9.60977C9.23972 9.14032 8.85916 8.75977 8.38972 8.75977L4.54708 8.75977Z"
@@ -284,11 +287,11 @@
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
                     <h3 class="text-base font-bold">1000万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">活跃用户</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.activeUsers') }}</p>
                   </li>
                   <li>
                     <h3 class="text-base font-bold">10万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">五星好评</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
                   </li>
                 </ul><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
@@ -314,11 +317,11 @@
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
                     <h3 class="text-base font-bold">1000万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">活跃用户</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.activeUsers') }}</p>
                   </li>
                   <li>
                     <h3 class="text-base font-bold">10万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">五星好评</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
                   </li>
                 </ul><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
@@ -381,7 +384,8 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(216_100%_60%/1)] to-[hsla(218_100%_75%/1)]">
                   <h3
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white">
-                    一键翻译网页，支持双语对照，50多种语言</h3>
+                    {{ t('home.features.oneClickTranslateWeb') }}</h3>
+
                   <p
                     class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white">
                   </p>
@@ -425,13 +429,15 @@
       <div class="relative z-10 max-w-[1400px] mx-auto px-5 md:px-10">
         <div class="mx-auto">
           <div class="space-y-5 md:space-y-6">
-            <h2 class="text-[40px] lg:text-[64px] font-semibold leading-normal">打造您的知识库 Wisebase</h2>
+            <h2 class="text-[40px] lg:text-[64px] font-semibold leading-normal">{{  t('home.titles.buildYourKnowledgeBase')  }}</h2>
+
             <div class="flex justify-between items-end gap-8 flex-wrap">
               <p class="w-full md:w-[60%] max-w-[720px] text-xl font-normal leading-normal opacity-60">
-                将研究报告、网络发现、聊天内容保存并整理到Wisebase: 一个持续进化，越来越懂您的专属知识库。</p>
+                {{  t('home.features.saveResearchFindings')  }}</p>
+
               <div class=""><a target="_blank"
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl flex gap-2 items-center w-fit h-fit ms-auto"
-                  href="/wisebase">免费开始<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
+                  href="/wisebase">{{ t('home.buttons.freeStart') }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
                       d="M4.54708 8.75977C4.29855 8.75977 4.09708 8.96124 4.09708 9.20977C4.09708 9.45829 4.29855 9.65977 4.54708 9.65977L7.70333 9.65977L2.53183 14.8313C2.35609 15.007 2.35609 15.2919 2.53183 15.4677C2.70756 15.6434 2.99249 15.6434 3.16822 15.4677L8.33972 10.2962V13.4524C8.33972 13.7009 8.54119 13.9024 8.78972 13.9024C9.03825 13.9024 9.23972 13.7009 9.23972 13.4524L9.23972 9.60977C9.23972 9.14032 8.85916 8.75977 8.38972 8.75977L4.54708 8.75977Z"
@@ -451,17 +457,20 @@
           <div class=""><video
               class="w-full aspect-square rounded-2xl md:rounded-3xl mb-4 md:mb-8 bg-color-grey-fill1-hover"
               src="/src/assets/vedio/L.mp4" playsinline="" muted=""></video>
-            <p class="text-xl font-semibold">上传私有文件，AI进行深度分析</p>
+            <p class="text-xl font-semibold">{{  t('home.features.uploadPrivateFiles')  }}</p>
+
           </div>
           <div class=""><video
               class="w-full aspect-square rounded-2xl md:rounded-3xl mb-4 md:mb-8 bg-color-grey-fill1-hover"
               src="/src/assets/vedio/M.mp4" playsinline="" muted=""></video>
-            <p class="text-xl font-semibold">与前沿AI模型聊天，获取深度见解</p>
+            <p class="text-xl font-semibold">{{  t('home.features.chatWithAIModels')  }}</p>
+
           </div>
           <div class=""><video
               class="w-full aspect-square rounded-2xl md:rounded-3xl mb-8 md:mb-8 bg-color-grey-fill1-hover"
               src="/src/assets/vedio/R.mp4" playsinline="" muted=""></video>
-            <p class="text-xl font-semibold">基于笔记进行写作</p>
+            <p class="text-xl font-semibold">{{  t('home.features.writeBasedOnNotes')  }}</p>
+
           </div>
         </div>
       </div>
@@ -472,14 +481,14 @@
             style="translate: none; rotate: none; scale: none; transform: scale(2, 1);">
             <div id="s6-bg" class="absolute inset-0">
               <div id=":R6f7puaqfja:" class="w-full h-full" style="position: relative;">
-                <canvas width="3136" height="574" id="colorbgcanvas"
+                <canvas width="3136" height="574" id="colorbgcanvas-2"
                   style="width: 3136px; height: 574.469px; position: absolute; top: 0px; left: 0px; z-index: 0;"></canvas>
               </div>
             </div>
           </div>
           <h2
-            class="relative z-10 font-semibold! mx-[6%] text-center text-white! py-6 text-[32px] sm:text-[40px] md:text-[48px] lg:text-[60px] xl:text-[72px] 2xl:text-[90px]">
-            Sider 助您成长无限</h2>
+            class="relative z-10 font-semibold! mx-[6%] text-center text-white! py-6 text-[32px] sm:text-[40px] md:text-[48px] lg:text-[60px] xl:text-[72px] 2xl:text-[90px]"> {{  t('home.titles.siderHelpsYouGrow')  }}</h2>
+
         </div>
       </div>
     </div>
@@ -492,7 +501,8 @@
       <div class="relative flex flex-col items-center gap-14 z-1">
         <h2
           class="w-[757px] max-w-full px-5 text-white! text-[32px] md:text-[64px] font-medium leading-snug text-center">
-          一个账号，全平台通用</h2><a
+          {{  t('home.titles.oneAccountAllPlatform')  }}</h2><a
+
           href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
           target="_blank"
           class="bg-white text-black rounded-full px-[15px] py-3 flex items-center gap-2.5 relative hover:before:opacity-100 before:opacity-0 before:transition-opacity before:duration-500 before:ease-in-out before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-[rgba(243,139,65,0.80)_5%] before:via-[rgba(243,71,183,0.80)_28.7%,rgba(85,139,252,0.80)_57.74%] before:to-[rgba(104,69,255,0.80)_95.01%] before:blur-[24px] before:content-[&quot;&quot;]"><span
@@ -501,7 +511,7 @@
               <path
                 d="M11.965.75q3.014-.024 5.664 1.507a11 11 0 0 1 4.42 4.67l-9.318-.49a6.17 6.17 0 0 0-3.692.936q-1.683 1.048-2.324 2.88L3.25 4.931A11 11 0 0 1 7.155 1.85 11.3 11.3 0 0 1 11.965.75M2.583 5.834l4.233 8.323a6.13 6.13 0 0 0 2.65 2.724 5.47 5.47 0 0 0 3.68.565l-2.889 5.662a11.1 11.1 0 0 1-4.835-1.977A11.16 11.16 0 0 1 2 17.164a11.03 11.03 0 0 1-1.25-5.166q0-3.351 1.833-6.164m19.919 2.122q.729 1.884.747 3.898a11.4 11.4 0 0 1-.609 3.841 11.1 11.1 0 0 1-1.921 3.415 11.2 11.2 0 0 1-3.09 2.63q-2.888 1.669-6.254 1.493l5.086-7.82a6 6 0 0 0 1.036-3.648q-.068-2.003-1.337-3.483zm-10.5.251q1.57 0 2.682 1.11a3.65 3.65 0 0 1 1.111 2.681q0 1.57-1.11 2.68a3.65 3.65 0 0 1-2.683 1.111 3.65 3.65 0 0 1-2.681-1.11 3.66 3.66 0 0 1-1.111-2.68q0-1.57 1.11-2.681a3.66 3.66 0 0 1 2.682-1.111">
               </path>
-            </svg></span><span class="text-lg md:text-2xl font-semibold">免费获取Sider</span></a>
+            </svg></span><span class="text-lg md:text-2xl font-semibold">{{  t('home.buttons.freeGet')  }}</span></a>
         <div
           class="flex flex-wrap justify-start md:justify-center gap-y-5 gap-x-3 md:gap-x-4 px-5 md:px-[10%] text-[hsla(235_100%_92%/0.56)]">
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"><a
@@ -779,9 +789,9 @@
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
                       href="/zh-CN/create/video/ai-video-shortener">{{ t('home.footer.tools.videoShortener') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/video/sora-video-downloader">Sora 视频下载器</a></li>
+                      href="/zh-CN/create/video/sora-video-downloader">{{ t('home.footer.bottomLinks.soraVideoDownloader') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/nano-banana-ai-image-generator">Nano Banana</a><span><svg
+                      href="/zh-CN/create/image/nano-banana-ai-image-generator">{{ t('home.footer.bottomLinks.nanoBanana') }}</a><span><svg
                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <path
                           d="M11.496 3.814c-.623-1.176-1.325-1.956-1.97-2.374-.315-.205-.67-.357-1.027-.372-.38-.017-.856.137-1.073.626C6.66 3.417 6.173 4.47 5.227 5.858c-.491.722-1.148 1.692-1.68 2.77-.528 1.075-.964 2.316-.964 3.588 0 2.268.99 4.007 2.426 5.163C6.428 18.52 8.266 19.082 10 19.082c1.735 0 3.572-.562 4.991-1.703 1.437-1.156 2.426-2.895 2.426-5.163 0-2.393-.63-4.078-1.954-6.124-.235-.364-.48-.684-.752-.871a1.04 1.04 0 0 0-.653-.197.94.94 0 0 0-.66.335c-.123.142-.193.3-.236.417a3 3 0 0 0-.105.37c-.038.174-.072.377-.102.561l-.028.166c-.073.428-.159.767-.253.983a.6.6 0 0 1-.215-.23c-.105-.183-.179-.449-.243-.854q-.03-.203-.062-.449c-.092-.717-.215-1.672-.658-2.509"
@@ -809,54 +819,54 @@
                         </defs>
                       </svg></span></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/ai-image-generator">图片生成</a></li>
+                      href="/zh-CN/create/image/ai-image-generator">{{ t('home.footer.bottomLinks.aiImageGenerator') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/italian-brainrot-generator">意大利脑洞</a></li>
+                      href="/zh-CN/create/image/italian-brainrot-generator">{{ t('home.footer.bottomLinks.italianBrainrotGenerator') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/background-remover">背景移除</a></li>
+                      href="/zh-CN/create/image/background-remover">{{ t('home.footer.bottomLinks.backgroundRemover') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/photo-background-changer">背景替换</a></li>
+                      href="/zh-CN/create/image/photo-background-changer">{{ t('home.footer.bottomLinks.photoBackgroundChanger') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/photo-eraser">区域抹除</a></li>
+                      href="/zh-CN/create/image/photo-eraser">{{ t('home.footer.bottomLinks.photoEraser') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/text-remover">文字移除</a></li>
+                      href="/zh-CN/create/image/text-remover">{{ t('home.footer.bottomLinks.textRemover') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/inpaint">局部重绘</a></li>
+                      href="/zh-CN/create/image/inpaint">{{ t('home.footer.not-[]:bottomLinks.inpaint') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/create/image/image-upscaler">画质提升</a></li>
+                      href="/zh-CN/create/image/image-upscaler">{{ t('home.footer.bottomLinks.imageUpscaler') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/translator/text-translator">文本翻译</a></li>
+                      href="/zh-CN/translator/text-translator">{{ t('home.footer.bottomLinks.textTranslator') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/translator/image-translator">图片翻译</a></li>
+                      href="/zh-CN/translator/image-translator">{{ t('home.footer.bottomLinks.imageTranslator') }}</a></li>
                   <li class="flex items-center gap-2"><a class="text-(--art-text-muted) hover:text-white" title=""
-                      href="/zh-CN/translator/pdf-translator">PDF翻译</a></li>
+                      href="/zh-CN/translator/pdf-translator">{{ t('home.footer.bottomLinks.pdfTranslator') }}</a></li>
                 </ul>
               </div>
             </div>
           </div>
           <div>
-            <div class="text-base font-medium pb-4 border-b border-[rgba(214,218,255,0.10)] mb-4">Sider</div>
+            <div class="text-base font-medium pb-4 border-b border-[rgba(214,218,255,0.10)] mb-4">{{ t('home.footer.bottomLinks.sider') }}</div>
             <div class="flex gap-10">
               <div class="text-sm">
                 <ul class="flex flex-col gap-4">
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/contact">联系我们</a>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/contact">{{ t('home.footer.bottomLinks.contact') }}</a>
                   </li>
                   <li><a target="_self" class="text-(--art-text-muted) hover:text-white"
-                      href="/zh-CN/help-center">帮助中心</a></li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/download">下载</a>
+                      href="/zh-CN/help-center">{{ t('home.footer.bottomLinks.helpCenter') }}</a></li>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/download">{{ t('home.footer.bottomLinks.download') }}</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/pricing">价格</a>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/pricing">{{ t('home.footer.bottomLinks.pricing') }}</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/whats-new">新功能</a>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/whats-new">{{ t('home.footer.bottomLinks.whatsNew') }}</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/blog">博客</a></li>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/blog">{{ t('home.footer.bottomLinks.blog') }}</a></li>
                   <li><a target="_blank" class="text-(--art-text-muted) hover:text-white"
-                      href="https://community.sider.ai/">社区</a></li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/partners">合作伙伴</a>
+                      href="https://community.sider.ai/">{{ t('home.footer.bottomLinks.community') }}</a></li>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/partners">{{ t('home.footer.bottomLinks.partners') }}</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/affiliate">联盟</a>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/affiliate">{{ t('home.footer.bottomLinks.affiliate') }}</a>
                   </li>
-                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/invite">邀请</a>
+                  <li><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/invite">{{ t('home.footer.bottomLinks.invite') }}</a>
                   </li>
                 </ul>
               </div>
@@ -928,9 +938,11 @@
           <div class="flex justify-start sm:!justify-between items-center w-full flex-wrap gap-2">
             <div class="text-sm text-text-white-3 flex gap-[10px] flex-wrap justify-start order-1 sm:order-none">
               ©<!-- -->2025<!-- --> <!-- -->版权所有<div class="bg-[rgba(214,218,255,0.10)] w-[1px] h-[20px]"></div><a
-                class="hover:text-text-white-1" href="/zh-CN/policies/terms">使用条款</a>
+                class="hover:text-text-white-1" href="/zh-CN/policies/terms">{{ t('home.footer.termsOfUse') }}</a>
+
               <div class="bg-[rgba(214,218,255,0.10)] w-[1px] h-[20px]"></div><a class="hover:text-text-white-1"
-                href="/zh-CN/policies/privacy">隐私政策</a>
+                href="/zh-CN/policies/privacy">{{ t('home.footer.privacyPolicy') }}</a>
+
             </div>
             <a-dropdown :trigger="['click']"  placement="topLeft">
               <a class="ant-dropdown-link" @click.prevent>
@@ -984,8 +996,12 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { ColorBgCanvas } from '../../../colorbgcanvas-example.js'
+import { GlowCloudAnimation } from '@/utils/canvas/glow-cloud-animation.js'
+import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
+
 import { useI18n } from "vue-i18n";
 import { LanguageEnum } from '../../enums/appEnum';
+import { changeLanguage } from '@/locales';
 
 const { locale, t } = useI18n();
 
@@ -996,79 +1012,75 @@ const languages = [
 ];
 
 // 切换语言函数
-const changeLanguage = (langCode: string) => {
-  locale.value = langCode;
-  // 可以在这里添加语言切换后的其他逻辑，如存储当前语言设置等
-};
 const menus = ref([
   {
-    name: t('home.nav.chat'),
+    name: 'home.nav.chat',
     path: '/'
   },
   {
-    name: t('home.nav.wisebase'),
+    name: 'home.nav.wisebase',
     path: '/wisebase',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: t('home.nav.tools'),
+    name: 'home.nav.tools',
     path: '/wisebase/agent',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: t('home.nav.extension'),
+    name: 'home.nav.extension',
     path: '/setting'
   },
   {
-    name: t('home.nav.app'),
+    name: 'home.nav.app', 
     path: '/setting',
     icon: 'iconsys-xia2',
     hoverIcon: 'iconsys-shang2'
   },
   {
-    name: t('home.nav.pricing'),
+    name: 'home.nav.pricing',
     path: '/setting'
   }
 ])
 
 const wbData = ref([
   {
-    name: t('home.appNames.wisebase'),
+    name:'home.appNames.wisebase',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.deepResearch'),
+    name: 'home.appNames.deepResearch',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.scholarResearch'),
+    name: 'home.appNames.scholarResearch',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.mathSolver'),
+    name: 'home.appNames.mathSolver',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.recNote'),
+    name: 'home.appNames.recNote',
     path: '/wisebase',
     isNew: true
   },
   {
-    name: t('home.appNames.audioToText'),
+    name: 'home.appNames.audioToText',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.gamifiedLearning'),
+    name: 'home.appNames.gamifiedLearning',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.interactiveReading'),
+    name: 'home.appNames.interactiveReading',
     path: '/wisebase'
   },
   {
-    name: t('home.appNames.chatPDF'),
+    name: 'home.appNames.chatPDF',
     path: '/wisebase'
   },
 ])
@@ -1094,17 +1106,25 @@ const handleHeaderMouseLeave = () => {
 }
 
 let colorBgCanvas = null
+let glowCloudAnimation = null
+let blueCloudAnimation = null
 
 // 在组件挂载时初始化canvas动画和滚动监听
 onMounted(() => {
   // 确保DOM已渲染完成
   setTimeout(() => {
-    if (document.getElementById('colorbgcanvas')) {
-      colorBgCanvas = new ColorBgCanvas('colorbgcanvas')
-      console.log('ColorBgCanvas initialized')
-    } else {
-      console.error('Canvas element with id \'colorbgcanvas\' not found')
-    }
+    // 为第一个canvas初始化动画
+      // 为第二个canvas初始化动画
+      if (document.getElementById('colorbgcanvas-1')) {
+        glowCloudAnimation = new GlowCloudAnimation('colorbgcanvas-1', '#A088E2')
+        console.log('Glow Cloud Animation 1 initialized')
+      }
+      
+      // 为第三个canvas初始化蓝色流体云动画
+      if (document.getElementById('colorbgcanvas-2')) {
+        blueCloudAnimation = new BlueCloudAnimation('colorbgcanvas-2', '#1C4FCE', '#51A2FF')
+        console.log('Blue Cloud Animation initialized with colors #1C4FCE and #51A2FF')
+      }
   }, 100)
 
   // 添加滚动事件监听器
@@ -1291,6 +1311,17 @@ onUnmounted(() => {
     colorBgCanvas.destroy()
     colorBgCanvas = null
   }
+  
+  if (glowCloudAnimation) {
+    glowCloudAnimation.destroy()
+    glowCloudAnimation = null
+  }
+  
+  if (blueCloudAnimation) {
+    blueCloudAnimation.destroy()
+    blueCloudAnimation = null
+  }
+  
   // 移除滚动事件监听器
   window.removeEventListener('scroll', handleScroll)
 })

@@ -302,7 +302,9 @@
       "addToChrome": "Add to Chrome",
       "login": "Login",
       "freeStart": "Free Start",
-      "getExtension": "Get Extension"
+      "getExtension": "Get Extension",
+      "freeGet": "Free Get"
+
     },
     "titles": {
       "deepResearchMinutes": "Deep Research in Minutes",
@@ -317,7 +319,8 @@
       "smartResearchAnytime": "Smarter research anytime, anywhere, powerful AI tools at your fingertips",
       "smartReadingTool": "Smart Reading Tool, Deep Research on Webpages and Files",
       "buildYourKnowledgeBase": "Build Your Knowledge Base Wisebase",
-      "siderHelpsYouGrow": "Sider Helps You Grow Limitlessly"
+      "siderHelpsYouGrow": "Sider Helps You Grow Limitlessly",
+      "oneAccountAllPlatform": "one account all platform"
     },
     "features": {
       "smartSearchFilter": "Intelligently search and filter the most relevant resources",
@@ -335,7 +338,13 @@
       "saveResearchFindings": "Save and organize research reports, web discoveries, and chat content to Wisebase: a continuously evolving, increasingly personalized knowledge base that understands you better.",
       "uploadPrivateFiles": "Upload private files for AI deep analysis",
       "chatWithAIModels": "Chat with cutting-edge AI models for deep insights",
-      "writeBasedOnNotes": "Write based on notes"
+      "writeBasedOnNotes": "Write based on notes",
+      "viewDemo": "View Demo",
+      "learn": "Learn",
+      "gFast": "Faster, deeper, and smarter",
+      "recommend": "Editor's Recommendation",
+      "learnMore": "Learn More"
+
     },
     "stats": {
       "tenMillionPlus": "10 Million+",
@@ -363,6 +372,9 @@
     "footer": {
       "slogan": "Learn faster, think deeper, grow smarter with Sider.",
       "siderLearning": "Learn faster, think deeper, grow smarter with Sider.",
+      "termsOfUse": "Terms of Use",
+      "privacyPolicy": "Privacy Policy",
+
       "categories": {
         "products": "Products",
         "applications": "Applications",
@@ -388,6 +400,32 @@
         "aiSlides": "AI PPT",
         "aiWriter": "AI Writer",
         "videoShortener": "Video Shortener"
+      },
+      "bottomLinks": {
+        "soraVideoDownloader": "Sora Video Downloader",
+        "nanoBanana": "Nano Banana",
+        "aiImageGenerator": "Image Generation",
+        "italianBrainrotGenerator": "Italian Brainrot",
+        "backgroundRemover": "Background Removal",
+        "photoBackgroundChanger": "Background Replacement",
+        "photoEraser": "Area Eraser",
+        "textRemover": "Text Removal",
+        "inpaint": "Local Redraw",
+        "imageUpscaler": "Image Enhancement",
+        "textTranslator": "Text Translation",
+        "imageTranslator": "Image Translation",
+        "pdfTranslator": "PDF Translation",
+        "contact": "Contact Us",
+        "helpCenter": "Help Center",
+        "download": "Download",
+        "pricing": "Pricing",
+        "whatsNew": "What's New",
+        "blog": "Blog",
+        "community": "Community",
+        "partners": "Partners",
+        "affiliate": "Affiliate",
+        "invite": "Invite",
+        "sider": "Sider"
       }
     },
     "placeholders": {

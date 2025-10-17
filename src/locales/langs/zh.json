@@ -302,7 +302,8 @@
       "addToChrome": "添加到Chrome",
       "login": "登录",
       "freeStart": "免费开始",
-      "getExtension": "获取扩展程序"
+      "getExtension": "获取扩展程序",
+      "freeGet": "免费获取"
     },
     "titles": {
       "deepResearchMinutes": "Deep Research 仅需数分钟",
@@ -317,7 +318,8 @@
       "smartResearchAnytime": "随时随地更智能地研究，强大的AI工具触手可及",
       "smartReadingTool": "智能阅读工具，深入研究网页与文件",
       "buildYourKnowledgeBase": "打造您的知识库 Wisebase",
-      "siderHelpsYouGrow": "Sider 助您成长无限"
+      "siderHelpsYouGrow": "Sider 助您成长无限",
+      "oneAccountAllPlatform": "一个账号，全平台通用"
     },
     "features": {
       "smartSearchFilter": "智能搜索并筛选最相关的资源",
@@ -335,7 +337,14 @@
       "saveResearchFindings": "将研究报告、网络发现、聊天内容保存并整理到Wisebase: 一个持续进化，越来越懂您的专属知识库。",
       "uploadPrivateFiles": "上传私有文件，AI进行深度分析",
       "chatWithAIModels": "与前沿AI模型聊天，获取深度见解",
-      "writeBasedOnNotes": "基于笔记进行写作"
+      "writeBasedOnNotes": "基于笔记进行写作",
+      "viewDemo": "查看演示",
+      "learn": "了解",
+      "gFast": "更快速、更深入、更智能",
+      "recommend": "编辑推荐",
+      "learnMore": "了解更多"
+
+
     },
     "stats": {
       "tenMillionPlus": "1000万+",
@@ -363,6 +372,8 @@
     "footer": {
       "slogan": "通过Sider更快学习、更深入思考、更聪明成长。",
       "siderLearning": "通过Sider更快学习、更深入思考、更聪明成长。",
+      "termsOfUse": "使用条款",
+      "privacyPolicy": "隐私政策",
       "categories": {
         "products": "产品",
         "applications": "应用",
@@ -388,6 +399,33 @@
         "aiSlides": "AI PPT",
         "aiWriter": "写作大师",
         "videoShortener": "智简视频"
+      },
+      "bottomLinks": {
+        "soraVideoDownloader": "Sora 视频下载器",
+        "nanoBanana": "Nano Banana",
+        "aiImageGenerator": "图片生成",
+        "italianBrainrotGenerator": "意大利脑洞",
+        "backgroundRemover": "背景移除",
+        "photoBackgroundChanger": "背景替换",
+        "photoEraser": "区域抹除",
+        "textRemover": "文字移除",
+        "inpaint": "局部重绘",
+        "imageUpscaler": "画质提升",
+        "textTranslator": "文本翻译",
+        "imageTranslator": "图片翻译",
+        "pdfTranslator": "PDF翻译",
+        "contact": "联系我们",
+        "helpCenter": "帮助中心",
+        "download": "下载",
+        "pricing": "价格",
+        "whatsNew": "新功能",
+        "blog": "博客",
+        "community": "社区",
+        "partners": "合作伙伴",
+        "affiliate": "联盟",
+        "invite": "邀请",
+        "sider": "Sider"
+        
       }
     },
     "placeholders": {
