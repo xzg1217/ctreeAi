@@ -1113,18 +1113,23 @@ let blueCloudAnimation = null
 onMounted(() => {
   // 确保DOM已渲染完成
   setTimeout(() => {
-    // 为第一个canvas初始化动画
-      // 为第二个canvas初始化动画
-      if (document.getElementById('colorbgcanvas-1')) {
-        glowCloudAnimation = new GlowCloudAnimation('colorbgcanvas-1', '#A088E2')
-        console.log('Glow Cloud Animation 1 initialized')
-      }
-      
-      // 为第三个canvas初始化蓝色流体云动画
-      if (document.getElementById('colorbgcanvas-2')) {
-        blueCloudAnimation = new BlueCloudAnimation('colorbgcanvas-2', '#1C4FCE', '#51A2FF')
-        console.log('Blue Cloud Animation initialized with colors #1C4FCE and #51A2FF')
-      }
+    // 为第一个canvas初始化ColorBgCanvas动画
+    if (document.getElementById('colorbgcanvas-0')) {
+      colorBgCanvas = new ColorBgCanvas('colorbgcanvas-0')
+      console.log('ColorBgCanvas initialized')
+    }
+    
+    // 为第二个canvas初始化动画
+    if (document.getElementById('colorbgcanvas-1')) {
+      glowCloudAnimation = new GlowCloudAnimation('colorbgcanvas-1', '#A088E2')
+      console.log('Glow Cloud Animation 1 initialized')
+    }
+    
+    // 为第三个canvas初始化蓝色流体云动画
+    if (document.getElementById('colorbgcanvas-2')) {
+      blueCloudAnimation = new BlueCloudAnimation('colorbgcanvas-2', '#1C4FCE', '#51A2FF')
+      console.log('Blue Cloud Animation initialized with colors #1C4FCE and #51A2FF')
+    }
   }, 100)
 
   // 添加滚动事件监听器
