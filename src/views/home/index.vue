@@ -5,7 +5,7 @@
       <div class="home-header-tab">
         <div class="home-header-left">
           <!-- Logo -->
-          <ElImage src="/src/assets/img/logo.png" class="home-header-left-logo" />
+          <ElImage :src="Logo" class="home-header-left-logo" />
           <!-- 导航菜单 -->
           <div class="home-header-left-menu">
             <div class="home-header-left-menu-item flex gap-1 items-center align-center" v-for="(item, index) in menus"
@@ -999,6 +999,8 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { ColorBgCanvas } from '../../../colorbgcanvas-example.js'
 import { GlowCloudAnimation } from '@/utils/canvas/glow-cloud-animation.js'
 //import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
+import Logo from '/src/assets/img/logo.png'
+
 
 import { useI18n } from "vue-i18n";
 import { LanguageEnum } from '../../enums/appEnum';
