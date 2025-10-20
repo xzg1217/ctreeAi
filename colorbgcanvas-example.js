@@ -1,4 +1,7 @@
 // colorbgcanvas 波浪动画效果实现（简化版，确保效果明显）
+// 导入背景图片
+import homeBg1 from '@/assets/home_bg1.png';
+
 export class ColorBgCanvas {
   constructor(canvasId) {
     this.canvas = document.getElementById(canvasId);
@@ -9,7 +12,7 @@ export class ColorBgCanvas {
     // 背景图片
     this.backgroundImage = null;
     this.imageLoaded = false;
-    this.imagePath = '/src/assets/home_bg1.png';
+    this.imagePath = homeBg1; // 使用导入的图片路径
     this.fallbackColor = '#4a90e2'; // 蓝色背景，模拟水的颜色
     
     // 波浪动画参数 - 支持多方向和独立运动
@@ -91,12 +94,12 @@ export class ColorBgCanvas {
       this.backgroundImage = new Image();
       console.log(`Attempting to load image from: ${this.imagePath}`);
       
-      // 尝试使用相对路径（考虑到可能在不同环境中的加载问题）
+      // 使用导入的图片路径
       try {
-        // 先尝试原始路径
         this.backgroundImage.src = this.imagePath;
       } catch (error) {
         console.error('Error setting image source:', error);
+        resolve();
       }
       
       this.backgroundImage.onload = () => {
@@ -107,28 +110,9 @@ export class ColorBgCanvas {
       
       this.backgroundImage.onerror = () => {
         console.error(`Failed to load background image: ${this.imagePath}`);
-        // 尝试另一种路径格式
-        const altPath = '/assets/img/home_bg1.png';
-        console.log(`Attempting alternative path: ${altPath}`);
-        try {
-          this.backgroundImage.src = altPath;
-        } catch (error) {
-          console.error('Error setting alternative image source:', error);
-          resolve();
-        }
-        
-        this.backgroundImage.onload = () => {
-          this.imageLoaded = true;
-          console.log('Background image loaded with alternative path');
-          resolve();
-        };
-        
-        this.backgroundImage.onerror = () => {
-          console.error('Failed to load background image with all paths');
-          // 如果所有路径都失败，继续使用默认的蓝色背景
-          console.log('Using default blue background for wave animation');
-          resolve();
-        };
+        // 如果图片加载失败，使用默认的蓝色背景
+        console.log('Using default blue background for wave animation');
+        resolve();
       };
     });
   }
