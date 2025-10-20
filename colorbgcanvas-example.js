@@ -9,7 +9,7 @@ export class ColorBgCanvas {
     // 背景图片
     this.backgroundImage = null;
     this.imageLoaded = false;
-    this.imagePath = '/src/assets/img/home_bg1.png';
+    this.imagePath = '/src/assets/home_bg1.png';
     this.fallbackColor = '#4a90e2'; // 蓝色背景，模拟水的颜色
     
     // 波浪动画参数 - 支持多方向和独立运动
