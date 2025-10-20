@@ -173,5 +173,25 @@ export const asyncRoutes: AppRouteRecord[] = [
         }
       }
     ]
+  },
+  {
+    path: '/agents',
+    name: 'Agents',
+    component: RoutesAlias.Layout,
+    meta: {
+      title: 'AI工具',
+      icon: '&#xe721;'
+    },
+    children: [
+      {
+        path: 'ai-slides',
+        name: 'AISlides',
+        component: RoutesAlias.AISlides,
+        meta: {
+          title: 'AI PPT',
+          keepAlive: true
+        }
+      }
+    ]
   }
 ]

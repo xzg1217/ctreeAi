@@ -60,13 +60,47 @@
       v-show="menuList.length > 0"
       class="menu-left"
       :class="`menu-left-${getMenuTheme.theme} menu-left-${!menuOpen ? 'close' : 'open'}`"
+      :style="{ background: getMenuTheme.background }"
     >
       <ElScrollbar style="height: calc(100% - 10px)">
-        <div class="header">
-          <SidebarHeader />
+        <div
+          class="header"
+          @click="navigateToHome"
+          :style="{ background: getMenuTheme.background }"
+        >
+          <ArtLogo v-if="!isDualMenu" class="logo" />
+
+          <p
+            :class="{ 'is-dual-menu-name': isDualMenu }"
+            :style="{
+              color: getMenuTheme.systemNameColor,
+              opacity: !menuOpen ? 0 : 1
+            }"
+          >
+            {{ AppConfig.systemInfo.name }}
+          </p>
         </div>
 
-        <SidebarSection />
+        <ElMenu
+          :class="'el-menu-' + getMenuTheme.theme"
+          :collapse="!menuOpen"
+          :default-active="routerPath"
+          :text-color="getMenuTheme.textColor"
+          :unique-opened="uniqueOpened"
+          :background-color="getMenuTheme.background"
+          :active-text-color="getMenuTheme.textActiveColor"
+          :default-openeds="defaultOpenedMenus"
+          :popper-class="`menu-left-${getMenuTheme.theme}-popper`"
+          :show-timeout="50"
+          :hide-timeout="50"
+        >
+          <SidebarSubmenu
+            :list="menuList"
+            :isMobile="isMobileMode"
+            :theme="getMenuTheme"
+            @close="handleMenuClose"
+          />
+        </ElMenu>
       </ElScrollbar>
 
       <div
@@ -90,8 +124,6 @@
   import { handleMenuJump } from '@/utils/navigation'
   import SidebarSubmenu from './widget/SidebarSubmenu.vue'
   import { useCommon } from '@/composables/useCommon'
-  import SidebarHeader from './widget/header.vue'
-  import SidebarSection from './widget/section.vue'
 
   defineOptions({ name: 'ArtSidebarMenu' })
 
@@ -306,11 +338,9 @@
   @use './theme';
 
   .layout-sidebar {
-    max-width: 240px;
     // 展开的宽度
     .el-menu:not(.el-menu--collapse) {
-      //width: v-bind(menuopenwidth);
-      width: 240px;
+      width: v-bind(menuopenwidth);
     }
 
     // 折叠后宽度

@@ -4,7 +4,8 @@
   display: flex;
   width: 100%;
   min-height: 100vh;
-  background: var(--art-bg-color);
+  //background: var(--art-bg-color);
+  background: var(--art-new-bg-color);
 
   .app-sidebar {
     flex-shrink: 0;
@@ -17,6 +18,7 @@
     min-width: 0;
     height: 100vh;
     overflow: auto;
+    padding: 8px;
 
     .app-header {
       position: sticky;
@@ -28,6 +30,8 @@
 
     .app-content {
       flex: 1;
+      background: var(--art-main-bg-color);
+      border-radius: 10px;
 
       :deep(.layout-content) {
         box-sizing: border-box;

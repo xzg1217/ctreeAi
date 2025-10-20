@@ -46,6 +46,19 @@
             </div>
           </div>
         </transition>
+
+         <transition name="slide-down">
+         <div  class="extension-panel-content flex gap-2">
+            <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2">
+              <p class="title text-sm">{{ t(item.title) }}</p>
+              <div class="flex flex-col gap-2">
+                <p class="name text-[#333] cursor-pointer" v-for="value in item.children" :key="value.name" @click="go(value.path)">{{ t(value.name) }} 
+                  <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span></p>
+
+              </div>
+            </div>
+          </div>
+          </transition>
       </div>
 
     </div>
@@ -1005,6 +1018,7 @@ import Logo from '/src/assets/img/logo.png'
 import { useI18n } from "vue-i18n";
 import { LanguageEnum } from '../../enums/appEnum';
 import { changeLanguage } from '@/locales';
+import { router } from '@/router/index.js';
 
 const { locale, t } = useI18n();
 
@@ -1088,12 +1102,51 @@ const wbData = ref([
   },
 ])
 
+const toolData = ref([
+  {
+    title:'Agents',
+    children:[
+      {
+        name:'home.nav.AIPPT',
+        path: '/dashboard/console',
+        isNew: true
+      },
+    ],
+  },
+  {
+    title:'图像',
+    children:[
+      // {
+      //   name:'home.appNames.agent',
+      //   path: '/wisebase/agent'
+      // },
+    ],
+  },
+  {
+    title:'翻译器',
+    children:[
+      // {
+      //   name:'home.appNames.agent',
+      //   path: '/wisebase/agent'
+      // },
+    ],
+  }
+])
+
+
 const searchText = ref('')
 
 const hoveredIndex = ref<number | null>(null)
 
 const handleMouseEnter = (index: number) => {
   hoveredIndex.value = index
+}
+
+const go = (path:any) => {
+  console.log(path)
+  router.push(path)
+
+
 }
 
 // 面板鼠标移入时，保持hoveredIndex状态为1

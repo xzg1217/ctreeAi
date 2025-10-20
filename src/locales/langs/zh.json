@@ -296,7 +296,9 @@
       "tools": "工具",
       "extension": "扩展程序",
       "app": "应用",
-      "pricing": "价格"
+      "pricing": "价格",
+      "AIPPT": "AI PPT"
+
     },
     "buttons": {
       "addToChrome": "添加到Chrome",

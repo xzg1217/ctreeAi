@@ -5,9 +5,9 @@
     </aside>
 
     <main id="app-main">
-      <div class="app-header">
+      <!-- <div class="app-header">
         <ArtHeaderBar />
-      </div>
+      </div> -->
       <div class="app-content">
         <ArtPageContent />
       </div>

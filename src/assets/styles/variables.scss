@@ -78,6 +78,12 @@
   // Theme background color
   --art-bg-color: #fafbfc; // 最底部背景颜色
   --art-main-bg-color: #ffffff;
+
+  //新的主题色
+  --art-new-bg-color: #f6f6f8;
+  --art-new-content-bg-color: #ffffff;
+  --menu-active-bg-color: #fff; //浅色模式下菜单选中时的背景颜色
+  --menu-active-color: #333; //浅色模式下菜单选中时的文字颜色
 }
 
 // Dark 主题变量
@@ -159,6 +165,12 @@ html.dark {
   // Theme background color
   --art-bg-color: #070707;
   --art-main-bg-color: #161618;
+
+  //新的主题色
+  --art-new-bg-color: #0c0d19;
+  --art-new-content-bg-color: #151622;
+  --menu-active-bg-color: #1e1f2b; //深色模式下菜单选中时的背景颜色
+  --menu-active-color: #fff; //深色模式下菜单选中时的文字颜色
 }
 
 // CSS 全局变量

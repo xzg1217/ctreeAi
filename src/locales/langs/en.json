@@ -296,7 +296,9 @@
       "tools": "Tools",
       "extension": "Extension",
       "app": "App",
-      "pricing": "Pricing"
+      "pricing": "Pricing",
+      "AIPPT": "AI PPT"
+
     },
     "buttons": {
       "addToChrome": "Add to Chrome",
