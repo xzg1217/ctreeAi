@@ -40,7 +40,8 @@
         <transition name="slide-down">
           <div v-if="hoveredIndex == 1" class="extension-panel-content">
             <div v-for="(item, index) in wbData" :key="item.path" class="panel-item flex gap-2 items-center">
-              <p class="name">{{ item.name }}</p>
+              <p class="name">{{ t(item.name) }}</p>
+
               <div v-if="item.isNew" class="new-tag">New</div>
             </div>
           </div>
