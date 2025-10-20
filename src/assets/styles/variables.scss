@@ -84,6 +84,8 @@
   --art-new-content-bg-color: #ffffff;
   --menu-active-bg-color: #fff; //浅色模式下菜单选中时的背景颜色
   --menu-active-color: #333; //浅色模式下菜单选中时的文字颜色
+  --menu-hover-bg-color: #ececf0; //浅色模式下菜单悬停时的背景颜色
+  --menu-text-primary-color: #333; //浅色模式下主文字颜色
 }
 
 // Dark 主题变量
@@ -164,13 +166,15 @@ html.dark {
 
   // Theme background color
   --art-bg-color: #070707;
-  --art-main-bg-color: #161618;
+  --art-main-bg-color: #151622;
 
   //新的主题色
   --art-new-bg-color: #0c0d19;
   --art-new-content-bg-color: #151622;
   --menu-active-bg-color: #1e1f2b; //深色模式下菜单选中时的背景颜色
   --menu-active-color: #fff; //深色模式下菜单选中时的文字颜色
+  --menu-hover-bg-color: #1c1e2b; //深色模式下菜单悬停时的背景颜色
+  --menu-text-primary-color: #fff; //深色模式下主文字颜色
 }
 
 // CSS 全局变量
@@ -266,3 +270,4 @@ $device-phone: 500px;
 .text-warning {
   color: rgb(var(--art-warning)) !important;
 }
+

@@ -21,7 +21,9 @@
                 d="M1.832 10.668a7.5 7.5 0 0 1 7.5-7.5h21.334a7.5 7.5 0 0 1 7.5 7.5v16.51a1.5 1.5 0 0 1-.167 2.99h-16.5v5h4.5a1.5 1.5 0 1 1 0 3h-12a1.5 1.5 0 0 1 0-3h4.5v-5h-16.5a1.5 1.5 0 0 1-.167-2.99zm3 0v16.5h30.334v-16.5a4.5 4.5 0 0 0-4.5-4.5H9.332a4.5 4.5 0 0 0-4.5 4.5"
                 clip-rule="evenodd"
               ></path></svg
-            ><h2 class="text-[34px] font-semibold leading-[48px]">AI PPT</h2></div
+            ><span class="text-[34px] font-semibold leading-[48px] text-(--menu-text-primary-color)"
+              >AI PPT</span
+            ></div
           ><div class="mt-2 flex gap-5 text-sm text-color-text-primary-3"
             ><div class="flex items-center gap-1"
               ><svg
@@ -94,16 +96,16 @@
             ></div
           ><div class="w-full mt-6"
             ><div
-              class="mx-auto overflow-hidden rounded-3xl px-2 pb-2 border border-color-grey-line2-normal transition-colors hover:border-color-grey-line2-hover bg-color-grey-layer2-normal shadow-transparent cursor-text max-w-[720px]"
+              class="mx-auto overflow-hidden rounded-3xl px-2 pb-2 border border-color-grey-line2-normal transition-colors hover:border-color-grey-line2-hover bg-color-grey-layer2-normal shadow-transparent cursor-text max-w-[720px] active:shadow"
               role="form"
               aria-label="Submit Input Form"
             >
               <textarea
-                class="custom-scrollbar mt-3 h-auto max-h-36 w-full resize-none overflow-y-auto border-none bg-transparent px-2 pb-2 leading-6 outline-none"
+                class="custom-scrollbar mt-3! h-auto max-h-36 w-full resize-none overflow-y-auto border-none bg-transparent px-2 pb-2 leading-6 outline-none text-[14px]!"
                 placeholder="今天想创建什么 PPT?"
                 aria-label="Input your text"
               ></textarea
-              ><div class="flex justify-between"
+              ><div class="flex justify-between text-[14px]"
                 ><div class="flex gap-2"
                   ><button
                     class="ant-dropdown-trigger flex h-8 cursor-pointer items-center gap-[7px] rounded-full border-none bg-color-grey-fill2-normal px-[14px] text-sm leading-5 text-color-text-primary-1 outline-none hover:bg-color-grey-fill2-hover"
@@ -210,7 +212,7 @@
       ><div class="mx-14 mt-6"
         ><div class="flex gap-5 text-lg font-semibold leading-5 text-color-text-primary-4"
           ><div
-            class="relative cursor-pointer py-2 pt-1 text-color-text-primary-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:m-auto after:h-[2px] after:w-5 after:bg-color-text-primary-1"
+            class="relative cursor-pointer py-2 pt-1 text-color-text-primary-1 after:absolute after:bottom-0 after:left-0 after:right-0 after:m-auto after:h-[2px] after:w-[10px] after:bg-color-text-primary-1"
             >模板</div
           ><div class="relative cursor-pointer py-2 pt-1">历史</div></div
         ><div class="my-3"

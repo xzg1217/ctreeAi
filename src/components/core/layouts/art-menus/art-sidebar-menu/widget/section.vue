@@ -10,6 +10,7 @@
   watch(
     () => route.path,
     (newPath) => {
+      console.log(newPath)
       activeMenuPath.value = newPath
     },
     { immediate: true }
@@ -39,7 +40,7 @@
             'flex',
             'items-center',
             'text-color-text-primary-3',
-            'hover:bg-[#ECECF0]',
+            'hover:bg-(--menu-hover-bg-color)',
             {
               'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
                 activeMenuPath === '/system/user-center'
@@ -84,7 +85,7 @@
         >Agents</div
       ><a draggable="false" class="block mb-1" @click="handleNavigation()"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -117,7 +118,7 @@
         ></a
       ><a draggable="false" class="block mb-1" @click="handleNavigation()"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -163,7 +164,7 @@
             'flex',
             'items-center',
             'text-color-text-primary-3',
-            'hover:bg-[#ECECF0]',
+            'hover:bg-(--menu-hover-bg-color)',
             {
               'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
                 activeMenuPath === '/system/user-center'
@@ -200,7 +201,24 @@
         ></a
       ><a draggable="false" class="block mb-1" @click="handleNavigation('/agents/ai-slides')"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+          :class="[
+            'box-border',
+            'h-[36px]',
+            'cursor-pointer',
+            'gap-[8px]',
+            'rounded-[10px]',
+            'px-[8px]',
+            'py-[6px]',
+            'transition-colors',
+            'flex',
+            'items-center',
+            'text-color-text-primary-3',
+            'hover:bg-(--menu-hover-bg-color)',
+            {
+              'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
+                activeMenuPath === '/agents/ai-slides'
+            }
+          ]"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -215,11 +233,7 @@
               'px-[1px]',
               'text-color-text-primary-5',
               'opacity-0',
-              'group-hover:opacity-100',
-              {
-                'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
-                  activeMenuPath === '/agents/ai-slides'
-              }
+              'group-hover:opacity-100'
             ]"
           >
             <path
@@ -246,7 +260,7 @@
             >AI PPT</span
           ><div class="size-2 rounded-full bg-color-error-normal"></div></div></a
       ><div
-        class="box-border cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] text-color-text-primary-3 flex items-center hover:bg-[#ECECF0]"
+        class="box-border cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] text-color-text-primary-3 flex items-center hover:bg-(--menu-hover-bg-color)"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="18"
@@ -276,7 +290,7 @@
     ><div class="relative my-1 box-border w-full space-y-1 px-[12px]"
       ><a draggable="false" class="block" href="/zh-CN/wisebase"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
@@ -292,7 +306,7 @@
             class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] font-semibold css-1p6dcus css-var-R5ubrafja"
             >Wisebase</span
           ><span
-            class="ml-auto cursor-pointer rounded-[6px] bg-transparent p-[4px] text-color-text-primary-3 transition-colors hover:bg-[#ECECF0]"
+            class="ml-auto cursor-pointer rounded-[6px] bg-transparent p-[4px] text-color-text-primary-3 transition-colors hover:bg-(--menu-hover-bg-color)"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="14"
@@ -309,7 +323,7 @@
         ><div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div
         ><a draggable="false" class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227213"
           ><div
-            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -349,7 +363,7 @@
             ><div
               class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
               ><div
-                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-[#ECECF0]"
+                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -367,7 +381,7 @@
         ><div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div
         ><a draggable="false" class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227214"
           ><div
-            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -412,7 +426,7 @@
             ><div
               class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
               ><div
-                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-[#ECECF0]"
+                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -430,7 +444,7 @@
         ><div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div
         ><a draggable="false" class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227215"
           ><div
-            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+            class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -478,7 +492,7 @@
             ><div
               class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
               ><div
-                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-[#ECECF0]"
+                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="1em"
@@ -494,7 +508,7 @@
         ></div></div
       ><a draggable="false" class="block" href="/zh-CN/wisebase/ai-inbox"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-[#ECECF0]"
+          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
