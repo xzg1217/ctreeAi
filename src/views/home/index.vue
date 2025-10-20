@@ -998,7 +998,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { ColorBgCanvas } from '../../../colorbgcanvas-example.js'
 import { GlowCloudAnimation } from '@/utils/canvas/glow-cloud-animation.js'
-import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
+//import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
 
 import { useI18n } from "vue-i18n";
 import { LanguageEnum } from '../../enums/appEnum';
