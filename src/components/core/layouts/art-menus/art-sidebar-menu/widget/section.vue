@@ -133,9 +133,26 @@
             >Deep Research</span
           ></div
         ></a
-      ><a draggable="false" class="block mb-1" @click="handleNavigation()"
+      ><a draggable="false" class="block mb-1" @click="handleNavigation('/agents/web-creator')"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
+          :class="[
+            'box-border',
+            'h-[36px]',
+            'cursor-pointer',
+            'gap-[8px]',
+            'rounded-[10px]',
+            'px-[8px]',
+            'py-[6px]',
+            'transition-colors',
+            'flex',
+            'items-center',
+            'text-color-text-primary-3',
+            'hover:bg-(--menu-hover-bg-color)',
+            {
+              'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
+                activeMenuPath === '/agents/web-creator'
+            }
+          ]"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"

@@ -200,6 +200,15 @@ export const asyncRoutes: AppRouteRecord[] = [
           title: '深度研究',
           keepAlive: true
         }
+      },
+      {
+        path: 'web-creator',
+        name: 'WebCreator',
+        component: RoutesAlias.WebCreator,
+        meta: {
+          title: '网页创作者',
+          keepAlive: true
+        }
       }
     ]
   }

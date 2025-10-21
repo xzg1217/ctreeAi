@@ -315,7 +315,7 @@ html.dark{
 }
 
 .text-color-text-primary-1 {
-    color: var(--color-text-primary-1, rgba(0,0,0,.96));
+    color: var(--color-text-primary-1, rgba(0,0,0,.96)) !important;
 }
 
 .text-color-text-primary-4 {
@@ -324,4 +324,22 @@ html.dark{
 
 .bg-color-text-primary-1 {
     background-color: var(--color-text-primary-1, rgba(0,0,0,.96));
+}
+
+.bg-color-grey-layer1-semitrans {
+    background-color: var(--color-grey-layer1-semitrans, rgba(237,237,241,.84));
+}
+
+.bg-color-grey-fill1-hover{
+    background-color: var(--color-grey-fill1-hover, rgba(114,118,139,.08));
+}
+
+.f-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-color-grey-layer3-normal {
+    background-color: var(--color-grey-layer3-normal, #fff);
 }

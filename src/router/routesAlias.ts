@@ -29,5 +29,6 @@ export enum RoutesAlias {
 
   // AI工具
   AISlides = '/agents/ai-slides', // AI PPT生成器
-  DeepResearch = '/agents/deep-research' // 深度研究工具
+  DeepResearch = '/agents/deep-research', // 深度研究工具
+  WebCreator = '/agents/web-creator' // 网页创作者工具
 }
