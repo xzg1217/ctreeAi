@@ -191,6 +191,15 @@ export const asyncRoutes: AppRouteRecord[] = [
           title: 'AI PPT',
           keepAlive: true
         }
+      },
+      {
+        path: 'deep-research',
+        name: 'DeepResearch',
+        component: RoutesAlias.DeepResearch,
+        meta: {
+          title: '深度研究',
+          keepAlive: true
+        }
       }
     ]
   }

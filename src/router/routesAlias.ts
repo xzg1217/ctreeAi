@@ -26,7 +26,8 @@ export enum RoutesAlias {
   Role = '/system/role', // 角色
   UserCenter = '/system/user-center', // 用户中心
   Menu = '/system/menu', // 菜单
-  
+
   // AI工具
-  AISlides = '/agents/ai-slides' // AI PPT生成器
+  AISlides = '/agents/ai-slides', // AI PPT生成器
+  DeepResearch = '/agents/deep-research' // 深度研究工具
 }

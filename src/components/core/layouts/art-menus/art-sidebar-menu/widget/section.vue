@@ -83,9 +83,26 @@
     ><div class="relative box-border w-full px-[12px]"
       ><div class="mb-1 px-[10px] py-[8px] text-color-text-primary-3 text-[14px] font-semibold"
         >Agents</div
-      ><a draggable="false" class="block mb-1" @click="handleNavigation()"
+      ><a draggable="false" class="block mb-1" @click="handleNavigation('/agents/deep-research')"
         ><div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)"
+          :class="[
+            'box-border',
+            'h-[36px]',
+            'cursor-pointer',
+            'gap-[8px]',
+            'rounded-[10px]',
+            'px-[8px]',
+            'py-[6px]',
+            'transition-colors',
+            'flex',
+            'items-center',
+            'text-color-text-primary-3',
+            'hover:bg-(--menu-hover-bg-color)',
+            {
+              'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
+                activeMenuPath === '/agents/deep-research'
+            }
+          ]"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="1em"
