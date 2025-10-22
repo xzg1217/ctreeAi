@@ -309,8 +309,8 @@
     max-width: 240px;
     // 展开的宽度
     .el-menu:not(.el-menu--collapse) {
-      //width: v-bind(menuopenwidth);
-      width: 240px;
+      width: v-bind(menuopenwidth);
+      //width: 240px;
     }
 
     // 折叠后宽度

@@ -1,11 +1,22 @@
-<script setup></script>
+<script setup>
+  import { useSettingStore } from '@/store/modules/setting'
+
+  const settingStore = useSettingStore()
+  const { menuOpen } = storeToRefs(settingStore)
+
+  const toggleMenu = () => {
+    console.log(menuOpen.value)
+    settingStore.setMenuOpen(!menuOpen.value)
+  }
+</script>
 
 <template>
-  <div class="w-full flex-center box-border pl-[20px] pr-[20px] flex"
+  <div class="w-full flex-center box-border pl-[15px] pr-[20px] flex"
     ><a
       href="/?landing"
       rel="noopener noreferrer"
       class="mr-auto shrink-0 text-color-text-primary-1"
+      :class="!menuOpen ? 'hidden' : ''"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="103"
@@ -18,6 +29,7 @@
         ></path></svg></a
     ><button
       class="sider-btn sider-btn-small sider-btn-text sider-btn-icon-only shrink-0 hover:cursor-pointer hover:bg-gray-200"
+      @click="toggleMenu"
       ><span class="sider-btn-icon"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
