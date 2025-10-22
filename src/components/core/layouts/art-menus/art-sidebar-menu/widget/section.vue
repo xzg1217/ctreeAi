@@ -15,6 +15,7 @@ import PlusIcon from './icons/PlusIcon.vue'
 import MoreOptionsIcon from './icons/MoreOptionsIcon.vue'
 import DragHandleIcon from './icons/DragHandleIcon.vue'
 import ArrowRightIcon from './icons/ArrowRightIcon.vue'
+import PinFilled from './icons/PinFilled.vue'
 
 import PopMenu from './popMenu.vue'
 import { useSettingStore } from '@/store/modules/setting'
@@ -25,6 +26,116 @@ const { menuOpen } = storeToRefs(settingStore)
 const router = useRouter()
 const route = useRoute()
 const activeMenuPath = ref<string>('')
+
+// 拖拽相关状态
+const dragOverIndex = ref<number>(-1)
+const demoItems = ref([
+  { 
+    id: 'wisebase-demo', 
+    title: 'Demo: Introduction to Wisebase',
+    icon: WisebaseIcon,
+    color: 'var(--color-warning-normal)',
+    bgColor: 'var(--color-warning-bg)',
+    pinned: false
+  },
+  { 
+    id: 'llm-research-demo', 
+    title: 'Demo: Research on LLMs',
+    icon: ResearchIcon,
+    color: 'var(--color-success-normal)',
+    bgColor: 'var(--color-success-bg)',
+    pinned: false
+  },
+  { 
+    id: 'nvidia-business-demo', 
+    title: 'Demo: NVIDIA Business Outlook',
+    icon: BusinessIcon,
+    color: 'var(--color-brand-primary-normal)',
+    bgColor: 'var(--color-brand-primary-bg)',
+    pinned: false
+  }
+])
+
+// 拖拽开始事件
+const handleDragStart = (event: DragEvent, index: number) => {
+  // 如果项目被固定，则不允许拖动
+  if (demoItems.value[index].pinned) {
+    event.preventDefault()
+    return
+  }
+  if (event.dataTransfer) {
+    event.dataTransfer.setData('text/plain', index.toString())
+    event.dataTransfer.effectAllowed = 'move'
+  }
+}
+
+// 拖拽经过事件
+const handleDragOver = (event: DragEvent, index: number) => {
+  event.preventDefault()
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = 'move'
+  }
+  dragOverIndex.value = index
+}
+
+// 拖拽离开事件
+const handleDragLeave = (event: DragEvent) => {
+  event.preventDefault()
+  dragOverIndex.value = -1
+}
+
+// 拖拽放置事件
+const handleDrop = (event: DragEvent, targetIndex: number) => {
+  event.preventDefault()
+  dragOverIndex.value = -1
+  
+  if (event.dataTransfer) {
+    const sourceIndex = parseInt(event.dataTransfer.getData('text/plain'))
+    if (sourceIndex !== targetIndex && sourceIndex >= 0 && targetIndex >= 0) {
+      // 检查源项目和目标项目的固定状态
+      const sourceItem = demoItems.value[sourceIndex]
+      const targetItem = demoItems.value[targetIndex]
+      
+      // 如果目标项目是固定的，则不允许放置
+      if (targetItem.pinned) {
+        return
+      }
+      
+      // 交换项目位置
+      const [removed] = demoItems.value.splice(sourceIndex, 1)
+      demoItems.value.splice(targetIndex, 0, removed)
+    }
+  }
+}
+
+// 计算排序后的项目列表
+const sortedDemoItems = computed(() => {
+  // 先按固定状态排序（固定的在前），然后保持原有顺序
+  const pinnedItems = demoItems.value.filter(item => item.pinned)
+  const unpinnedItems = demoItems.value.filter(item => !item.pinned)
+  return [...pinnedItems, ...unpinnedItems]
+})
+
+// 获取项目在原始数组中的索引
+const getOriginalIndex = (itemId: string) => {
+  return demoItems.value.findIndex(item => item.id === itemId)
+}
+
+const handleMenuClick = ({ key }: { key: string }, itemId: string) => {
+   if (key === 'pin') {
+     // 实现固定功能
+     const item = demoItems.value.find(item => item.id === itemId)
+     if (item) {
+       item.pinned = !item.pinned
+     }
+   } else if (key === 'edit') {
+     // 实现编辑功能
+     console.log('编辑功能被点击')
+   } else if (key === 'delete') {
+     // 实现删除功能
+     console.log('删除功能被点击')
+   }
+ }
 
 // 监听路由变化，更新当前激活的菜单
 watch(
@@ -222,94 +333,55 @@ const handleNavigation = (path?: string) => {
         </span>
       </div>
     </a>
-    <div class="relative" draggable="true" style="opacity: 1">
-      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div><a draggable="false"
-        class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227213">
+    <div 
+      v-for="(item, index) in sortedDemoItems" 
+      :key="item.id"
+      class="relative" 
+      :draggable="!item.pinned" 
+      style="opacity: 1"
+      @dragstart="handleDragStart($event, getOriginalIndex(item.id))"
+      @dragover="handleDragOver($event, getOriginalIndex(item.id))"
+      @dragleave="handleDragLeave($event)"
+      @drop="handleDrop($event, getOriginalIndex(item.id))"
+      :class="{ 'bg-color-assistive-blue-focus': dragOverIndex === getOriginalIndex(item.id) }"
+    >
+      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div>
+      <a draggable="false" class="block group" :href="`/zh-CN/wisebase/${item.id}`">
         <div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)">
+          class="box-border h-[36px] gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3"
+          :class="item.pinned ? 'cursor-default opacity-60' : 'cursor-pointer hover:bg-(--menu-hover-bg-color)'">
           <DragHandleIcon
             class="absolute -left-[3px] top-1/2 -translate-y-1/2 px-[1px] text-color-text-primary-5 opacity-0 group-hover:opacity-100" />
           <span class="size-[24px] shrink-0 flex justify-center items-center">
-            <div class="cursor-pointer rounded-[8px] bg-transparent flex justify-center items-center shrink-0" style="
-                  color: var(--color-warning-normal);
-                  width: 24px;
-                  height: 24px;
-                  background-color: var(--color-warning-bg);
-                ">
-              <WisebaseIcon />
+            <div class="cursor-pointer rounded-[8px] bg-transparent flex justify-center items-center shrink-0" :style="`color: ${item.color}; background-color: ${item.bgColor}; width: 24px; height: 24px;`">
+              <component :is="item.icon" />
             </div>
           </span>
           <span v-show="menuOpen"
-            class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja">Demo:
-            Research on LLMs</span>
+            class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja">{{ item.title }} <div v-if="item.pinned" class="ml-0">
+            <PinFilled style="color: #1890ff; font-size: 10px;" />
+          </div></span>
+         
           <div v-show="menuOpen"
             class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-            <div
-              class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)">
-              <MoreOptionsIcon />
-            </div>
-          </div>
-        </div>
-      </a>
-      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -bottom-1"></div>
-    </div>
-    <div class="relative" draggable="true" style="opacity: 1">
-      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div><a draggable="false"
-        class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227214">
-        <div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)">
-          <DragHandleIcon
-            class="absolute -left-[3px] top-1/2 -translate-y-1/2 px-[1px] text-color-text-primary-5 opacity-0 group-hover:opacity-100" />
-          <span class="size-[24px] shrink-0 flex justify-center items-center">
-            <div class="cursor-pointer rounded-[8px] bg-transparent flex justify-center items-center shrink-0" style="
-                  color: var(--color-success-normal);
-                  width: 24px;
-                  height: 24px;
-                  background-color: var(--color-success-bg);
-                ">
-              <ResearchIcon />
-            </div>
-          </span>
-          <span v-show="menuOpen"
-            class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja">Demo:
-            NVIDIA Business Outlook</span>
-          <div v-show="menuOpen"
-            class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-            <div
-              class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)">
-              <MoreOptionsIcon />
-            </div>
-          </div>
-        </div>
-      </a>
-      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -bottom-1"></div>
-    </div>
-    <div class="relative" draggable="true" style="opacity: 1">
-      <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -top-1"></div><a draggable="false"
-        class="block group" href="/zh-CN/wisebase/68e7584b6cd86d3975227215">
-        <div
-          class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)">
-          <DragHandleIcon
-            class="absolute -left-[3px] top-1/2 -translate-y-1/2 px-[1px] text-color-text-primary-5 opacity-0 group-hover:opacity-100" />
-          <span class="size-[24px] shrink-0 flex justify-center items-center">
-            <div class="cursor-pointer rounded-[8px] bg-transparent flex justify-center items-center shrink-0" style="
-                  color: var(--color-brand-primary-normal);
-                  width: 24px;
-                  height: 24px;
-                  background-color: var(--color-brand-primary-bg);
-                ">
-              <BusinessIcon />
-            </div>
-          </span>
-          <span v-show="menuOpen"
-            class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja">Demo:
-            Introduction to Wisebase</span>
-          <div v-show="menuOpen"
-            class="ml-auto shrink-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-            <div
-              class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)">
-              <MoreOptionsIcon />
-            </div>
+            <a-dropdown :trigger="['hover','click']" placement="bottomRight">
+              <div 
+                class="ant-dropdown-trigger more-icon-wrapper size-[24px] cursor-pointer rounded-[6px] text-color-text-primary-3 flex justify-center items-center hover:bg-(--menu-hover-bg-color)!">
+                <MoreOptionsIcon />
+              </div>
+              <template #overlay>
+                <a-menu @click="(menuInfo) => handleMenuClick(menuInfo, item.id)">
+                  <a-menu-item key="pin">
+                    <template #icon v-if="item.pinned">
+                      <PinFilled style="color: #1890ff" />
+                    </template>
+                    {{ item.pinned ? '取消固定' : '固定' }}
+                  </a-menu-item>
+                  <a-menu-item key="edit">编辑</a-menu-item>
+                  <a-menu-item key="delete">删除</a-menu-item>
+                </a-menu>
+              </template>
+            </a-dropdown>
           </div>
         </div>
       </a>

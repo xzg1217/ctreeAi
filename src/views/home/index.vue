@@ -34,6 +34,7 @@
           <!-- 登录 -->
           <a
             class="font-normal-14 flex gap-2 items-center login px-3 py-1.5 rounded-[999px] cursor-pointer bg-black text-white"
+            @click="handleLoginClick"
           >
             {{ t('home.buttons.login') }}
           </a>
@@ -49,6 +50,7 @@
               v-for="(item, index) in wbData"
               :key="item.path"
               class="panel-item flex gap-2 items-center"
+              @click="go(item.path)"
             >
               <p class="name">{{ t(item.name) }}</p>
 
@@ -58,10 +60,10 @@
         </transition>
 
         <transition name="slide-down">
-          <div class="extension-panel-content flex gap-2">
+          <div v-if="hoveredIndex == 2" class="extension-panel-content flex gap-2">
             <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2">
               <p class="title text-sm">{{ t(item.title) }}</p>
-              <div class="flex flex-col gap-2">
+              <div class="flex flex-col gap-4 mt-4">
                 <p
                   class="name text-[#333] cursor-pointer"
                   v-for="value in item.children"
@@ -1878,6 +1880,9 @@
       </div>
     </div>
   </div>
+
+  <!-- 登录弹窗 -->
+  <ArtLoginDialog ref="loginDialog" />
 </template>
 
 <script setup lang="ts">
@@ -1891,6 +1896,10 @@
   import { LanguageEnum } from '../../enums/appEnum'
   import { changeLanguage } from '@/locales'
   import { router } from '@/router/index.js'
+  import ArtLoginDialog from '@/components/core/dialogs/art-login-dialog/index.vue'
+
+  // 登录弹窗引用
+  const loginDialog = ref<InstanceType<typeof ArtLoginDialog>>()
 
   const { locale, t } = useI18n()
 
@@ -1937,15 +1946,15 @@
   const wbData = ref([
     {
       name: 'home.appNames.wisebase',
-      path: '/wisebase'
+      path: ''
     },
     {
       name: 'home.appNames.deepResearch',
-      path: '/wisebase'
+      path: '/agents/deep-research?type=1'
     },
     {
       name: 'home.appNames.scholarResearch',
-      path: '/wisebase'
+      path: '/agents/deep-research?type=2'
     },
     {
       name: 'home.appNames.mathSolver',
@@ -1979,9 +1988,25 @@
       title: 'Agents',
       children: [
         {
+          name: 'home.nav.deepResearch',
+          path: '/agents/deep-research?type=1'
+        },
+        {
+          name: 'home.nav.scholarResearch',
+          path: '/agents/deep-research?type=2'
+        },
+        {
+          name: 'home.nav.websiteGenerator',
+          path: '/agents/web-creator'
+        },
+        {
           name: 'home.nav.AIPPT',
           path: '/agents/ai-slides',
           isNew: true
+        },
+        {
+          name: 'home.nav.writerMaster',
+          path: '/agents/ai-writer'
         }
       ]
     },
@@ -2028,6 +2053,11 @@
   // 当鼠标完全离开home-header区域时才收起面板
   const handleHeaderMouseLeave = () => {
     hoveredIndex.value = null
+  }
+
+  // 处理登录按钮点击
+  const handleLoginClick = () => {
+    loginDialog.value?.open()
   }
 
   let colorBgCanvas = null

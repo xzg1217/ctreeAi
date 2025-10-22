@@ -363,3 +363,7 @@ html.dark {
 .bg-color-grey-line1-normal {
   background-color: var(--color-grey-line1-normal, rgba(114, 118, 139, 0.08));
 }
+
+.bg-brand-primary-normal {
+  background-color: var(--sds-color-brand-primary-normal, #6128ff);
+}
