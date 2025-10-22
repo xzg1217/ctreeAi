@@ -234,7 +234,7 @@
     <!-- 第四模块 -->
     <div class="relative w-full mt-[60px] md:mt-[160px]">
       <div
-        class="s4-wrapper -max-h-screen pb-16 max-w-[1400px] relative flex flex-col mx-auto px-5 gap-8 pt-[120px] md:flex-row lg:px-10 lg:gap-20 md:pt-[160px]"
+        class="s4-wrapper -max-h-screen pb-16 max-w-[1400px] relative flex  mx-auto px-5 gap-8 pt-[120px] md:flex-row lg:px-10 lg:gap-20 md:pt-[160px]"
       >
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
@@ -439,7 +439,7 @@
     </div>
     <div class="relative w-full mt-[60px] md:mt-[160px]">
       <div
-        class="s5-wrapper -max-h-screen pb-16 max-w-[1400px] relative flex flex-col mx-auto px-5 gap-8 pt-[120px] md:flex-row-reverse lg:px-10 lg:gap-20 md:pt-[160px]"
+        class="s5-wrapper -max-h-screen pb-16 max-w-[1400px] relative flex  mx-auto px-5 gap-8 pt-[120px] md:flex-row-reverse lg:px-10 lg:gap-20 md:pt-[160px]"
       >
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
@@ -1886,7 +1886,6 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, onMounted, onUnmounted } from 'vue'
   import { ColorBgCanvas } from '../../../colorbgcanvas-example.js'
   import { GlowCloudAnimation } from '@/utils/canvas/glow-cloud-animation.js'
   //import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
@@ -1900,6 +1899,7 @@
 
   // 登录弹窗引用
   const loginDialog = ref<InstanceType<typeof ArtLoginDialog>>()
+  let originalHtmlClass = ''
 
   const { locale, t } = useI18n()
 
@@ -2066,6 +2066,12 @@
 
   // 在组件挂载时初始化canvas动画和滚动监听
   onMounted(() => {
+    const htmlElement = document.documentElement
+    originalHtmlClass = htmlElement.className
+    if (htmlElement.classList.contains('dark')) {
+      htmlElement.classList.remove('dark')
+    }
+
     // 确保DOM已渲染完成
     setTimeout(() => {
       // 为第一个canvas初始化ColorBgCanvas动画
@@ -2265,6 +2271,11 @@
       }
     }
   }
+
+  // 页面卸载时恢复原始状态
+  onBeforeUnmount(() => {
+    document.documentElement.className = originalHtmlClass
+  })
 
   // 在组件卸载时清理资源
   onUnmounted(() => {

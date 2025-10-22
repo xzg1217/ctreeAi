@@ -8,9 +8,9 @@
     width="500px"
     centered
   >
-    <div class="flex justify-center flex-col w-full"
+    <div class="flex justify-center flex-col w-full mt-10!"
       ><h1
-        class="text-text-primary-1 text-[32px] font-semibold mb-[8px] text-center font-poppins leading-[36px]"
+        class="text-text-primary-1 text-[32px] font-semibold! mb-[8px] text-center font-poppins leading-[36px]"
         >登录</h1
       ><div class="text-[16px] leading-[20px] text-text-primary-3 text-center"
         >登录即可每天获得<div
@@ -24,42 +24,24 @@
           ><div class="vcomp-phone"
             ><div class="content h-full flex flex-col md:h-auto md:block phone-view"
               ><div class="flex flex-col flex-1"
-                ><button
-                  type="button"
-                  class="ant-btn css-mkip61 ant-btn-text back self-start gap-[4px] !f-i-center"
+                ><a-button
+                  type="text"
+                  class="back self-start gap-[4px] flex! items-center"
                   @click="showPhoneLogin = false"
-                  ><span type="arrow" size="24" class="component-icon arrow" style="font-size: 24px"
-                    ><svg
-                      width="1em"
-                      height="1em"
-                      fill="currentColor"
-                      aria-hidden="true"
-                      focusable="false"
-                    >
-                      <use xlink:href="#arrow"></use></svg></span
-                  ><span>后退</span></button
+                  ><LeftOutlined /><span>后退</span></a-button
                 ><p>电话号码</p
                 ><div class="input-container"
-                  ><div class="phone-input"
-                    ><div class="iti iti--separate-dial-code"
-                      ><div class="iti__flag-container"
-                        ><div
-                          class="iti__selected-flag"
-                          role="combobox"
-                          aria-controls="iti-0__country-listbox"
-                          aria-owns="iti-0__country-listbox"
-                          aria-expanded="false"
-                          title="China (中国): +86"
-                          ><div class="iti__flag iti__cn"></div
-                          ><div class="iti__selected-dial-code">+86</div></div
-                        ></div
-                      ><input
-                        class="ant-input css-mkip61 ant-input-outlined ant-input w-full !rounded-[12px] !border-grey-line2-normal hover:!border-grey-line2-hover focus:!border-brand-secondary-normal focus:!shadow-[0_0_0_3px_var(--sds-color-focus-primary-1)]"
-                        type="tel"
-                        value=""
-                        autocomplete="off"
-                        data-intl-tel-input-id="0"
-                        style="padding-left: 70px" /></div></div
+                  ><div class="phone-input">
+                    <a-input>
+                      <template #addonBefore>
+                        <vue3-country-intl
+                          type="phone"
+                          onlyValue
+                          
+                          v-model="countryCode"
+                        ></vue3-country-intl>
+                      </template>
+                    </a-input> </div
                   ><div class="code-warn"></div></div
                 ><p>在这里输入您的验证码:</p
                 ><div class="input-container" style="margin-bottom: 4px"
@@ -160,12 +142,12 @@
                 ></path></svg></div
             ><div
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-white"
-              @click="handlePhoneLogin"
               >使用手机登录</div
             >
             <div class="w-full h-full relative z-10"></div
             ><div
-              class="col-[main] absolute inset-0 border border-(--sds-color-grey-line2-normal) rounded-[12px] transition-colors cursor-pointer text-white bg-brand-primary-normal hover:bg-brand-primary-hover"
+              @click="handlePhoneLogin"
+              class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer text-white bg-brand-primary-normal hover:bg-brand-primary-hover"
               style="grid-row: 1 / span 1"
               ><div class="w-full h-full relative z-10"></div></div
             ><div class="col-[icon] relative z-[5]"
@@ -174,7 +156,7 @@
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-[#000000D1]"
               >使用Google登录</div
             ><div
-              class="col-[main] absolute inset-0 border border-[initial] rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
+              class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
               style="grid-row: 2 / span 1"
               ><div class="w-full h-full relative z-10"></div></div
             ><div class="col-[icon] relative z-[5]"
@@ -191,18 +173,18 @@
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-[#000000D1]"
               >使用Apple登录</div
             ><div
-              class="col-[main] absolute inset-0 border border-(--sds-color-grey-line2-normal) rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
+              class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
               style="grid-row: 3 / span 1"
               ><div class="w-full h-full relative z-10"></div></div></div></div
         ><div class="text-center mt-[40px] leading-5"
           >还没有账号？
           <button
-            class="inline-block cursor-pointer font-[700] text-[#7450FF] bg-transparent border-none p-0 m-0 outline-none"
+            class="inline-block cursor-pointer font-[700] text-[#7450FF]! bg-transparent border-none p-0 m-0 outline-none"
             >创建一个帐户</button
           ></div
         ></div
       ><div
-        class="mt-[40px] py-[16px] text-center text-color-text-primary-4 bg-color-grey-fill2-normal w-full mb:px-[12px]"
+        class="mt-[40px] py-[16px] text-center text-color-text-primary-4! bg-color-grey-fill2-normal w-full mb:px-[12px]"
         ><div class="text-[14px] flex-center gap-[4px] text-center"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
@@ -229,7 +211,7 @@
               clip-rule="evenodd"
             ></path></svg
           ><span>承诺数据不外泄，无垃圾信息。</span></div
-        ><div class="[&amp;_a]:text-color-text-primary-4 leading-[20px]"
+        ><div class="[&amp;_a]:text-color-text-primary-4! leading-[20px]"
           >继续即表示您同意 <br class="dp:hidden" />
           <a class="underline" target="_blank" href="/terms.html">使用条款</a> 和
           <a class="underline" target="_blank" href="/privacy.html">隐私政策</a></div
@@ -240,12 +222,18 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import { Modal as AModal } from 'ant-design-vue'
+  import { ref, h } from 'vue'
+  import { Modal as AModal, Button as AButton, Input as AInput } from 'ant-design-vue'
+  import { LeftOutlined } from '@ant-design/icons-vue'
+  import Vue3CountryIntl from 'vue3-country-intl'
+  // 引入css
+  import 'vue3-country-intl/lib/vue3-country-intl.css'
 
   // 弹窗显示状态
   const visible = ref(false)
   const showPhoneLogin = ref(false)
+
+  const countryCode = ref(86)
 
   // 打开弹窗
   const open = () => {
@@ -272,4 +260,26 @@
   })
 </script>
 
-<style scoped></style>
+<style scoped lang="scss">
+  .vcomp-phone .back {
+    margin-bottom: 24px;
+    //margin-left: -24px;
+    color: rgba(0, 0, 0, 0.65);
+    line-height: 20px;
+    cursor: pointer;
+  }
+
+  .vcomp-phone button.ant-btn {
+    height: 40px;
+  }
+
+  .phone-input .country-intl-input-wrap {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: var(--sds-color-grey-fill2-normal);
+    border-radius: 12px 0 0 12px;
+    border-right: 1px solid var(--sds-color-grey-line2-normal);
+    color: var(--sds-color-text-primary-3);
+  }
+</style>

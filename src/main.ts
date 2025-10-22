@@ -31,6 +31,5 @@ initStore(app)
 initRouter(app)
 setupGlobDirectives(app)
 setupErrorHandle(app)
-
 app.use(language)
 app.mount('#app')
