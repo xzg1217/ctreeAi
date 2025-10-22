@@ -184,7 +184,7 @@
             class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja"
             >网页创建者</span
           ><div class="size-2 rounded-full bg-color-error-normal"></div></div></a
-      ><a draggable="false" class="block mb-1" @click="handleNavigation('/system/user-center')"
+      ><a draggable="false" class="block mb-1" @click="handleNavigation('/agents/ai-writer')"
         ><div
           :class="[
             'box-border',
@@ -201,7 +201,7 @@
             'hover:bg-(--menu-hover-bg-color)',
             {
               'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
-                activeMenuPath === '/system/user-center'
+                activeMenuPath === '/agents/ai-writer'
             }
           ]"
           ><svg

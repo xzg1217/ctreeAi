@@ -209,6 +209,15 @@ export const asyncRoutes: AppRouteRecord[] = [
           title: '网页创作者',
           keepAlive: true
         }
+      },
+      {
+        path: 'ai-writer',
+        name: 'AIWriter',
+        component: RoutesAlias.AIWriter,
+        meta: {
+          title: 'AI写作助手',
+          keepAlive: true
+        }
       }
     ]
   }
