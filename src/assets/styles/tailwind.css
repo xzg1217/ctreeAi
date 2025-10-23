@@ -1,6 +1,8 @@
 @import 'tailwindcss';
 
 :root {
+  --sds-light: initial;
+  --sds-dark: ;
   --color-brand-primary-normal: #6128ff;
   --color-brand-primary-hover: #6a3fff;
   --color-brand-primary-click: #561bef;
@@ -130,9 +132,155 @@
   --color-shadow-overflow-16: rgba(12, 13, 25, 0.16);
 
   /** sds */
+  --sds-color-brand-primary-normal: var(--sds-light, #6128ff) var(--sds-dark, #7f60ff);
+  --sds-color-brand-primary-hover: var(--sds-light, #6a3fff) var(--sds-dark, #937dff);
+  --sds-color-brand-primary-click: var(--sds-light, #561bef) var(--sds-dark, #896fff);
+  --sds-color-brand-primary-disable: var(--sds-light, #cabeff) var(--sds-dark, #3a00b3);
+  --sds-color-brand-primary-focus: var(--sds-light, rgba(122, 89, 255, 0.16))
+    var(--sds-dark, rgba(122, 89, 255, 0.32));
+  --sds-color-brand-primary-bg: var(--sds-light, rgba(122, 89, 255, 0.08))
+    var(--sds-dark, rgba(122, 89, 255, 0.16));
+  --sds-color-brand-secondary-normal: var(--sds-light, #7450ff) var(--sds-dark, #9e8aff);
+  --sds-color-brand-secondary-hover: var(--sds-light, #3a00b3) var(--sds-dark, #e0d7ff);
+  --sds-color-brand-secondary-click: var(--sds-light, #20006c) var(--sds-dark, #cabeff);
+  --sds-color-text-primary-1: var(--sds-light, rgba(0, 0, 0, 0.96)) var(--sds-dark, #fff);
+  --sds-color-text-primary-2: var(--sds-light, rgba(6, 8, 31, 0.88))
+    var(--sds-dark, rgba(220, 223, 249, 0.92));
+  --sds-color-text-primary-3: var(--sds-light, rgba(10, 13, 51, 0.6))
+    var(--sds-dark, rgba(214, 218, 255, 0.56));
+  --sds-color-text-primary-4: var(--sds-light, rgba(10, 13, 51, 0.45))
+    var(--sds-dark, rgba(214, 218, 255, 0.4));
+  --sds-color-text-primary-5: var(--sds-light, rgba(10, 13, 51, 0.18))
+    var(--sds-dark, rgba(214, 218, 255, 0.16));
+  --sds-color-text-secondary-1: var(--sds-light, #fff) var(--sds-dark, rgba(0, 0, 0, 0.96));
+  --sds-color-text-secondary-2: var(--sds-light, rgba(220, 223, 249, 0.92))
+    var(--sds-dark, rgba(6, 8, 31, 0.88));
+  --sds-color-text-secondary-3: var(--sds-light, rgba(214, 218, 255, 0.56))
+    var(--sds-dark, rgba(10, 13, 51, 0.6));
+  --sds-color-text-secondary-4: var(--sds-light, rgba(214, 218, 255, 0.4))
+    var(--sds-dark, rgba(10, 13, 51, 0.45));
+  --sds-color-text-secondary-5: var(--sds-light, rgba(214, 218, 255, 0.16))
+    var(--sds-dark, rgba(10, 13, 51, 0.18));
+  --sds-color-text-black-1: var(--sds-light, rgba(0, 0, 0, 0.96))
+    var(--sds-dark, rgba(0, 0, 0, 0.96));
+  --sds-color-text-black-2: var(--sds-light, rgba(6, 8, 31, 0.88))
+    var(--sds-dark, rgba(6, 8, 31, 0.88));
+  --sds-color-text-black-3: var(--sds-light, rgba(10, 13, 51, 0.6))
+    var(--sds-dark, rgba(10, 13, 51, 0.6));
+  --sds-color-text-black-4: var(--sds-light, rgba(10, 13, 51, 0.45))
+    var(--sds-dark, rgba(10, 13, 51, 0.45));
+  --sds-color-text-black-5: var(--sds-light, rgba(10, 13, 51, 0.18))
+    var(--sds-dark, rgba(10, 13, 51, 0.18));
+  --sds-color-text-white-1: var(--sds-light, #fff) var(--sds-dark, #fff);
+  --sds-color-text-white-2: var(--sds-light, rgba(220, 223, 249, 0.92))
+    var(--sds-dark, rgba(220, 223, 249, 0.92));
+  --sds-color-text-white-3: var(--sds-light, rgba(214, 218, 255, 0.56))
+    var(--sds-dark, rgba(214, 218, 255, 0.56));
+  --sds-color-text-white-4: var(--sds-light, rgba(214, 218, 255, 0.4))
+    var(--sds-dark, rgba(214, 218, 255, 0.4));
+  --sds-color-text-white-5: var(--sds-light, rgba(214, 218, 255, 0.16))
+    var(--sds-dark, rgba(214, 218, 255, 0.16));
+  --sds-color-grey-layer1-normal: var(--sds-light, #f6f6f8) var(--sds-dark, #0c0d19);
+  --sds-color-grey-layer1-semitrans: var(--sds-light, rgba(237, 237, 241, 0.84))
+    var(--sds-dark, rgba(12, 13, 25, 0.92));
+  --sds-color-grey-layer2-normal: var(--sds-light, #fff) var(--sds-dark, #1e1f2b);
+  --sds-color-grey-layer2-semitrans: var(--sds-light, hsla(0, 0%, 100%, 0.84))
+    var(--sds-dark, rgba(30, 31, 43, 0.84));
+  --sds-color-grey-layer3-normal: var(--sds-light, #fff) var(--sds-dark, #2e2f3c);
+  --sds-color-grey-layer3-reserve: var(--sds-light, #0c0d19) var(--sds-dark, #5a5d6e);
+  --sds-color-grey-fill1-normal: var(--sds-light, hsla(0, 0%, 100%, 0)) var(--sds-dark, transparent);
+  --sds-color-grey-fill1-hover: var(--sds-light, rgba(114, 118, 139, 0.08))
+    var(--sds-dark, rgba(114, 118, 139, 0.16));
+  --sds-color-grey-fill1-hover05: var(--sds-light, rgba(114, 118, 139, 0.04))
+    var(--sds-dark, rgba(114, 118, 139, 0.08));
+  --sds-color-grey-fill1-click: var(--sds-light, rgba(114, 118, 139, 0.16))
+    var(--sds-dark, rgba(114, 118, 139, 0.08));
+  --sds-color-grey-fill1-hover2: var(--sds-light, rgba(122, 89, 255, 0.08))
+    var(--sds-dark, rgba(122, 89, 255, 0.16));
+  --sds-color-grey-fill1-click2: var(--sds-light, rgba(122, 89, 255, 0.16))
+    var(--sds-dark, rgba(122, 89, 255, 0.08));
+  --sds-color-grey-fill2-normal: var(--sds-light, rgba(114, 118, 139, 0.06))
+    var(--sds-dark, rgba(114, 118, 139, 0.12));
+  --sds-color-grey-fill2-hover: var(--sds-light, rgba(114, 118, 139, 0.12))
+    var(--sds-dark, rgba(114, 118, 139, 0.24));
+  --sds-color-grey-fill2-click: var(--sds-light, rgba(114, 118, 139, 0.2))
+    var(--sds-dark, rgba(114, 118, 139, 0.16));
+  --sds-color-advanced-fill-normal: var(--sds-light, #0c0d19) var(--sds-dark, #7f60ff);
+  --sds-color-advanced-fil-hover: var(--sds-light, #151622) var(--sds-dark, #937dff);
+  --sds-color-advanced-fill-hover: var(--sds-light, #151622) var(--sds-dark, #937dff);
+  --sds-color-advanced-fil-click: var(--sds-light, #000) var(--sds-dark, #896fff);
+  --sds-color-advanced-fill-click: var(--sds-light, #000) var(--sds-dark, #896fff);
+  --sds-color-grey-line1-normal: var(--sds-light, rgba(114, 118, 139, 0.08))
+    var(--sds-dark, rgba(114, 118, 139, 0.16));
+  --sds-color-grey-line1-hover: var(--sds-light, rgba(114, 118, 139, 0.16))
+    var(--sds-dark, rgba(114, 118, 139, 0.32));
+  --sds-color-grey-line1-click: var(--sds-light, rgba(114, 118, 139, 0.24))
+    var(--sds-dark, rgba(114, 118, 139, 0.24));
+  --sds-color-grey-line2-normal: var(--sds-light, rgba(114, 118, 139, 0.16))
+    var(--sds-dark, rgba(114, 118, 139, 0.32));
+  --sds-color-grey-line2-hover: var(--sds-light, rgba(114, 118, 139, 0.32))
+    var(--sds-dark, rgba(114, 118, 139, 0.64));
+  --sds-color-grey-line2-click: var(--sds-light, rgba(114, 118, 139, 0.4))
+    var(--sds-dark, rgba(114, 118, 139, 0.48));
+  --sds-color-grey-overlav1: var(--sds-light, rgba(12, 13, 25, 0.2))
+    var(--sds-dark, rgba(12, 13, 25, 0.64));
+  --sds-color-grey-overlay1: var(--sds-light, rgba(12, 13, 25, 0.2))
+    var(--sds-dark, rgba(12, 13, 25, 0.64));
+  --sds-color-success-normal: var(--sds-light, #20b082) var(--sds-dark, #32bb8c);
+  --sds-color-success-hover: var(--sds-light, #32bb8c) var(--sds-dark, #71cca6);
+  --sds-color-success-click: var(--sds-light, #00a578) var(--sds-dark, #56c498);
+  --sds-color-success-disabled: var(--sds-light, #8cd5b4) var(--sds-dark, #006145);
+  --sds-color-success-focus: var(--sds-light, rgba(0, 136, 98, 0.16))
+    var(--sds-dark, rgba(0, 136, 98, 0.32));
+  --sds-color-success-bg: var(--sds-light, rgba(0, 136, 98, 0.08))
+    var(--sds-dark, rgba(0, 136, 98, 0.16));
+  --sds-color-success-text: var(--sds-light, #00825e) var(--sds-dark, #20b082);
+  --sds-color-warning-normal: var(--sds-light, #eb7e26) var(--sds-dark, #f38b40);
+  --sds-color-warning-hover: var(--sds-light, #f38b40) var(--sds-dark, #ffa76a);
+  --sds-color-warning-click: var(--sds-light, #e47100) var(--sds-dark, #f99956);
+  --sds-color-warning-disabled: var(--sds-light, #ffb688) var(--sds-dark, #884100);
+  --sds-color-warning-focus: var(--sds-light, rgba(189, 92, 0, 0.16))
+    var(--sds-dark, rgba(189, 92, 0, 0.32));
+  --sds-color-warning-bg: var(--sds-light, rgba(189, 92, 0, 0.08))
+    var(--sds-dark, rgba(189, 92, 0, 0.16));
+  --sds-color-error-normal: var(--sds-light, #e55649) var(--sds-dark, #f57365);
+  --sds-color-error-hover: var(--sds-light, #ed6557) var(--sds-dark, #ff9286);
+  --sds-color-error-click: var(--sds-light, #e55749) var(--sds-dark, #fb8275);
+  --sds-color-error-disabled: var(--sds-light, #ffb4ab) var(--sds-dark, #ab100f);
+  --sds-color-error-focus: var(--sds-light, rgba(215, 65, 52, 0.16))
+    var(--sds-dark, rgba(215, 65, 52, 0.32));
+  --sds-color-error-bg: var(--sds-light, rgba(215, 65, 52, 0.08))
+    var(--sds-dark, rgba(215, 65, 52, 0.16));
+  --sds-color-assistive-blue: var(--sds-light, #1477f7) var(--sds-dark, #1477f7);
+  --sds-color-assistive-blue-bg: var(--sds-light, #f1f3ff) var(--sds-dark, #00163a);
+  --sds-color-assistive-green: var(--sds-light, #20b082) var(--sds-dark, #20b082);
+  --sds-color-assistive-green-bg: var(--sds-light, #f0f9f1) var(--sds-dark, #001c12);
+  --sds-color-assistive-yellow: var(--sds-light, #e4d200) var(--sds-dark, #e4d200);
+  --sds-color-assistive-yellow-bg: var(--sds-light, #fff5b5) var(--sds-dark, #191600);
+  --sds-color-assistive-red: var(--sds-light, #e55649) var(--sds-dark, #e55649);
+  --sds-color-assistive-red-bg: var(--sds-light, #fff0ee) var(--sds-dark, #390001);
+  --sds-color-assistive-magenta: var(--sds-light, #ff41b1) var(--sds-dark, #ff41b1);
+  --sds-color-assistive-magenta-bg: var(--sds-light, #fff0f4) var(--sds-dark, #360021);
+  --sds-color-glass-fill1-hover: var(--sds-light, rgba(114, 118, 139, 0.4))
+    var(--sds-dark, rgba(114, 118, 139, 0.4));
+  --sds-color-glass-fill1-normal: var(--sds-light, rgba(114, 118, 139, 0.16))
+    var(--sds-dark, rgba(114, 118, 139, 0.08));
+  --sds-color-glass-fill2-hover: var(--sds-light, rgba(114, 118, 139, 0.8))
+    var(--sds-dark, rgba(114, 118, 139, 0.8));
+  --sds-color-glass-fill2-normal: var(--sds-light, rgba(114, 118, 139, 0.48))
+    var(--sds-dark, rgba(114, 118, 139, 0.48));
+  --sds-color-focus-primary-1: var(--sds-light, rgba(122, 89, 255, 0.12))
+    var(--sds-dark, rgba(122, 89, 255, 0.24));
+  --sds-color-focus-error-1: var(--sds-light, rgba(215, 65, 52, 0.12))
+    var(--sds-dark, rgba(215, 65, 52, 0.24));
+  --sds-color-focus-gray-1: var(--sds-light, rgba(114, 118, 139, 0.06))
+    var(--sds-dark, rgba(114, 118, 139, 0.12));
+  --sds-color-table-border: var(--sds-light, #d0d7de) var(--sds-dark, #30363d);
 }
 
 html.dark {
+  --sds-light: ;
+  --sds-dark: initial;
   --color-brand-primary-normal: #7f60ff;
   --color-brand-primary-hover: #937dff;
   --color-brand-primary-click: #896fff;
@@ -370,6 +518,10 @@ html.dark {
   background-color: var(--sds-color-brand-primary-normal, #6128ff);
 }
 
-.text-text-primary-1{
-  color: var(--sds-color-text-primary-1, rgba(0,0,0,.96)) !important;
+.text-text-primary-1 {
+  color: var(--sds-color-text-primary-1, rgba(0, 0, 0, 0.96)) !important;
+}
+
+.border-grey-line2-normal {
+  border-color: var(--sds-color-grey-line2-normal, rgba(114, 118, 139, 0.16));
 }

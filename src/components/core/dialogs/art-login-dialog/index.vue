@@ -8,67 +8,77 @@
     width="500px"
     centered
   >
-    <div class="flex justify-center flex-col w-full mt-10!"
-      ><h1
+    <div class="flex justify-center flex-col w-full mt-10!">
+      <h1
         class="text-text-primary-1 text-[32px] font-semibold! mb-[8px] text-center font-poppins leading-[36px]"
-        >登录</h1
-      ><div class="text-[16px] leading-[20px] text-text-primary-3 text-center"
+        >登录
+      </h1>
+      <div class="text-[16px] leading-[20px] text-text-primary-3 text-center"
         >登录即可每天获得<div
           class="inline-block font-bold text-[18px] leading-[24px] relative text-text-primary-1"
-          ><div class="absolute h-[6px] w-full bg-[#8CD5B4] bottom-[4px]"></div
-          ><div class="relative">30个免费</div></div
+        >
+          <div class="absolute h-[6px] w-full bg-[#8CD5B4] bottom-[4px]"></div>
+          <div class="relative">30个免费</div> </div
         >积分</div
       >
-      <div class="relative overflow-hidden"
-        ><div class="vcomp-phone-container" v-show="showPhoneLogin"
-          ><div class="vcomp-phone"
-            ><div class="content h-full flex flex-col md:h-auto md:block phone-view"
-              ><div class="flex flex-col flex-1"
+      <div class="relative overflow-hidden">
+        <div class="vcomp-phone-container" v-show="showPhoneLogin">
+          <div class="vcomp-phone">
+            <div class="content h-full flex flex-col md:h-auto md:block phone-view">
+              <div class="flex flex-col flex-1"
                 ><a-button
                   type="text"
                   class="back self-start gap-[4px] flex! items-center"
                   @click="showPhoneLogin = false"
-                  ><LeftOutlined /><span>后退</span></a-button
-                ><p>电话号码</p
-                ><div class="input-container"
-                  ><div class="phone-input">
-                    <a-input>
-                      <template #addonBefore>
-                        <vue3-country-intl
-                          type="phone"
-                          onlyValue
-                          
-                          v-model="countryCode"
-                        ></vue3-country-intl>
-                      </template>
-                    </a-input> </div
-                  ><div class="code-warn"></div></div
-                ><p>在这里输入您的验证码:</p
-                ><div class="input-container" style="margin-bottom: 4px"
-                  ><div class="f-i-center input gap-[16px]"
-                    ><input
+                >
+                  <LeftOutlined /><span>后退</span>
+                </a-button>
+                <p class="mb-[12px]! text-[rgba(0, 0, 0, .65)]">电话号码</p>
+                <div class="input-container">
+                  <div class="phone-input mb-[24px]!">
+                    <IntlTelInput
+                      width="100%"
+                      :options="{
+                        allowDropdown: true,
+                        containerClass: 'w-full h-[40px]',
+                        initialCountry: 'cn'
+                      }"
+                      :value="86"
+                      class="phone-input h-[40px] css-mkip61 ant-input-outlined ant-input w-full rounded-[12px] border border-grey-line2-normal hover:border-(--sds-color-grey-line2-hover)! focus:border-(--sds-color-brand-secondary-normal) focus:shadow-[0_0_0_3px_var(--sds-color-focus-primary-1)]"
+                    />
+                  </div>
+                  <div class="code-warn"></div>
+                </div>
+                <p class="mb-[12px]!">在这里输入您的验证码:</p>
+                <div class="input-container" style="margin-bottom: 4px">
+                  <div class="flex items-center input gap-[16px] mb-[16px]!"
+                    ><a-input
                       maxlength="6"
-                      class="ant-input css-mkip61 ant-input-outlined !border-grey-line2-normal hover:!border-grey-line2-hover !rounded-[12px] focus:!border-brand-secondary-normal focus:!shadow-[0_0_0_3px_var(--sds-color-focus-primary-1)]"
+                      class="ant-input h-[40px] css-mkip61 ant-input-outlined border-grey-line2-normal hover:border-(--sds-color-grey-line2-hover)! rounded-[12px]! focus:border-(--sds-color-brand-secondary-normal)! focus:shadow-[0_0_0_3px_var(--sds-color-focus-primary-1)]!"
                       type="text"
                       value=""
                       style="flex: 1 1 0%"
-                    /><button
+                    ></a-input
+                    ><a-button
                       type="button"
                       class="ant-btn css-9c7804 ant-btn-primary"
                       disabled=""
                       style="width: 120px; border-radius: 12px"
-                      ><span>获取代码</span></button
+                      ><span>获取代码</span></a-button
                     ></div
-                  ><div class="code-warn"></div></div
-                ><button
+                  >
+                  <div class="code-warn"></div> </div
+                ><a-button
                   type="button"
                   class="ant-btn css-9c7804 ant-btn-primary ant-btn-block"
                   disabled=""
                   style="border-radius: 12px"
-                  ><span>登 录</span></button
-                ></div
-              ><div class="pt-[20px] pb-[10px] text-center w-full md:hidden"
-                ><div class="text-[14px] flex-center gap-[4px] text-center"
+                  ><span>登 录</span></a-button
+                >
+              </div>
+
+              <div class="pt-[20px] pb-[10px] text-center w-full md:hidden">
+                <div class="text-[14px] flex-center gap-[4px] text-center"
                   ><svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="17"
@@ -95,71 +105,86 @@
                       clip-rule="evenodd"
                     ></path></svg
                   ><span class="text-[rgba(6,8,31,0.88)]">承诺数据不外泄，无垃圾信息。</span></div
-                ><div class="text-[rgba(10,13,51,0.45)] [&amp;_a]:text-[#7450FF] leading-[20px]"
+                >
+                <div class="text-[rgba(10,13,51,0.45)] [&amp;_a]:text-[#7450FF] leading-[20px]"
                   >继续即表示您同意 <br class="dp:hidden" />
                   <a class="underline" target="_blank" href="/terms.html">使用条款</a> 和
-                  <a class="underline" target="_blank" href="/privacy.html">隐私政策</a></div
-                ></div
-              ></div
-            ></div
-          ></div
-        ><div class="relative w-full px-[30px] mb-[32px] mt-[32px]" v-show="!showPhoneLogin"
-          ><div
+                  <a class="underline" target="_blank" href="/privacy.html">隐私政策</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative w-full px-[30px] mb-[32px] mt-[32px]" v-show="!showPhoneLogin">
+          <div
             class="px-4 py-3 flex justify-center text-text-primary-1 bg-color-grey-fill2-normal rounded-[8px]"
-            ><div class="flex-1 text-center"
-              ><div
+          >
+            <div class="flex-1 text-center">
+              <div
                 class="flex justify-center items-center gap-[4px] text-[16px] font-bold leading-5"
-                ><span>2025</span></div
-              ><div class="text-[12px] leading-[18px] text-text-primary-2"
-                >Chrome 编辑推荐</div
-              ></div
-            ><div class="flex-1 text-center"
-              ><div
+                ><span>2025</span>
+              </div>
+              <div class="text-[12px] leading-[18px] text-text-primary-2">Chrome 编辑推荐</div>
+            </div>
+            <div class="flex-1 text-center">
+              <div
                 class="flex justify-center items-center gap-[4px] text-[16px] font-bold leading-5"
                 >100K+</div
-              ><div class="text-[12px] leading-[18px] text-text-primary-2">5星好评</div></div
-            ><div class="flex-1 text-center"
-              ><div
+              >
+              <div class="text-[12px] leading-[18px] text-text-primary-2">5星好评</div>
+            </div>
+            <div class="flex-1 text-center">
+              <div
                 class="flex justify-center items-center gap-[4px] text-[16px] font-bold leading-5"
                 >10M+</div
-              ><div class="text-[12px] leading-[18px] text-text-primary-2">活跃用户</div></div
-            ></div
-          ></div
-        ><div class="px-[30px]" v-show="!showPhoneLogin"
-          ><div
+              >
+              <div class="text-[12px] leading-[18px] text-text-primary-2">活跃用户</div>
+            </div>
+          </div>
+        </div>
+        <div class="px-[30px]" v-show="!showPhoneLogin">
+          <div
             class="grid gap-y-6 gap-x-3 auto-rows-[48px] font-semibold text-start items-center relative w-full"
             style="
               grid-template-columns: [main-start] 1fr [icon-start] 20px [icon-end text-start] max-content [text-end] 1fr [main-end];
               grid-auto-rows: 48px;
             "
-            ><div class="col-[icon] relative z-[5] text-white"
+          >
+            <div class="col-[icon] relative z-[5] text-white"
               ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="20">
                 <path
                   fill="currentColor"
                   fill-rule="evenodd"
                   d="M4 2.75a2 2 0 0 1 2-2h11.25a2 2 0 0 1 2 2v18.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM8 20.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5m2.125-19a.375.375 0 1 0 0 .75h3a.375.375 0 0 0 0-.75z"
                   clip-rule="evenodd"
-                ></path></svg></div
-            ><div
+                ></path></svg
+            ></div>
+            <div
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-white"
               >使用手机登录</div
             >
-            <div class="w-full h-full relative z-10"></div
-            ><div
+            <div class="w-full h-full relative z-10"></div>
+            <div
               @click="handlePhoneLogin"
               class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer text-white bg-brand-primary-normal hover:bg-brand-primary-hover"
               style="grid-row: 1 / span 1"
-              ><div class="w-full h-full relative z-10"></div></div
-            ><div class="col-[icon] relative z-[5]"
-              ><img width="20" alt="" src="/src/assets/icons/google.svg" /></div
-            ><div
+            >
+              <div class="w-full h-full relative z-10"></div>
+            </div>
+            <div class="col-[icon] relative z-[5]"
+              ><img width="20" alt="" src="/src/assets/icons/google.svg"
+            /></div>
+            <div
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-[#000000D1]"
-              >使用Google登录</div
-            ><div
+              >使用Google登录
+            </div>
+            <div
               class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
               style="grid-row: 2 / span 1"
-              ><div class="w-full h-full relative z-10"></div></div
-            ><div class="col-[icon] relative z-[5]"
+            >
+              <div class="w-full h-full relative z-10"></div>
+            </div>
+            <div class="col-[icon] relative z-[5]"
               ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="20">
                 <path
                   fill="currentColor"
@@ -168,24 +193,32 @@
                 <path
                   fill="currentColor"
                   d="M15.549 4.224C16.95 2.559 16.823 1.044 16.78.5c-1.238.072-2.67.843-3.485 1.791-.899 1.018-1.427 2.275-1.313 3.693 1.337.103 2.56-.586 3.566-1.76"
-                ></path></svg></div
-            ><div
+                ></path></svg
+            ></div>
+            <div
               class="col-[text] relative z-[5] cursor-pointer font-semibold text-[20px] text-[#000000D1]"
-              >使用Apple登录</div
-            ><div
+              >使用Apple登录
+            </div>
+            <div
               class="col-[main] absolute inset-0 border border-[rgba(114,118,139,.32)] rounded-[12px] transition-colors cursor-pointer hover:bg-[#00000008] text-[#000000D1] bg-transparent"
               style="grid-row: 3 / span 1"
-              ><div class="w-full h-full relative z-10"></div></div></div></div
-        ><div class="text-center mt-[40px] leading-5"
+            >
+              <div class="w-full h-full relative z-10"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-[40px] leading-5"
           >还没有账号？
           <button
             class="inline-block cursor-pointer font-[700] text-[#7450FF]! bg-transparent border-none p-0 m-0 outline-none"
             >创建一个帐户</button
-          ></div
-        ></div
-      ><div
+          >
+        </div>
+      </div>
+      <div
         class="mt-[40px] py-[16px] text-center text-color-text-primary-4! bg-color-grey-fill2-normal w-full mb:px-[12px]"
-        ><div class="text-[14px] flex-center gap-[4px] text-center"
+      >
+        <div class="text-[14px] flex-center gap-[4px] text-center"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="17"
@@ -211,13 +244,14 @@
               clip-rule="evenodd"
             ></path></svg
           ><span>承诺数据不外泄，无垃圾信息。</span></div
-        ><div class="[&amp;_a]:text-color-text-primary-4! leading-[20px]"
+        >
+        <div class="[&amp;_a]:text-color-text-primary-4! leading-[20px]"
           >继续即表示您同意 <br class="dp:hidden" />
           <a class="underline" target="_blank" href="/terms.html">使用条款</a> 和
-          <a class="underline" target="_blank" href="/privacy.html">隐私政策</a></div
-        ></div
-      ></div
-    >
+          <a class="underline" target="_blank" href="/privacy.html">隐私政策</a>
+        </div>
+      </div>
+    </div>
   </a-modal>
 </template>
 
@@ -225,10 +259,8 @@
   import { ref, h } from 'vue'
   import { Modal as AModal, Button as AButton, Input as AInput } from 'ant-design-vue'
   import { LeftOutlined } from '@ant-design/icons-vue'
-  import Vue3CountryIntl from 'vue3-country-intl'
-  // 引入css
-  import 'vue3-country-intl/lib/vue3-country-intl.css'
-
+  import IntlTelInput from 'intl-tel-input/vueWithUtils'
+  import 'intl-tel-input/styles'
   // 弹窗显示状态
   const visible = ref(false)
   const showPhoneLogin = ref(false)
@@ -273,7 +305,11 @@
     height: 40px;
   }
 
-  .phone-input .country-intl-input-wrap {
+  .phone-input:focus-visible {
+    outline: none;
+  }
+
+  ::v-deep country-intl-label {
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
@@ -281,5 +317,9 @@
     border-radius: 12px 0 0 12px;
     border-right: 1px solid var(--sds-color-grey-line2-normal);
     color: var(--sds-color-text-primary-3);
+  }
+
+  ::v-deep .ant-input-group-addon {
+    padding: 0 !important;
   }
 </style>
