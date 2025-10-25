@@ -21,56 +21,56 @@ export const staticRoutes: AppRouteRecordRaw[] = [
     path: RoutesAlias.Home,
     name: 'Home',
     component: () => import('@views/home/index.vue'),
-    meta: { title: 'menus.home.title', isHideTab: true }
+    meta: { title: 'menus.home.title', isHideTab: true, layoutType: 'default' }
   },
   {
     path: RoutesAlias.Login,
     name: 'Login',
     component: () => import('@views/auth/login/index.vue'),
-    meta: { title: 'menus.login.title', isHideTab: true }
+    meta: { title: 'menus.login.title', isHideTab: true, layoutType: 'default' }
   },
   {
     path: RoutesAlias.Register,
     name: 'Register',
     component: () => import('@views/auth/register/index.vue'),
-    meta: { title: 'menus.register.title', isHideTab: true }
+    meta: { title: 'menus.register.title', isHideTab: true, layoutType: 'default' }
   },
   {
     path: RoutesAlias.ForgetPassword,
     name: 'ForgetPassword',
     component: () => import('@views/auth/forget-password/index.vue'),
-    meta: { title: 'menus.forgetPassword.title', isHideTab: true }
+    meta: { title: 'menus.forgetPassword.title', isHideTab: true, layoutType: 'default' }
   },
   {
     path: '/403',
     name: 'Exception403',
     component: () => import('@views/exception/403/index.vue'),
-    meta: { title: '403' }
+    meta: { title: '403', layoutType: 'top', isHideTab: true }
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'Exception404',
     component: () => import('@views/exception/404/index.vue'),
-    meta: { title: '404' }
+    meta: { title: '404', layoutType: 'top', isHideTab: true }
   },
   {
     path: '/500',
     name: 'Exception500',
     component: () => import('@views/exception/500/index.vue'),
-    meta: { title: '500' }
+    meta: { title: '500', layoutType: 'top', isHideTab: true }
   },
   {
     path: '/outside',
     component: () => import('@views/index/index.vue'),
     name: 'Outside',
-    meta: { title: 'menus.outside.title' },
+    meta: { title: 'menus.outside.title', layoutType: 'default' },
     children: [
       // iframe 内嵌页面
       {
         path: '/outside/iframe/:path',
         name: 'Iframe',
         component: () => import('@/views/outside/Iframe.vue'),
-        meta: { title: 'iframe' }
+        meta: { title: 'iframe', layoutType: 'default' }
       }
     ]
   }

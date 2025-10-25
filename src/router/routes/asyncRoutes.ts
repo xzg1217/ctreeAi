@@ -22,7 +22,8 @@ export const asyncRoutes: AppRouteRecord[] = [
     meta: {
       title: 'menus.dashboard.title',
       icon: '&#xe721;',
-      roles: ['R_SUPER', 'R_ADMIN']
+      roles: ['R_SUPER', 'R_ADMIN'],
+      layoutType: 'default'
     },
     children: [
       {
@@ -44,7 +45,8 @@ export const asyncRoutes: AppRouteRecord[] = [
     meta: {
       title: 'menus.system.title',
       icon: '&#xe7b9;',
-      roles: ['R_SUPER', 'R_ADMIN']
+      roles: ['R_SUPER', 'R_ADMIN'],
+      layoutType: 'default'
     },
     children: [
       {
@@ -110,7 +112,8 @@ export const asyncRoutes: AppRouteRecord[] = [
     component: RoutesAlias.Layout,
     meta: {
       title: 'menus.result.title',
-      icon: '&#xe715;'
+      icon: '&#xe715;',
+      layoutType: 'default'
     },
     children: [
       {
@@ -139,7 +142,8 @@ export const asyncRoutes: AppRouteRecord[] = [
     component: RoutesAlias.Layout,
     meta: {
       title: 'menus.exception.title',
-      icon: '&#xe820;'
+      icon: '&#xe820;',
+      layoutType: 'default'
     },
     children: [
       {
@@ -180,7 +184,8 @@ export const asyncRoutes: AppRouteRecord[] = [
     component: RoutesAlias.Layout,
     meta: {
       title: 'AI工具',
-      icon: '&#xe721;'
+      icon: '&#xe721;',
+      layoutType: 'default'
     },
     children: [
       {
@@ -189,7 +194,8 @@ export const asyncRoutes: AppRouteRecord[] = [
         component: RoutesAlias.AISlides,
         meta: {
           title: 'AI PPT',
-          keepAlive: true
+          keepAlive: true,
+          layoutType: 'default'
         }
       },
       {
