@@ -224,6 +224,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           title: 'AI写作助手',
           keepAlive: true
         }
+      },
+      {
+        path: 'browser-extension',
+        name: 'BrowserExtension',
+        component: RoutesAlias.BrowserExtension,
+        meta: {
+          title: '浏览器插件',
+          keepAlive: true,
+          layoutType: 'top'
+        }
       }
     ]
   }

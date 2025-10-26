@@ -525,3 +525,17 @@ html.dark {
 .border-grey-line2-normal {
   border-color: var(--sds-color-grey-line2-normal, rgba(114, 118, 139, 0.16));
 }
+
+
+.f-i-center {
+    display: flex;
+    align-items: center;
+}
+
+.font-semibold{
+  font-weight: 600;
+}
+
+.bg-grey-layer1-normal{
+  background-color: var(--sds-color-grey-layer1-normal, #f6f6f8);
+}
