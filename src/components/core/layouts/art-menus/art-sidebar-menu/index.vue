@@ -1,10 +1,6 @@
 <!-- 左侧菜单 或 双列菜单 -->
 <template>
-  <div
-    class="layout-sidebar"
-    v-if="showLeftMenu || isDualMenu"
-    :class="{ 'no-border': menuList.length === 0 }"
-  >
+  <div class="layout-sidebar" v-if="showLeftMenu || isDualMenu" :class="{ 'no-border': menuList.length === 0 }">
     <!-- 双列菜单（左侧） -->
     <div v-if="isDualMenu" class="dual-menu-left" :style="{ background: getMenuTheme.background }">
       <ArtLogo class="logo" @click="navigateToHome" />
@@ -23,9 +19,7 @@
             >
               <div
                 :class="{
-                  'is-active': menu.meta.isFirstLevel
-                    ? menu.path === route.path
-                    : menu.path === firstLevelMenuPath
+                  'is-active': menu.meta.isFirstLevel ? menu.path === route.path : menu.path === firstLevelMenuPath
                 }"
                 :style="{
                   margin: dualMenuShowText ? '5px' : '15px',
@@ -66,7 +60,9 @@
           <SidebarHeader />
         </div>
 
-        <SidebarSection />
+        <!-- 根据layoutType动态渲染不同sidebar -->
+        <SidebarSection v-if="route.meta?.layoutType === 'default' || !route.meta?.layoutType" />
+        <ImgSection v-else-if="route.meta?.layoutType === 'image'" />
       </ElScrollbar>
 
       <div
@@ -92,6 +88,7 @@
   import { useCommon } from '@/composables/useCommon'
   import SidebarHeader from './widget/header.vue'
   import SidebarSection from './widget/section.vue'
+  import ImgSection from './widget/imgSection.vue'
 
   defineOptions({ name: 'ArtSidebarMenu' })
 
@@ -103,8 +100,7 @@
   const router = useRouter()
   const settingStore = useSettingStore()
 
-  const { getMenuOpenWidth, menuType, uniqueOpened, dualMenuShowText, menuOpen, getMenuTheme } =
-    storeToRefs(settingStore)
+  const { getMenuOpenWidth, menuType, uniqueOpened, dualMenuShowText, menuOpen, getMenuTheme } = storeToRefs(settingStore)
 
   // 组件内部状态
   const defaultOpenedMenus = ref<string[]>([])
@@ -118,9 +114,7 @@
 
   // 菜单类型判断
   const isTopLeftMenu = computed(() => menuType.value === MenuTypeEnum.TOP_LEFT)
-  const showLeftMenu = computed(
-    () => menuType.value === MenuTypeEnum.LEFT || menuType.value === MenuTypeEnum.TOP_LEFT
-  )
+  const showLeftMenu = computed(() => menuType.value === MenuTypeEnum.LEFT || menuType.value === MenuTypeEnum.TOP_LEFT)
   const isDualMenu = computed(() => menuType.value === MenuTypeEnum.DUAL_MENU)
 
   // 路由相关

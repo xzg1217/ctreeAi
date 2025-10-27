@@ -1,5 +1,5 @@
 <template>
-  <div class="price-page">
+  <div class="price-page" ref="pricePage">
     <div
       ><div class="pt-[48px] px-[32px] max-w-[1344px] mx-auto text-color-text-primary-1 flex flex-col items-center text-center"
         ><h1 class="text-[48px] font-semibold leading-[54px]">Sider: 提供一站式人工智能服务</h1
@@ -2899,10 +2899,36 @@
       ></div
     >
   </div>
+
+  <!-- 页面进入时显示的模态框 -->
+  <a-modal
+    v-model:visible="showWelcomeModal"
+    title=""
+    :footer="null"
+    :closable="true"
+    :mask-closable="true"
+    width="1036px"
+    :bodyStyle="{
+      background: 'linear-gradient(0deg, rgba(122, 89, 255, 0.08), rgba(122, 89, 255, 0.08)), #fff'
+    }"
+    :getContainer="() => pricePage"
+  >
+    <ModalContent />
+  </a-modal>
 </template>
 
 <script setup lang="ts">
-  // 页面逻辑，后续补充
+  import { ref, onMounted } from 'vue'
+  import ModalContent from './components/modal.vue'
+
+  // 控制欢迎模态框的显示
+  const showWelcomeModal = ref(false)
+  const pricePage = ref()
+
+  // 页面加载时显示模态框
+  onMounted(() => {
+    showWelcomeModal.value = true
+  })
 </script>
 
 <style scoped lang="scss">
@@ -2912,5 +2938,12 @@
 
   .group:hover .group-hover\:opacity-100 {
     opacity: 1;
+  }
+
+  :deep(.ant-modal-content) {
+    padding: 0 !important;
+    background: linear-gradient(0deg, rgba(122, 89, 255, 0.08), rgba(122, 89, 255, 0.08)), #fff;
+    border-radius: 20px;
+    overflow: hidden;
   }
 </style>

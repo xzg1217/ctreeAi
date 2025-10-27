@@ -504,3 +504,11 @@ html.dark {
 .border-t-color-grey-line1-normal {
   border-top-color: var(--color-grey-line1-normal, #72768b14);
 }
+
+.bg-color-brand-primary-normal {
+  background-color: var(--color-brand-primary-normal, #6128ff);
+}
+
+.bg-color-grey-line2-normal {
+  background-color: var(--color-grey-line2-normal, #72768b29);
+}

@@ -35,5 +35,8 @@ export enum RoutesAlias {
   BrowserExtension = '/agents/browser-extension', // 浏览器插件
 
   // 价格页面
-  Price = '/price' // 价格页面
+  Price = '/price', // 价格页面
+
+  // 图片模块
+  Images = '/images' // 图片生成
 }

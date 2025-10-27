@@ -246,5 +246,26 @@ export const asyncRoutes: AppRouteRecord[] = [
       keepAlive: true,
       layoutType: 'top'
     }
+  },
+  {
+    path: '/images',
+    name: 'Images',
+    component: RoutesAlias.Layout,
+    meta: {
+      title: '图片生成',
+      icon: '&#xe721;'
+    },
+    children: [
+      {
+        path: 'generate',
+        name: 'ImagesGenerate',
+        component: RoutesAlias.Images,
+        meta: {
+          title: '图片生成',
+          keepAlive: true,
+          layoutType: 'image'
+        }
+      }
+    ]
   }
 ]

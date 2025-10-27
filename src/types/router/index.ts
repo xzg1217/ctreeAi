@@ -46,7 +46,7 @@ export interface RouteMeta extends Record<string | number | symbol, unknown> {
   /** 父级路径 */
   parentPath?: string
   /** 布局类型 */
-  layoutType?: 'default' | 'top'
+  layoutType?: 'default' | 'top' | 'image'
 }
 
 // 扩展路由记录
