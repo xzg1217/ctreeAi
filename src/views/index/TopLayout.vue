@@ -155,15 +155,15 @@
       name: 'home.nav.extension',
       path: '/agents/browser-extension'
     },
-    {
-      name: 'home.nav.app',
-      path: '/setting',
-      icon: 'iconsys-xia2',
-      hoverIcon: 'iconsys-shang2'
-    },
+    // {
+    //   name: 'home.nav.app',
+    //   path: '/setting',
+    //   icon: 'iconsys-xia2',
+    //   hoverIcon: 'iconsys-shang2'
+    // },
     {
       name: 'home.nav.pricing',
-      path: '/setting'
+      path: '/price'
     }
   ])
 

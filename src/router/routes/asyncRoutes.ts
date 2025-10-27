@@ -236,5 +236,15 @@ export const asyncRoutes: AppRouteRecord[] = [
         }
       }
     ]
+  },
+  {
+    path: '/price',
+    name: 'Price',
+    component: RoutesAlias.Price,
+    meta: {
+      title: '价格',
+      keepAlive: true,
+      layoutType: 'top'
+    }
   }
 ]

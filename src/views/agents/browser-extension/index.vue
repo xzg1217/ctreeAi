@@ -48,7 +48,7 @@
           ><div
             ><button
               type="button"
-              class="bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
+              class="mt-8! bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
               ><div>安装 Sider 插件</div></button
             ></div
           ></div
@@ -75,7 +75,7 @@
           ><div
             ><button
               type="button"
-              class="bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
+              class="mt-8! bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
               ><div>安装 Sider 插件</div></button
             ></div
           ></div
@@ -102,7 +102,7 @@
           ><div
             ><button
               type="button"
-              class="bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
+              class="mt-8! bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
               ><div>安装 Sider 插件</div></button
             ></div
           ></div
@@ -129,7 +129,7 @@
           ><div
             ><button
               type="button"
-              class="bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
+              class="mt-8! bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
               ><div>安装 Sider 插件</div></button
             ></div
           ></div
@@ -156,7 +156,7 @@
           ><div
             ><button
               type="button"
-              class="bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
+              class="mt-8! bg-color-advanced-fill-normal hover:opacity-90 active:opacity-80 rounded-full px-[24px] py-[8px] flex-center gap-[12px] text-white! text-[20px] font-semibold leading-[22px] h-[40px] font-normal-16"
               ><div>安装 Sider 插件</div></button
             ></div
           ></div
@@ -733,18 +733,22 @@
       ></div
     ><div class="relative w-full text-white py-[160px] bg-[#09001e]"
       ><div
-        class="top-light transform-gpu scale-x-0 scale-y-50 origin-top absolute inset-0 bg-[url('/home-materials/top-light.jpg')] bg-no-repeat bg-top z-0"
+        class="top-light transform-gpu scale-x-0 scale-y-50 absolute inset-0 z-0"
         style="
           background-size: 100% 100%;
           translate: none;
           rotate: none;
           scale: none;
-          transform: translate(0px, 0px);
+          transform: translate3d(0px, 0px, 0px) translate(0, 0.5) !;
+          background: url('/src/assets/img/top-light.jpg');
+          transform-origin: top;
+          background-repeat: no-repeat;
+          background-position: top;
         "
       ></div
       ><div class="relative flex flex-col items-center gap-14 z-1"
         ><h2
-          class="w-[757px] max-w-full px-5 text-white text-[32px] md:text-[64px] font-medium leading-snug text-center"
+          class="w-[757px] max-w-full px-5 text-white! text-[32px] md:text-[64px] font-medium leading-snug text-center"
           >一个账号，全平台通用</h2
         ><a
           href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
