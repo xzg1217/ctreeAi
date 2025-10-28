@@ -16,17 +16,12 @@
               @click="go(item.path)"
             >
               <p class="">{{ t(item.name) }}</p>
-              <i
-                class="iconfont-sys font-size-[12px]"
-                :class="[item.icon, { 'rotate-icon': hoveredIndex === index }]"
-              ></i>
+              <i class="iconfont-sys font-size-[12px]" :class="[item.icon, { 'rotate-icon': hoveredIndex === index }]"></i>
             </div>
           </div>
         </div>
         <div class="home-header-right">
-          <a
-            class="font-size-[12px] flex gap-2 items-center add-chrome px-3 py-1.5 rounded-[999px] cursor-pointer hover:bg-gray-200"
-          >
+          <a class="font-size-[12px] flex gap-2 items-center add-chrome px-3 py-1.5 rounded-[999px] cursor-pointer hover:bg-gray-200">
             <i class="iconfont-sys iconsys-add-plus font-size-[12px]"></i>
 
             {{ t('home.buttons.addToChrome') }}
@@ -47,12 +42,7 @@
         <!-- wb扩展 -->
         <transition name="slide-down">
           <div v-if="hoveredIndex == 1" class="extension-panel-content">
-            <div
-              v-for="(item, index) in wbData"
-              :key="item.path"
-              class="panel-item flex gap-2 items-center"
-              @click="go(item.path)"
-            >
+            <div v-for="(item, index) in wbData" :key="item.path" class="panel-item flex gap-2 items-center" @click="go(item.path)">
               <p class="name">{{ t(item.name) }}</p>
 
               <div v-if="item.isNew" class="new-tag">New</div>
@@ -65,17 +55,9 @@
             <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2">
               <p class="title text-sm">{{ t(item.title) }}</p>
               <div class="flex flex-col gap-4 mt-4">
-                <p
-                  class="name text-[#333] cursor-pointer"
-                  v-for="value in item.children"
-                  :key="value.name"
-                  @click="go(value.path)"
+                <p class="name text-[#333] cursor-pointer" v-for="value in item.children" :key="value.name" @click="go(value.path)"
                   >{{ t(value.name) }}
-                  <span
-                    v-if="value.isNew"
-                    class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]"
-                    >New</span
-                  ></p
+                  <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span></p
                 >
               </div>
             </div>
@@ -102,23 +84,13 @@
               >{{ t('home.titles.deepResearchMinutes').replace('Deep Research ', '')
               }}<!-- -->&nbsp;</span
             ><span
-              style="
-                display: inline-block;
-                will-change: transform, filter, opacity;
-                filter: blur(0px);
-                opacity: 1;
-                transform: none;
-              "
+              style="display: inline-block; will-change: transform, filter, opacity; filter: blur(0px); opacity: 1; transform: none"
             ></span>
           </p>
         </h1>
-        <div
-          class="w-full max-w-[720px] mt-2 gsap-fade-in transform-gpu scale-75 opacity-0 animate-content content-container"
-        >
+        <div class="w-full max-w-[720px] mt-2 gsap-fade-in transform-gpu scale-75 opacity-0 animate-content content-container">
           <div class="w-fit mx-auto text-center">
-            <div
-              class="text-[16px] sm:text-[20px] font-normal leading-[1.33] text-color-text-primary-3 hero-text"
-            >
+            <div class="text-[16px] sm:text-[20px] font-normal leading-[1.33] text-color-text-primary-3 hero-text">
               {{ t('home.titles.aiResearchSimulation') }}
             </div>
           </div>
@@ -159,9 +131,7 @@
               <p class="text-xs opacity-60">{{ t('home.features.recommend') }}</p>
             </li>
             <li>
-              <h3 class="flex items-center gap-1 text-base font-bold">{{
-                t('home.stats.tenMillionPlus')
-              }}</h3>
+              <h3 class="flex items-center gap-1 text-base font-bold">{{ t('home.stats.tenMillionPlus') }}</h3>
               <p class="text-xs opacity-60">{{ t('home.stats.activeUsers') }}</p>
             </li>
             <li>
@@ -209,12 +179,7 @@
           style="translate: none; rotate: none; scale: none; opacity: 1; transform: scale(1, 1)"
         >
           <div id=":R1m97puaqfja:" class="w-full h-full" style="position: relative">
-            <canvas
-              width="1568"
-              height="588"
-              id="colorbgcanvas-1"
-              style="position: absolute; top: 0px; left: 0px; z-index: 0"
-            ></canvas>
+            <canvas width="1568" height="588" id="colorbgcanvas-1" style="position: absolute; top: 0px; left: 0px; z-index: 0"></canvas>
           </div>
         </div>
         <h3
@@ -240,24 +205,14 @@
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{
-                t('home.titles.deepResearchAgent')
-              }}</h2>
-              <p class="text-xl opacity-60 leading-normal">{{
-                t('home.titles.aiResearchWorkload')
-              }}</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.deepResearchAgent') }}</h2>
+              <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"
                 ><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research"
                   >{{ t('home.buttons.freeStart')
-                  }}<svg
-                    width="12"
-                    height="24"
-                    viewBox="0 0 12 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -274,24 +229,14 @@
         >
           <div class="relative block md:hidden text-left mb-14 w-full">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{
-                t('home.titles.deepResearchAgent')
-              }}</h2>
-              <p class="text-xl opacity-60 leading-normal">{{
-                t('home.titles.aiResearchWorkload')
-              }}</p>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.deepResearchAgent') }}</h2>
+              <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"
                 ><a
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research"
                   >{{ t('home.buttons.freeStart')
-                  }}<svg
-                    width="12"
-                    height="24"
-                    viewBox="0 0 12 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -319,17 +264,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/A1.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/A1.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -352,17 +288,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/A2.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/A2.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -385,17 +312,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/A3.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/A3.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -418,17 +336,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/A4.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/A4.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -445,36 +354,24 @@
         <div class="hidden md:block flex-1">
           <div class="sticky top-[120px]">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{
-                t('home.titles.allInOneBrowserAssistant')
-              }}</h2>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.allInOneBrowserAssistant') }}</h2>
               <p class="text-xl opacity-60">{{ t('home.titles.smartResearchAnytime') }}</p>
               <div class="mt-4 md:mt-8">
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
                     <h3 class="text-base font-bold">1000万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">{{
-                      t('home.stats.activeUsers')
-                    }}</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.activeUsers') }}</p>
                   </li>
                   <li>
                     <h3 class="text-base font-bold">10万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">{{
-                      t('home.stats.fiveStarReviews')
-                    }}</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
                   </li> </ul
                 ><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
                   >{{ t('home.buttons.getExtension')
-                  }}<svg
-                    width="12"
-                    height="24"
-                    viewBox="0 0 12 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -492,36 +389,24 @@
         >
           <div class="relative block md:hidden text-left mb-14 w-full">
             <div class="w-full flex flex-col gap-6">
-              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{
-                t('home.titles.allInOneBrowserAssistant')
-              }}</h2>
+              <h2 class="text-[40px] lg:text-[64px] font-semibold leading-[1.2]">{{ t('home.titles.allInOneBrowserAssistant') }}</h2>
               <p class="text-xl opacity-60">{{ t('home.titles.smartResearchAnytime') }}</p>
               <div class="mt-4 md:mt-8">
                 <ul class="flex items-center gap-5 text-text-primary-2 leading-normal">
                   <li>
                     <h3 class="text-base font-bold">1000万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">{{
-                      t('home.stats.activeUsers')
-                    }}</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.activeUsers') }}</p>
                   </li>
                   <li>
                     <h3 class="text-base font-bold">10万+</h3>
-                    <p class="text-xs leading-[18px] opacity-60">{{
-                      t('home.stats.fiveStarReviews')
-                    }}</p>
+                    <p class="text-xs leading-[18px] opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
                   </li> </ul
                 ><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
                   >{{ t('home.buttons.getExtension')
-                  }}<svg
-                    width="12"
-                    height="24"
-                    viewBox="0 0 12 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -550,17 +435,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/C1.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/C1.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -583,17 +459,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/C2.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/C2.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -617,17 +484,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/C3.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/C3.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -650,17 +508,8 @@
                   <div
                     class="flex-1 w-full h-full mx-auto bg-white rounded-t-xl mt-2 sm:mt-6 overflow-hidden contain-strict relative translate-y-[--img-tr] opacity-[--img-opacity] will-change-[translate,opacity]"
                   >
-                    <video
-                      class="w-full h-full"
-                      src="/src/assets/vedio/C4.mp4"
-                      loop=""
-                      autoplay=""
-                      playsinline=""
-                      muted=""
-                    ></video>
-                    <div
-                      class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]"
-                    >
+                    <video class="w-full h-full" src="/src/assets/vedio/C4.mp4" loop="" autoplay="" playsinline="" muted=""></video>
+                    <div class="absolute bottom-0 w-full h-8 z-10 left-0 bg-gradient-to-b from-[transparent_60%] to-[hsl(252_0%_0%/0.1)]">
                     </div>
                   </div>
                 </div>
@@ -674,14 +523,10 @@
       <div class="relative z-10 max-w-[1400px] mx-auto px-5 md:px-10">
         <div class="mx-auto">
           <div class="space-y-5 md:space-y-6">
-            <h2 class="text-[40px] lg:text-[64px] font-semibold leading-normal">{{
-              t('home.titles.buildYourKnowledgeBase')
-            }}</h2>
+            <h2 class="text-[40px] lg:text-[64px] font-semibold leading-normal">{{ t('home.titles.buildYourKnowledgeBase') }}</h2>
 
             <div class="flex justify-between items-end gap-8 flex-wrap">
-              <p
-                class="w-full md:w-[60%] max-w-[720px] text-xl font-normal leading-normal opacity-60"
-              >
+              <p class="w-full md:w-[60%] max-w-[720px] text-xl font-normal leading-normal opacity-60">
                 {{ t('home.features.saveResearchFindings') }}</p
               >
 
@@ -691,13 +536,7 @@
                   class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl flex gap-2 items-center w-fit h-fit ms-auto"
                   href="/wisebase"
                   >{{ t('home.buttons.freeStart')
-                  }}<svg
-                    width="12"
-                    height="24"
-                    viewBox="0 0 12 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -707,9 +546,7 @@
               ></div>
             </div>
           </div>
-          <div
-            class="relative mt-8 md:mt-16 max-w-[min(1400px,100%)] mx-auto rounded-2xl md:rounded-3xl overflow-hidden"
-          >
+          <div class="relative mt-8 md:mt-16 max-w-[min(1400px,100%)] mx-auto rounded-2xl md:rounded-3xl overflow-hidden">
             <video
               class="w-full aspect-[2100/1110] lg:aspect-[1216/574] -xl:aspect-[1300/614] 2xl:aspect-[2100/1110] object-cover object-top"
               src="/src/assets/vedio/wisebase.mp4"
@@ -720,9 +557,7 @@
             ></video>
           </div>
         </div>
-        <div
-          class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-[1400px] mx-auto mt-8 md:mt-[100px] mb-[160px]"
-        >
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 max-w-[1400px] mx-auto mt-8 md:mt-[100px] mb-[160px]">
           <div class=""
             ><video
               class="w-full aspect-square rounded-2xl md:rounded-3xl mb-4 md:mb-8 bg-color-grey-fill1-hover"
@@ -753,9 +588,7 @@
         </div>
       </div>
       <div class="relative z-10 px-5 md:px-10">
-        <div
-          class="relative -z-[1] mx-auto my-20 flex items-center justify-center w-full aspect-square md:aspect-[1856/680]"
-        >
+        <div class="relative -z-[1] mx-auto my-20 flex items-center justify-center w-full aspect-square md:aspect-[1856/680]">
           <div
             class="s6-bg scale-x-[200%] overflow-hidden absolute z-0 w-full h-full rounded-[32px] bg-blue-400"
             style="translate: none; rotate: none; scale: none; transform: scale(2, 1)"
@@ -766,14 +599,7 @@
                   width="3136"
                   height="574"
                   id="colorbgcanvas-2"
-                  style="
-                    width: 3136px;
-                    height: 574.469px;
-                    position: absolute;
-                    top: 0px;
-                    left: 0px;
-                    z-index: 0;
-                  "
+                  style="width: 3136px; height: 574.469px; position: absolute; top: 0px; left: 0px; z-index: 0"
                 ></canvas>
               </div>
             </div>
@@ -791,18 +617,10 @@
     <div class="relative w-[100vw] text-white! py-[160px] bg-[#09001e]">
       <div
         class="top-light transform-gpu scale-x-0 scale-y-50 origin-top absolute inset-0 bg-[url('/home-materials/top-light.jpg')] bg-no-repeat bg-top z-0"
-        style="
-          background-size: 100% 100%;
-          translate: none;
-          rotate: none;
-          scale: none;
-          transform: scale(0, 0.5);
-        "
+        style="background-size: 100% 100%; translate: none; rotate: none; scale: none; transform: scale(0, 0.5)"
       ></div>
       <div class="relative flex flex-col items-center gap-14 z-1">
-        <h2
-          class="w-[757px] max-w-full px-5 text-white! text-[32px] md:text-[64px] font-medium leading-snug text-center"
-        >
+        <h2 class="w-[757px] max-w-full px-5 text-white! text-[32px] md:text-[64px] font-medium leading-snug text-center">
           {{ t('home.titles.oneAccountAllPlatform') }}</h2
         ><a
           href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
@@ -892,10 +710,7 @@
             ></div
           >
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"
-            ><a
-              href="/download?windowsDl=1"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            ><a href="/download?windowsDl=1" target="_blank" class="flex flex-col items-center gap-2"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -918,10 +733,7 @@
           <div
             class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white relative group flex flex-col gap-2 items-center -order-1 md:order-none"
           >
-            <a
-              href="https://apps.apple.com/app/id6446394143"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            <a href="https://apps.apple.com/app/id6446394143" target="_blank" class="flex flex-col items-center gap-2"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -950,12 +762,7 @@
               >
                 <rect width="120" height="120" rx="12" fill="url(#IosQr_svg__a)"></rect>
                 <defs>
-                  <pattern
-                    id="IosQr_svg__a"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
+                  <pattern id="IosQr_svg__a" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#IosQr_svg__b" transform="scale(.00676)"></use>
                   </pattern>
                   <image
@@ -1006,12 +813,7 @@
               >
                 <rect width="120" height="120" rx="12" fill="url(#AndroidQr_svg__a)"></rect>
                 <defs>
-                  <pattern
-                    id="AndroidQr_svg__a"
-                    patternContentUnits="objectBoundingBox"
-                    width="1"
-                    height="1"
-                  >
+                  <pattern id="AndroidQr_svg__a" patternContentUnits="objectBoundingBox" width="1" height="1">
                     <use xlink:href="#AndroidQr_svg__b" transform="scale(.00676)"></use>
                   </pattern>
                   <image
@@ -1165,10 +967,10 @@
     {
       title: '图像',
       children: [
-        // {
-        //   name:'home.appNames.agent',
-        //   path: '/wisebase/agent'
-        // },
+        {
+          name: '图片生成',
+          path: '/images/generate'
+        }
       ]
     },
     {
@@ -1263,8 +1065,7 @@
     //获取title1的位置
     const viewportHeight = window.innerHeight
     const viewportCenter = viewportHeight / 2
-    const title1Center =
-      title1.getBoundingClientRect().top + title1.getBoundingClientRect().height / 2
+    const title1Center = title1.getBoundingClientRect().top + title1.getBoundingClientRect().height / 2
     console.log(title1Center, viewportCenter, scrollY)
 
     // 改变s2-card-bg的transform，使其铺满整个网页
@@ -1314,10 +1115,7 @@
       const elementCenter = elementRect.top + elementRect.height / 2
 
       // 计算元素中心与视口中心的距离比例（-1到1之间）
-      const distanceFactor = Math.max(
-        -1,
-        Math.min(1, (elementCenter - viewportCenter) / (viewportHeight / 2))
-      )
+      const distanceFactor = Math.max(-1, Math.min(1, (elementCenter - viewportCenter) / (viewportHeight / 2)))
 
       // 检查元素位置并应用相应的效果
       if (startScroll > scrollY || distanceFactor > 0) {

@@ -6,30 +6,18 @@
 
     <RouterView v-if="isRefresh" v-slot="{ Component, route }" :style="contentStyle">
       <!-- 路由信息调试 -->
-      <div v-if="isOpenRouteInfo === 'true'" class="route-info">
-        router meta：{{ route.meta }}
-      </div>
+      <div v-if="isOpenRouteInfo === 'true'" class="route-info"> router meta：{{ route.meta }} </div>
 
       <!-- 缓存路由动画 -->
       <Transition :name="showTransitionMask ? '' : actualTransition" mode="out-in" appear>
         <KeepAlive :max="10" :exclude="keepAliveExclude">
-          <component
-            class="art-page-view"
-            :is="Component"
-            :key="route.path"
-            v-if="route.meta.keepAlive"
-          />
+          <component class="art-page-view" :is="Component" :key="route.path" v-if="route.meta.keepAlive" />
         </KeepAlive>
       </Transition>
 
       <!-- 非缓存路由动画 -->
       <Transition :name="showTransitionMask ? '' : actualTransition" mode="out-in" appear>
-        <component
-          class="art-page-view"
-          :is="Component"
-          :key="route.path"
-          v-if="!route.meta.keepAlive"
-        />
+        <component class="art-page-view" :is="Component" :key="route.path" v-if="!route.meta.keepAlive" />
       </Transition>
     </RouterView>
 
@@ -63,9 +51,7 @@
   const prevIsFullPage = ref(isFullPage.value)
 
   // 切换动画名称：从全屏返回时不使用动画
-  const actualTransition = computed(() =>
-    prevIsFullPage.value && !isFullPage.value ? '' : pageTransition.value
-  )
+  const actualTransition = computed(() => (prevIsFullPage.value && !isFullPage.value ? '' : pageTransition.value))
 
   // 监听全屏状态变化，显示过渡遮罩
   watch(isFullPage, (val, oldVal) => {
@@ -117,6 +103,7 @@
 
 <style lang="scss" scoped>
   .layout-content {
+    height: 100% !important;
     &.no-basic-layout {
       overflow: auto;
     }

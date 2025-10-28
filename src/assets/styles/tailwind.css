@@ -497,6 +497,14 @@ html.dark {
   font-family: var(--font-family);
 }
 
+.font-medium-14 {
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+  font-family: var(--font-family);
+  font-weight: 600;
+}
+
 .hover\:bg-color-grey-fill2-hover:hover {
   background-color: var(--color-grey-fill2-hover, #72768b1f);
 }
@@ -511,4 +519,17 @@ html.dark {
 
 .bg-color-grey-line2-normal {
   background-color: var(--color-grey-line2-normal, #72768b29);
+}
+
+.bg-darken2 {
+    background-color: rgba(0,0,0,.03);
+}
+
+.bg-primary4 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(236 228 252/var(--tw-bg-opacity, 1));
+}
+
+.text-blackText2 {
+    color: rgba(0,0,0,.78);
 }

@@ -36,8 +36,8 @@
     .app-sidebar {
       flex-shrink: 0;
       //width: 240px;
-      background: var(--art-bg-color);
-      border-right: 1px solid var(--art-border-color);
+      //background: var(--art-bg-color);
+      //border-right: 1px solid var(--art-border-color);
       transition: width 0.3s ease;
 
       /* 菜单折叠时的样式 */
