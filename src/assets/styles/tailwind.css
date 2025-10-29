@@ -522,14 +522,27 @@ html.dark {
 }
 
 .bg-darken2 {
-    background-color: rgba(0,0,0,.03);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .bg-primary4 {
-    --tw-bg-opacity: 1;
-    background-color: rgb(236 228 252/var(--tw-bg-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 228 252 / var(--tw-bg-opacity, 1));
 }
 
 .text-blackText2 {
-    color: rgba(0,0,0,.78);
+  color: rgba(0, 0, 0, 0.78);
+}
+
+.text-blackText3 {
+  color: rgba(0, 0, 0, 0.35);
+}
+
+.text-primary5 {
+  --tw-text-opacity: 1;
+  color: rgb(110 52 197 / var(--tw-text-opacity, 1));
+}
+
+.bg-bg2 {
+  background-color: rgb(247 247 247 / var(--tw-bg-opacity, 1));
 }

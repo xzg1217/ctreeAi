@@ -265,6 +265,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'background-remover',
+        name: 'BackgroundRemover',
+        component: RoutesAlias.BackgroundRemover,
+        meta: {
+          title: '背景移除',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }

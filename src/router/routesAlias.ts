@@ -38,5 +38,6 @@ export enum RoutesAlias {
   Price = '/price', // 价格页面
 
   // 图片模块
-  Images = '/images' // 图片生成
+  Images = '/images', // 图片生成
+  BackgroundRemover = '/images/background-remover' // 背景移除
 }

@@ -9,7 +9,7 @@
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
             ><span class="line-clamp-1 flex items-center gap-[8px] font-normal-14"><ToolsPainterIcon />图片生成</span></button
           ></a
-        ><a target="_blank" href="/create/image/background-remover"
+        ><a target="_blank" @click="to('/images/background-remover')"
           ><button
             type="button"
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"

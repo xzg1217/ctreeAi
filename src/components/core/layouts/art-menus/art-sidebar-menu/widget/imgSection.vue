@@ -68,7 +68,7 @@
     },
     {
       title: '背景移除',
-      path: '/zh-CN/create/image/background-remover',
+      path: '/images/background-remover',
       icon: BackgroundRemoverIcon
     },
     {
