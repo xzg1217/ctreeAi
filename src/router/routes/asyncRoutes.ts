@@ -275,6 +275,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'text-remover',
+        name: 'TextRemover',
+        component: RoutesAlias.TextRemover,
+        meta: {
+          title: '文字移除',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }

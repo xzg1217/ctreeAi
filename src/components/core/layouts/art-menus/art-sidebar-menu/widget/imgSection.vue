@@ -73,7 +73,7 @@
     },
     {
       title: '文字移除',
-      path: '/zh-CN/create/image/text-remover',
+      path: '/images/text-remover',
       icon: TextRemoverIcon
     },
     {
