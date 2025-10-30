@@ -78,7 +78,7 @@
     },
     {
       title: '区域抹除',
-      path: '/zh-CN/create/image/photo-eraser',
+      path: '/images/photo-eraser',
       icon: PhotoEraserIcon
     },
     {

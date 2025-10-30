@@ -21,7 +21,7 @@
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
             ><span class="line-clamp-1 flex items-center gap-[8px] font-normal-14"><RemoveTextIcon />文字移除</span></button
           ></a
-        ><a target="_blank" href="/create/image/photo-eraser"
+        ><a target="_blank" @click="to('/images/photo-eraser')"
           ><button
             type="button"
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"

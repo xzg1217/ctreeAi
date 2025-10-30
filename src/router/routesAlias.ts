@@ -40,5 +40,6 @@ export enum RoutesAlias {
   // 图片模块
   Images = '/images', // 图片生成
   BackgroundRemover = '/images/background-remover', // 背景移除
-  TextRemover = '/images/text-remover' // 文字移除
+  TextRemover = '/images/text-remover', // 文字移除
+  PhotoEraser = '/images/photo-eraser' // 区域涂抹
 }

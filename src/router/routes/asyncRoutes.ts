@@ -285,6 +285,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'photo-eraser',
+        name: 'PhotoEraser',
+        component: RoutesAlias.PhotoEraser,
+        meta: {
+          title: '区域涂抹',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }
