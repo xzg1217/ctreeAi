@@ -27,19 +27,19 @@
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
             ><span class="line-clamp-1 flex items-center gap-[8px] font-normal-14"><EraseAreaIcon />区域抹除</span></button
           ></a
-        ><a target="_blank" href="/create/image/inpaint"
+        ><a target="_blank" @click="to('/images/photo-background-changer')"
           ><button
             type="button"
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
             ><span class="line-clamp-1 flex items-center gap-[8px] font-normal-14"><RepaintIcon />局部重绘</span></button
           ></a
-        ><a target="_blank" href="/create/image/image-upscaler"
+        ><a target="_blank" @click="to('/images/image-upscaler')"
           ><button
             type="button"
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
             ><span class="line-clamp-1 flex items-center gap-[8px] font-normal-14"><QualityIcon />画质提升</span></button
           ></a
-        ><a target="_blank" href="/create/image/photo-background-changer"
+        ><a target="_blank" @click="to('/images/photo-background-changer')"
           ><button
             type="button"
             class="min-w-[196px] rounded-[8px] !bg-transparent !p-[8px] text-color-text-primary-3 hover:bg-(--color-grey-fill1-hover)! hover:cursor-pointer"
