@@ -83,7 +83,8 @@
     },
     {
       title: '局部重绘',
-      path: '/zh-CN/create/image/inpaint',
+      path: '/images/inpaint',
+
       icon: InpaintIcon
     },
     {

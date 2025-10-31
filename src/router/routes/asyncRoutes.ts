@@ -295,6 +295,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'inpaint',
+        name: 'Inpaint',
+        component: RoutesAlias.Inpaint,
+        meta: {
+          title: '区域重绘',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }
