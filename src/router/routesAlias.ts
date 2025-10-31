@@ -42,5 +42,6 @@ export enum RoutesAlias {
   BackgroundRemover = '/images/background-remover', // 背景移除
   TextRemover = '/images/text-remover', // 文字移除
   PhotoEraser = '/images/photo-eraser', // 区域涂抹
-  Inpaint = '/images/inpaint' // 区域重绘
+  Inpaint = '/images/inpaint', // 区域重绘
+  ImageUpscaler = '/images/image-upscaler' // 画质提升
 }

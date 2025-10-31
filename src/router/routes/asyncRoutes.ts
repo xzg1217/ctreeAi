@@ -305,6 +305,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'image-upscaler',
+        name: 'ImageUpscaler',
+        component: RoutesAlias.ImageUpscaler,
+        meta: {
+          title: '画质提升',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }

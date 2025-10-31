@@ -550,3 +550,8 @@ html.dark {
 .flex-row {
   flex-direction: row;
 }
+
+.bg-bg5 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 240 240 / var(--tw-bg-opacity, 1));
+}

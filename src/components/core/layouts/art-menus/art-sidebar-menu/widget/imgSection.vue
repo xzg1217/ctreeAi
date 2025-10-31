@@ -89,7 +89,8 @@
     },
     {
       title: '画质提升',
-      path: '/zh-CN/create/image/image-upscaler',
+      path: '/images/image-upscaler',
+
       icon: ImageUpscalerIcon
     },
     {
