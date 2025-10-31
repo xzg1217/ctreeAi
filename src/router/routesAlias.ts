@@ -37,11 +37,12 @@ export enum RoutesAlias {
   // 价格页面
   Price = '/price', // 价格页面
 
-  // 图片模块
-  Images = '/images', // 图片生成
+  /** 图片模块 */
+  Images = '/images',
   BackgroundRemover = '/images/background-remover', // 背景移除
   TextRemover = '/images/text-remover', // 文字移除
-  PhotoEraser = '/images/photo-eraser', // 区域涂抹
+  PhotoEraser = '/images/photo-eraser', // 图片橡皮擦
   Inpaint = '/images/inpaint', // 区域重绘
-  ImageUpscaler = '/images/image-upscaler' // 画质提升
+  ImageUpscaler = '/images/image-upscaler', // 画质提升
+  PhotoBackgroundChanger = '/images/photo-background-changer', // 背景替换
 }

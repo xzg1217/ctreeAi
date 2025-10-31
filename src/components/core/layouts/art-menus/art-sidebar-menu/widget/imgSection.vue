@@ -95,7 +95,7 @@
     },
     {
       title: '背景替换',
-      path: '/zh-CN/create/image/photo-background-changer',
+      path: '/images/photo-background-changer',
       icon: PhotoBackgroundChangerIcon
     }
   ]

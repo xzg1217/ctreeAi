@@ -315,6 +315,16 @@ export const asyncRoutes: AppRouteRecord[] = [
           keepAlive: true,
           layoutType: 'image'
         }
+      },
+      {
+        path: 'photo-background-changer',
+        name: 'PhotoBackgroundChanger',
+        component: RoutesAlias.PhotoBackgroundChanger,
+        meta: {
+          title: '背景替换',
+          keepAlive: true,
+          layoutType: 'image'
+        }
       }
     ]
   }
