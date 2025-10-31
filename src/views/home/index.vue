@@ -29,7 +29,7 @@
 
           <!-- 登录 -->
           <a
-            class="font-normal-14 flex gap-2 items-center login px-3 py-1.5 rounded-[999px] cursor-pointer bg-black text-white"
+            class="font-normal-14 flex gap-2 items-center login px-3 py-1.5 rounded-[999px] cursor-pointer bg-black text-white!"
             @click="handleLoginClick"
           >
             {{ t('home.buttons.login') }}
@@ -57,7 +57,7 @@
               <div class="flex flex-col gap-4 mt-4">
                 <p class="name text-[#333] cursor-pointer" v-for="value in item.children" :key="value.name" @click="go(value.path)"
                   >{{ t(value.name) }}
-                  <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span></p
+                  <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white! bg-red-400 rounded-[4px]">New</span></p
                 >
               </div>
             </div>
@@ -113,7 +113,7 @@
                 viewBox="0 0 16 17"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                class="size-5 text-color-text-white-1"
+                class="size-5 text-color-text-white!-1"
               >
                 <path
                   d="M3.242 15.029c.635.157 1.772-.33 4.046-1.3l2.08-.89c3.181-1.36 4.772-2.04 5.254-2.996.418-.83.418-1.81 0-2.64-.482-.956-2.073-1.636-5.254-2.995l-2.13-.91c-2.247-.961-3.37-1.441-3.994-1.296A1.96 1.96 0 0 0 1.74 3.72c-.061.638.564 1.687 1.815 3.787.1.166.173.29.227.393H8a.6.6 0 0 1 0 1.2H3.79c-.053.105-.126.23-.225.4-1.249 2.14-1.873 3.21-1.796 3.86a1.96 1.96 0 0 0 1.473 1.668"
@@ -209,7 +209,7 @@
               <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"
                 ><a
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
+                  class="text-base text-white! bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research"
                   >{{ t('home.buttons.freeStart')
                   }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -233,7 +233,7 @@
               <p class="text-xl opacity-60 leading-normal">{{ t('home.titles.aiResearchWorkload') }}</p>
               <div class="mt-0 md:mt-8"
                 ><a
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
+                  class="text-base text-white! bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit"
                   href="/wisebase/deep-research"
                   >{{ t('home.buttons.freeStart')
                   }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -253,12 +253,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(253_100%_62%/1)] to-[hsla(252_100%_75%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.intelligentSearch') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -277,12 +277,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(216_100%_60%/1)] to-[hsla(218_100%_75%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.highlightNotes') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -301,12 +301,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(161_69%_41%/1)] to-[hsla(161_56%_53%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.detailedReport') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -325,12 +325,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(249_11%_31%/1)] to-[hsla(250_9%_52%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.visualReport') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -369,7 +369,7 @@
                 ><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
+                  class="text-base text-white! bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
                   >{{ t('home.buttons.getExtension')
                   }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -404,7 +404,7 @@
                 ><a
                   href="https://chrome.google.com/webstore/detail/sider-chatgpt-sidebar-gpt/difoiogjjojoaoomphldepapgpbgkhkb"
                   target="_blank"
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
+                  class="text-base text-white! bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl inline-flex gap-2 items-center w-fit mt-6"
                   >{{ t('home.buttons.getExtension')
                   }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -424,12 +424,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(30_98%_52%/1)] to-[hsla(35_95%_66%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.quickSummary') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -448,12 +448,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] group bg-gradient-to-br from-[hsla(159_58%_46%/1)] to-[hsla(159_58%_46%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.explainHighlight') }}</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -472,13 +472,13 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(216_100%_60%/1)] to-[hsla(218_100%_75%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     {{ t('home.features.oneClickTranslateWeb') }}</h3
                   >
 
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -497,12 +497,12 @@
                   class="@container relative rounded-2xl md:rounded-3xl overflow-hidden flex flex-col items-start justify-start mb-5 sm:mb-10 contain-strict px-4 sm:px-8 pt-4 sm:pt-8 transition duration-500 aspect-[1.2/1] md:aspect-[822/566] bg-gradient-to-br from-[hsla(253_100%_62%/1)] to-[hsla(252_100%_75%/1)]"
                 >
                   <h3
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-base sm:text-2xl font-semibold w-fit will-change-[top,left,transform] text-white!"
                   >
                     智能阅读工具，深入研究网页与文件</h3
                   >
                   <p
-                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white"
+                    class="relative top-[--position] left-[--position] translate-x-[--tr] translate-y-[--tr] text-xl opacity-60 mt-2 will-change-[top,left,transform] text-white!"
                   >
                   </p>
                   <div
@@ -533,7 +533,7 @@
               <div class=""
                 ><a
                   target="_blank"
-                  class="text-base text-white bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl flex gap-2 items-center w-fit h-fit ms-auto"
+                  class="text-base text-white! bg-[hsla(235_35%_7%/1)] px-4 py-2 rounded-xl flex gap-2 items-center w-fit h-fit ms-auto"
                   href="/wisebase"
                   >{{ t('home.buttons.freeStart')
                   }}<svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -643,7 +643,7 @@
         <div
           class="flex flex-wrap justify-start md:justify-center gap-y-5 gap-x-3 md:gap-x-4 px-5 md:px-[10%] text-[hsla(235_100%_92%/0.56)]"
         >
-          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"
+          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
             ><a
               href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
               target="_blank"
@@ -663,7 +663,7 @@
               ><span class="text-xs md:text-sm">Chrome</span></a
             ></div
           >
-          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"
+          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
             ><a
               href="https://microsoftedge.microsoft.com/addons/detail/sider-ai-sidebar/dhoenijjpgpeimemopealfcbiecgceod"
               target="_blank"
@@ -687,7 +687,7 @@
             class="w-0.5 h-15 hidden md:block bg-gradient-to-b from-[hsla(230_10%_50%/0)] via-[hsla(230_10%_50%/0.4)] via-[50%] to-[hsla(230_10%_50%/0)]"
           >
           </div>
-          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"
+          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
             ><a
               href="https://sider-1257001727.cos.ap-guangzhou.myqcloud.com/mac/Sider-release-2.5.7.dmg"
               target="_blank"
@@ -709,7 +709,7 @@
               ><span class="text-xs md:text-sm">Mac OS</span></a
             ></div
           >
-          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white"
+          <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
             ><a href="/download?windowsDl=1" target="_blank" class="flex flex-col items-center gap-2"
               ><span class="size-[22px] md:size-8"
                 ><svg
@@ -731,7 +731,7 @@
           >
           </div>
           <div
-            class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white relative group flex flex-col gap-2 items-center -order-1 md:order-none"
+            class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white! relative group flex flex-col gap-2 items-center -order-1 md:order-none"
           >
             <a href="https://apps.apple.com/app/id6446394143" target="_blank" class="flex flex-col items-center gap-2"
               ><span class="size-[22px] md:size-8"
@@ -777,7 +777,7 @@
             </div>
           </div>
           <div
-            class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white relative group flex flex-col gap-2 items-center -order-1 md:order-none"
+            class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white! relative group flex flex-col gap-2 items-center -order-1 md:order-none"
           >
             <a
               href="https://sider-1257001727.cos.ap-guangzhou.myqcloud.com/android/SiderAndroid-release-3.4.7-1760412485974.apk"

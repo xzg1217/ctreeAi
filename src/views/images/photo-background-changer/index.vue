@@ -58,11 +58,7 @@
               class="ant-input css-1qi1usw ant-input-borderless w-full !min-h-[40px] py-[8px] !bg-[rgba(0,0,0,0.04)]"
               style="overflow-y: hidden; resize: none; height: 38px; max-height: 82px"
             ></textarea></div
-          ><a-button
-            type="primary"
-            class="!flex items-center justify-center !border-none bg-[#8A57EA] !h-[40px] gap-[8px]"
-            disabled
-          >
+          ><a-button type="primary" class="!flex items-center justify-center !border-none bg-[#8A57EA] !h-[40px] gap-[8px]" disabled>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 fill-rule="evenodd"
@@ -79,8 +75,7 @@
             </svg>
             <span>改变</span>
           </a-button>
-          </div
-        ></div
+        </div></div
       ></div
     ></div
   >
@@ -92,8 +87,8 @@
 
 <style scoped lang="scss">
   :deep(.ant-btn-primary) {
-    background-color: #8A57EA;
-    border-color: #8A57EA;
+    background-color: #8a57ea;
+    border-color: #8a57ea;
     color: #fff;
 
     &:hover {
@@ -102,8 +97,8 @@
     }
 
     &.ant-btn-disabled {
-      background-color: #DCCDF9;
-      border-color: #DCCDF9;
+      background-color: #dccdf9;
+      border-color: #dccdf9;
       color: #fff;
     }
   }

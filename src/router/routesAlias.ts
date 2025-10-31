@@ -44,5 +44,5 @@ export enum RoutesAlias {
   PhotoEraser = '/images/photo-eraser', // 图片橡皮擦
   Inpaint = '/images/inpaint', // 区域重绘
   ImageUpscaler = '/images/image-upscaler', // 画质提升
-  PhotoBackgroundChanger = '/images/photo-background-changer', // 背景替换
+  PhotoBackgroundChanger = '/images/photo-background-changer' // 背景替换
 }
