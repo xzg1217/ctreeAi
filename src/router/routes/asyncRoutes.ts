@@ -327,5 +327,25 @@ export const asyncRoutes: AppRouteRecord[] = [
         }
       }
     ]
+  },
+  {
+    path: '/wisebase',
+    name: 'Wisebase',
+    component: RoutesAlias.Layout,
+    meta: {
+      title: 'Wisebase',
+      icon: '&#xe721;'
+    },
+    children: [
+      {
+        path: 'index',
+        name: 'WisebaseIndex',
+        component: RoutesAlias.Wisebase,
+        meta: {
+          title: 'Wisebase',
+          keepAlive: true
+        }
+      }
+    ]
   }
 ]

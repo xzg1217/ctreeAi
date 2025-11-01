@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 :root {
+  --font-family: "D-DIN Exp", "DM Sans", arial, "microsoft yahei", pingfangsc, helvetica, sans-serif;
   --sds-light: initial;
   --sds-dark: ;
   --color-brand-primary-normal: #6128ff;
@@ -495,6 +496,8 @@ html.dark {
   line-height: 24px;
   font-style: normal;
   font-family: var(--font-family);
+  //font-family: "D-DIN Exp", "DM Sans", arial, "microsoft yahei", pingfangsc, helvetica, sans-serif;
+  font-weight: 500;
 }
 
 .font-medium-14 {
@@ -503,6 +506,13 @@ html.dark {
   font-style: normal;
   font-family: var(--font-family);
   font-weight: 600;
+}
+.font-normal-14 {
+    font-size: 14px;
+    line-height: 20px;
+    font-style: normal;
+    font-family: var(--font-family);
+    font-weight: 400;
 }
 
 .hover\:bg-color-grey-fill2-hover:hover {
@@ -554,4 +564,14 @@ html.dark {
 .bg-bg5 {
   --tw-bg-opacity: 1;
   background-color: rgb(240 240 240 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:text-color-text-primary-1:hover {
+    color: var(--color-text-primary-1, rgba(0,0,0,.96));
+}
+.hover\:bg-color-grey-fill1-hover:hover {
+    background-color: var(--color-grey-fill1-hover, rgba(114,118,139,.08));
+}
+.hover\:border-color-grey-line2-hover:hover {
+    border-color: var(--color-grey-line2-hover, rgba(114,118,139,.32));
 }

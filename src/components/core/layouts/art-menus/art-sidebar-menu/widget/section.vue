@@ -316,10 +316,26 @@ const handleNavigation = (path?: string) => {
     </a-popover>
   </div>
   <div class="mx-[22px] my-[6px] h-[1px] bg-color-grey-line1-normal"></div>
-  <div class="relative my-1 box-border w-full space-y-1 px-[12px]"><a draggable="false" class="block"
-      href="/zh-CN/wisebase">
+  <div class="relative my-1 box-border w-full space-y-1 px-[12px]"><a draggable="false" class="block" @click="handleNavigation('/wisebase/index')">
       <div
-        class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)">
+        :class="[
+          'box-border',
+          'h-[36px]',
+          'cursor-pointer',
+          'gap-[8px]',
+          'rounded-[10px]',
+          'px-[8px]',
+          'py-[6px]',
+          'transition-colors',
+          'flex',
+          'items-center',
+          'text-color-text-primary-3',
+          'hover:bg-(--menu-hover-bg-color)',
+          {
+            'bg-[var(--menu-active-bg-color)] text-[var(--menu-active-color)]':
+              activeMenuPath === '/wisebase/index'
+          }
+        ]">
         <DragHandleIcon
           class="absolute -left-[3px] top-1/2 -translate-y-1/2 px-[1px] text-color-text-primary-5 opacity-0 group-hover:opacity-100" />
         <span v-show="menuOpen"
