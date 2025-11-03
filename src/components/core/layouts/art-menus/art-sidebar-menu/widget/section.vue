@@ -349,7 +349,7 @@ const handleNavigation = (path?: string) => {
         </span>
       </div>
     </a>
-    <div 
+    <!-- <div 
       v-for="(item, index) in sortedDemoItems" 
       :key="item.id"
       class="relative" 
@@ -402,7 +402,8 @@ const handleNavigation = (path?: string) => {
         </div>
       </a>
       <div class="absolute h-1 w-full bg-color-assistive-blue-focus opacity-0 -bottom-1"></div>
-    </div><a draggable="false" class="block" href="/zh-CN/wisebase/ai-inbox">
+    </div> -->
+    <!-- <a draggable="false" class="block" href="/zh-CN/wisebase/ai-inbox">
       <div
         class="box-border h-[36px] cursor-pointer gap-[8px] rounded-[10px] px-[8px] py-[6px] transition-colors flex items-center text-color-text-primary-3 hover:bg-(--menu-hover-bg-color)">
         <DragHandleIcon
@@ -414,7 +415,7 @@ const handleNavigation = (path?: string) => {
           class="ant-typography ant-typography-ellipsis text-ellipsis overflow-hidden ant-typography-ellipsis-single-line line-clamp-1 w-max !text-inherit text-[14px] css-1p6dcus css-var-R5ubrafja">AI
           暂存箱</span>
       </div>
-    </a>
+    </a> -->
   </div>
 </template>
 

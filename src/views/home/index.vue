@@ -51,10 +51,10 @@
         </transition>
 
         <transition name="slide-down">
-          <div v-if="hoveredIndex == 2" class="extension-panel-content flex gap-2">
-            <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2">
+          <div v-if="hoveredIndex == 2" class="extension-panel-content flex gap-[50px]">
+            <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2!">
               <p class="title text-sm">{{ t(item.title) }}</p>
-              <div class="flex flex-col gap-4 mt-4">
+              <div class="flex flex-col gap-6! mt-4">
                 <p class="name text-[#333] cursor-pointer" v-for="value in item.children" :key="value.name" @click="go(value.path)"
                   >{{ t(value.name) }}
                   <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white! bg-red-400 rounded-[4px]">New</span></p
@@ -101,7 +101,7 @@
               rows="1"
               :placeholder="t('home.placeholders.researchTopic')"
               v-model="searchText"
-              class="w-full box-border max-h-36 ps-6 py-2.5 my-[10px] pe-16 text-color-text-primary-1 block bg-transparent border-none outline-none resize-none text-base search-textarea"
+              class="w-full box-border max-h-36 ps-6 py-2.5 my-[10px] pe-16 text-color-text-primary-1 block bg-transparent border-none outline-none resize-none! text-base search-textarea"
               maxlength="200"
             ></textarea>
             <button
@@ -127,15 +127,15 @@
         >
           <ul class="flex items-center justify-center gap-5 text-text-primary-2 w-full md:w-auto">
             <li>
-              <h3 class="text-base font-bold">2025</h3>
+              <h3 class="text-base font-bold!">2025</h3>
               <p class="text-xs opacity-60">{{ t('home.features.recommend') }}</p>
             </li>
             <li>
-              <h3 class="flex items-center gap-1 text-base font-bold">{{ t('home.stats.tenMillionPlus') }}</h3>
+              <h3 class="flex items-center gap-1 text-base font-bold!">{{ t('home.stats.tenMillionPlus') }}</h3>
               <p class="text-xs opacity-60">{{ t('home.stats.activeUsers') }}</p>
             </li>
             <li>
-              <h3 class="text-base font-bold">{{ t('home.stats.oneHundredThousandPlus') }}</h3>
+              <h3 class="text-base font-bold!">{{ t('home.stats.oneHundredThousandPlus') }}</h3>
               <p class="text-xs opacity-60">{{ t('home.stats.fiveStarReviews') }}</p>
             </li>
           </ul>
@@ -147,14 +147,14 @@
             <a
               href="https://app.arcade.software/share/X4F2JwLx3SewOIa9GDGd"
               target="_blank"
-              class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-solid text-[var(--color-text-primary-3)] hover:bg-gray-100 hover:text-black no-underline"
+              class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-color-grey-line2-normal text-[var(--color-text-primary-3)] hover:bg-color-grey-fill1-hover hover:text-color-text-primary-1 no-underline"
             >
               <i class="iconfont-sys font-size-[20px] iconsys-shuju"></i>
               {{ t('home.features.viewDemo') }}</a
             >
 
             <a
-              class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-solid text-[var(--color-text-primary-3)] hover:bg-gray-100 hover:text-black no-underline"
+              class="cursor-pointer flex items-center gap-3 rounded-xl border px-4 py-2 text-base border-color-grey-line2-normal text-[var(--color-text-primary-3)] hover:bg-color-grey-fill1-hover hover:text-color-text-primary-1 no-underline"
             >
               <i class="iconfont-sys font-size-[20px] iconsys-shuju"></i>
               {{ t('home.features.learn') }} Sider 5.0</a
@@ -970,6 +970,30 @@
         {
           name: '图片生成',
           path: '/images/generate'
+        },
+        {
+          name: '背景移除',
+          path: '/images/background-remover'
+        },
+        {
+          name: '背景替换',
+          path: '/images/photo-background-changer'
+        },
+        {
+          name: '区域抹除',
+          path: '/images/photo-eraser'
+        },
+        {
+          name: '文字移除',
+          path: '/images/text-remover'
+        },
+        {
+          name: '局部重绘',
+          path: '/images/inpaint'
+        },
+        {
+          name: '画质提升',
+          path: '/images/image-upscaler'
         }
       ]
     },
@@ -1041,10 +1065,11 @@
       }
 
       // 为第三个canvas初始化蓝色流体云动画
-      if (document.getElementById('colorbgcanvas-2')) {
+      /* if (document.getElementById('colorbgcanvas-2')) {
         blueCloudAnimation = new BlueCloudAnimation('colorbgcanvas-2', '#1C4FCE', '#51A2FF')
         console.log('Blue Cloud Animation initialized with colors #1C4FCE and #51A2FF')
       }
+      */
     }, 100)
 
     // 添加滚动事件监听器
