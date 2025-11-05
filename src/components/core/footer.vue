@@ -53,7 +53,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="/zh-CN/contact"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#Email_svg__a)" fill="#DCDFF9" fill-opacity="0.92">
                 <path
@@ -69,7 +69,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://discord.com/invite/5PQ3pYaTDZ"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M11.87 2.558c1.572 2.334 2.358 4.954 2.072 7.98 0 0 0 .023-.024.023a11.3 11.3 0 0 1-3.501 1.763c-.024.024-.024 0-.048 0-.262-.381-.5-.762-.714-1.167v-.048l.023-.024c.382-.143.739-.31 1.096-.524 0 0 .024 0 .024-.024 0-.023 0-.023-.024-.047-.071-.048-.143-.095-.214-.167h-.048c-2.263 1.048-4.74 1.048-7.027 0h-.047c-.072.072-.143.12-.215.167-.023.024-.023.024-.023.047 0 .024 0 .024.023.024.334.215.715.381 1.096.524 0 0 0 .024.024.024v.048c-.214.405-.453.786-.715 1.167-.023 0-.047.024-.047 0A11.3 11.3 0 0 1 .079 10.56c-.024 0-.024-.024-.024-.024-.238-2.62.262-5.264 2.073-7.98h.024a10.9 10.9 0 0 1 2.834-.88c.024-.024.048 0 .048 0 .143.238.262.5.357.738a10.4 10.4 0 0 1 3.216 0c.095-.238.214-.5.357-.738 0 0 .024-.024.048 0 .976.166 1.929.452 2.834.88zM4.676 8.942c.691 0 1.263-.644 1.263-1.406 0-.786-.548-1.405-1.263-1.405-.69 0-1.262.62-1.262 1.405 0 .762.572 1.406 1.262 1.406m4.645 0c.715 0 1.263-.644 1.263-1.406.023-.786-.548-1.405-1.263-1.405-.69 0-1.238.62-1.238 1.405 0 .762.547 1.406 1.238 1.406"
@@ -79,7 +79,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://x.com/Sider_AI"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M11.026.584h2.147l-4.69 5.36L14 13.24H9.68L6.296 8.815l-3.871 4.424H.276l5.017-5.734L0 .584h4.43l3.058 4.044zm-.754 11.37h1.19L3.783 1.8H2.507z"
@@ -89,7 +89,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://www.youtube.com/@Sider_ai"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M13.693 3.458C14 4.533 14 6.836 14 6.836s0 2.278-.307 3.379a1.71 1.71 0 0 1-1.229 1.228c-1.1.282-5.451.282-5.451.282s-4.377 0-5.477-.282a1.71 1.71 0 0 1-1.229-1.228C0 9.114 0 6.836 0 6.836s0-2.303.307-3.378c.154-.615.64-1.1 1.229-1.254 1.1-.308 5.477-.308 5.477-.308s4.35 0 5.451.308c.589.153 1.075.64 1.229 1.254M5.58 8.909l3.634-2.073L5.58 4.763z"
@@ -99,7 +99,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://www.tiktok.com/@sider.ai"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#TikTok_svg__a)">
                 <path
@@ -116,7 +116,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://www.facebook.com/SiderAIApp"
+            @click="showComingSoon"
             ><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#Facebook_svg__a)">
                 <path
@@ -133,7 +133,7 @@
           ><a
             class="size-8 md:size-9 rounded-full shrink-0 flex items-center justify-center cursor-pointer bg-[rgba(114,118,139,0.12)] hover:bg-[rgba(114,118,139,0.24)] text-text-white-2 hover:text-text-white-1"
             target="_blank"
-            href="https://www.linkedin.com/company/sider-ai"
+            @click="showComingSoon"
             ><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
                 d="M13.867.146c.531 0 1 .47 1 1.032v11.968c0 .563-.469 1-1 1H1.836a.98.98 0 0 1-.969-1V1.178c0-.563.438-1.032.969-1.032zm-8.781 12V5.49H3.023v6.656zM4.055 4.554c.656 0 1.187-.532 1.187-1.188s-.531-1.219-1.187-1.219a1.22 1.22 0 0 0-1.22 1.22c0 .655.532 1.187 1.22 1.187m8.812 7.594V8.49c0-1.781-.406-3.187-2.5-3.187-1 0-1.687.562-1.969 1.093h-.03V5.49h-1.97v6.656h2.063v-3.28c0-.876.156-1.72 1.25-1.72 1.062 0 1.062 1 1.062 1.75v3.25z"
@@ -152,23 +152,23 @@
               <div class="font-medium mb-4">{{ t('home.footer.categories.applications') }}</div>
               <ul class="flex flex-col gap-y-4 gap-x-4">
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/extensions">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.applications.extension')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/apps/ios">{{ t('home.platforms.ios') }}</a></li
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{ t('home.platforms.ios') }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/apps/android">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.platforms.android')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/apps/mac">{{ t('home.platforms.mac') }}</a></li
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{ t('home.platforms.mac') }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/apps/windows">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.platforms.windows')
                   }}</a></li
                 >
@@ -178,48 +178,48 @@
               <div class="font-medium mb-4">{{ t('home.footer.categories.wisebase') }}</div>
               <ul class="flex-col grid grid-cols-2 gap-4">
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.wisebase')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/deep-research">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.deepResearch')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/scholar-research">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.scholarResearch')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/math-solver">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.mathSolver')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="Rec Note" href="/zh-CN/rec-note">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="Rec Note" @click="showComingSoon">{{
                     t('home.footer.wisebase.recNote')
                   }}</a
                   ><span class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                 </li>
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/audio-to-text">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.audioToText')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/gamification">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.gamifiedLearning')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/wisebase/interactive-reading">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.interactiveReading')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/chatpdf">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.wisebase.chatpdf')
                   }}</a></li
                 >
@@ -229,34 +229,34 @@
               <div class="font-medium mb-4">{{ t('home.footer.categories.tools') }}</div>
               <ul class="flex-col grid grid-cols-2 gap-4">
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/agents/web-creator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.tools.webCreator')
                   }}</a
                   ><span class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                 </li>
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/agents/ai-slides">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.tools.aiSlides')
                   }}</a
                   ><span class="px-1 font-[600]! text-[11px] text-white bg-red-400 rounded-[4px]">New</span>
                 </li>
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/agents/ai-writer">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.tools.aiWriter')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/video/ai-video-shortener">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.tools.videoShortener')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/video/sora-video-downloader">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.soraVideoDownloader')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/nano-banana-ai-image-generator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.nanoBanana')
                   }}</a
                   ><span
@@ -289,57 +289,57 @@
                       </defs></svg></span
                 ></li>
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/ai-image-generator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.aiImageGenerator')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/italian-brainrot-generator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.italianBrainrotGenerator')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/background-remover">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.backgroundRemover')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/photo-background-changer">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.photoBackgroundChanger')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/photo-eraser">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.photoEraser')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/text-remover">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.textRemover')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/inpaint">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.inpaint')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/create/image/image-upscaler">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.imageUpscaler')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/translator/text-translator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.textTranslator')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/translator/image-translator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.imageTranslator')
                   }}</a></li
                 >
                 <li class="flex items-center gap-2"
-                  ><a class="text-(--art-text-muted) hover:text-white" title="" href="/zh-CN/translator/pdf-translator">{{
+                  ><a class="text-(--art-text-muted) hover:text-white cursor-pointer" title="" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.pdfTranslator')
                   }}</a></li
                 >
@@ -355,47 +355,47 @@
             <div class="text-sm">
               <ul class="flex flex-col gap-4">
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/contact">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.contact')
                   }}</a>
                 </li>
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/help-center">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.helpCenter')
                   }}</a></li
                 >
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/download">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.download')
                   }}</a>
                 </li>
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/pricing">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.pricing')
                   }}</a>
                 </li>
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/whats-new">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.whatsNew')
                   }}</a>
                 </li>
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/blog">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.blog')
                   }}</a></li
                 >
                 <li
-                  ><a target="_blank" class="text-(--art-text-muted) hover:text-white" href="https://community.sider.ai/">{{
+                  ><a target="_blank" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.community')
                   }}</a></li
                 >
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/partners">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.partners')
                   }}</a>
                 </li>
                 <li
-                  ><a target="_self" class="text-(--art-text-muted) hover:text-white" href="/zh-CN/affiliate">{{
+                  ><a target="_self" class="text-(--art-text-muted) hover:text-white cursor-pointer" @click="showComingSoon">{{
                     t('home.footer.bottomLinks.affiliate')
                   }}</a>
                 </li>
@@ -501,13 +501,13 @@
           <div class="text-sm text-text-white-3 flex gap-[10px] flex-wrap justify-start order-1 sm:order-none">
             ©<!-- -->2025<!-- -->
             <!-- -->版权所有<div class="bg-[rgba(214,218,255,0.10)] w-[1px] h-[20px]"></div
-            ><a class="hover:text-text-white-1" href="/zh-CN/policies/terms">{{ t('home.footer.termsOfUse') }}</a>
+            ><a class="hover:text-text-white-1 cursor-pointer" @click="showComingSoon">{{ t('home.footer.termsOfUse') }}</a>
 
             <div class="bg-[rgba(214,218,255,0.10)] w-[1px] h-[20px]"></div
-            ><a class="hover:text-text-white-1" href="/zh-CN/policies/privacy">{{ t('home.footer.privacyPolicy') }}</a>
+            ><a class="hover:text-text-white-1 cursor-pointer" @click="showComingSoon">{{ t('home.footer.privacyPolicy') }}</a>
           </div>
           <a-dropdown :trigger="['click']" placement="topLeft">
-            <a class="ant-dropdown-link" @click.prevent>
+            <a class="ant-dropdown-link cursor-pointer" @click.prevent>
               <button
                 class="flex items-center px-3 py-1.5 gap-2 text-sm text-[#D6DAFF8F] rounded-[8px] bg-[#1E1F2B00] transition-all hover:bg-[#72768B29]"
                 ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -567,8 +567,14 @@
   import { useI18n } from 'vue-i18n'
   import { LanguageEnum } from '@/enums/appEnum'
   import { changeLanguage } from '@/locales'
+  import { message } from 'ant-design-vue'
 
   const { locale, t } = useI18n()
+  
+  // 显示"敬请期待"提示
+  const showComingSoon = () => {
+    message.info('敬请期待')
+  }
 
   // 语言列表数据
   const languages = [

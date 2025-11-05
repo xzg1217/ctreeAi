@@ -104,13 +104,13 @@
 
     <!-- 第三模块 -->
     <div class="mt-[-80px] relative w-full h-[200vh]">
-      <div class="text-base flex justify-center font-size-[12px]">
+      <div class="text-base flex justify-center font-size-[12px] text-text-primary-3">
         <i class="iconfont-sys font-size-[12px] iconsys-xia mr-2 bounce-arrow-icon"></i>
         {{ t('home.features.learnMore') }}</div
       >
       <!-- 滚动区 -->
       <div
-        class="s2-card w-full relative aspect-square xs:aspect-[16/9] lg:aspect-[16/6] xl:aspect-[16/6] text-center text-[32px] sm:text-[68px] lg:text-[92px]"
+        class="s2-card w-full relative aspect-square xs:aspect-[16/9] lg:aspect-[16/6] xl:aspect-[16/6] text-center text-[32px] sm:text-[68px] lg:text-[92px] mt-2!"
       >
         <div
           class="s2-card-bg from-hide origin-center top-0 left-0 w-full h-full absolute bg-[#5b59c9] rounded-2xl md:rounded-3xl overflow-hidden"
@@ -558,12 +558,12 @@
         style="background-size: 100% 100%; translate: none; rotate: none; scale: none; transform: scale(0, 0.5)"
       ></div>
       <div class="relative flex flex-col items-center gap-14 z-1">
+        {{ contextHolder }}
         <h2 class="w-[757px] max-w-full px-5 text-white! text-[32px] md:text-[64px] font-medium leading-snug text-center">
           {{ t('home.titles.oneAccountAllPlatform') }}</h2
         ><a
-          href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
-          target="_blank"
-          class="bg-white text-black rounded-full px-[15px] py-3 flex items-center gap-2.5 relative hover:before:opacity-100 before:opacity-0 before:transition-opacity before:duration-500 before:ease-in-out before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-[rgba(243,139,65,0.80)_5%] before:via-[rgba(243,71,183,0.80)_28.7%,rgba(85,139,252,0.80)_57.74%] before:to-[rgba(104,69,255,0.80)_95.01%] before:blur-[24px] before:content-[&quot;&quot;]"
+          class="bg-white text-black rounded-full px-[15px] py-3 flex items-center gap-2.5 relative hover:before:opacity-100 before:opacity-0 before:transition-opacity before:duration-500 before:ease-in-out before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-[rgba(243,139,65,0.80)_5%] before:via-[rgba(243,71,183,0.80)_28.7%,rgba(85,139,252,0.80)_57.74%] before:to-[rgba(104,69,255,0.80)_95.01%] before:blur-[24px] before:content-[&quot;&quot;] cursor-pointer"
+          @click="showComingSoon"
           ><span class="size-6 inline-block"
             ><svg
               width="24"
@@ -582,10 +582,7 @@
           class="flex flex-wrap justify-start md:justify-center gap-y-5 gap-x-3 md:gap-x-4 px-5 md:px-[10%] text-[hsla(235_100%_92%/0.56)]"
         >
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
-            ><a
-              href="https://chrome.google.com/webstore/detail/chatgpt-sidebar/difoiogjjojoaoomphldepapgpbgkhkb"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            ><a class="flex flex-col items-center gap-2 cursor-pointer" @click="showComingSoon"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   width="24"
@@ -602,10 +599,7 @@
             ></div
           >
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
-            ><a
-              href="https://microsoftedge.microsoft.com/addons/detail/sider-ai-sidebar/dhoenijjpgpeimemopealfcbiecgceod"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            ><a target="_blank" class="flex flex-col items-center gap-2"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   width="24"
@@ -626,10 +620,7 @@
           >
           </div>
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
-            ><a
-              href="https://sider-1257001727.cos.ap-guangzhou.myqcloud.com/mac/Sider-release-2.5.7.dmg"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            ><a target="_blank" class="flex flex-col items-center gap-2" @click="showComingSoon"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -648,7 +639,7 @@
             ></div
           >
           <div class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white!"
-            ><a href="/download?windowsDl=1" target="_blank" class="flex flex-col items-center gap-2"
+            ><a target="_blank" class="flex flex-col items-center gap-2" @click="showComingSoon"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -671,7 +662,7 @@
           <div
             class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white! relative group flex flex-col gap-2 items-center -order-1 md:order-none"
           >
-            <a href="https://apps.apple.com/app/id6446394143" target="_blank" class="flex flex-col items-center gap-2"
+            <a target="_blank" class="flex flex-col items-center gap-2" @click="showComingSoon"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -717,10 +708,7 @@
           <div
             class="w-[72.7px] cursor-pointer text-(--art-text-muted) hover:text-white! relative group flex flex-col gap-2 items-center -order-1 md:order-none"
           >
-            <a
-              href="https://sider-1257001727.cos.ap-guangzhou.myqcloud.com/android/SiderAndroid-release-3.4.7-1760412485974.apk"
-              target="_blank"
-              class="flex flex-col items-center gap-2"
+            <a target="_blank" class="flex flex-col items-center gap-2" @click="showComingSoon"
               ><span class="size-[22px] md:size-8"
                 ><svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -790,6 +778,11 @@
   import Footer from '@/components/core/footer.vue'
   import DefaultTab from './components/defaultTab.vue'
   import mobileTab from './components/mobileTab.vue'
+  import { message } from 'ant-design-vue'
+
+  const showComingSoon = () => {
+    message.info('敬请期待')
+  }
 
   // 登录弹窗引用
   const loginDialog = ref<InstanceType<typeof ArtLoginDialog>>()
