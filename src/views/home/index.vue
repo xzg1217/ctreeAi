@@ -1,70 +1,8 @@
 <template>
   <div class="home">
-    <!-- 顶部导航条 -->
-    <div class="home-header" @mouseleave="handleHeaderMouseLeave">
-      <div class="home-header-tab">
-        <div class="home-header-left">
-          <!-- Logo -->
-          <ElImage :src="Logo" class="home-header-left-logo" />
-          <!-- 导航菜单 -->
-          <div class="home-header-left-menu">
-            <div
-              class="home-header-left-menu-item flex gap-1 items-center align-center"
-              v-for="(item, index) in menus"
-              :key="item.path"
-              @mouseenter="handleMouseEnter(index)"
-              @click="go(item.path)"
-            >
-              <p class="">{{ t(item.name) }}</p>
-              <i class="iconfont-sys font-size-[12px]" :class="[item.icon, { 'rotate-icon': hoveredIndex === index }]"></i>
-            </div>
-          </div>
-        </div>
-        <div class="home-header-right">
-          <a class="font-size-[12px] flex gap-2 items-center add-chrome px-3 py-1.5 rounded-[999px] cursor-pointer hover:bg-gray-200">
-            <i class="iconfont-sys iconsys-add-plus font-size-[12px]"></i>
-
-            {{ t('home.buttons.addToChrome') }}
-          </a>
-
-          <!-- 登录 -->
-          <a
-            class="font-normal-14 flex gap-2 items-center login px-3 py-1.5 rounded-[999px] cursor-pointer bg-black text-white!"
-            @click="handleLoginClick"
-          >
-            {{ t('home.buttons.login') }}
-          </a>
-        </div>
-      </div>
-
-      <!-- 扩展面板 -->
-      <div class="extension-panel-wrapper" @mouseenter="handlePanelMouseEnter">
-        <!-- wb扩展 -->
-        <transition name="slide-down">
-          <div v-if="hoveredIndex == 1" class="extension-panel-content">
-            <div v-for="(item, index) in wbData" :key="item.path" class="panel-item flex gap-2 items-center" @click="go(item.path)">
-              <p class="name">{{ t(item.name) }}</p>
-
-              <div v-if="item.isNew" class="new-tag">New</div>
-            </div>
-          </div>
-        </transition>
-
-        <transition name="slide-down">
-          <div v-if="hoveredIndex == 2" class="extension-panel-content flex gap-[50px]">
-            <div v-for="(item, index) in toolData" :key="index" class="flex flex-col gap-2!">
-              <p class="title text-sm">{{ t(item.title) }}</p>
-              <div class="flex flex-col gap-6! mt-4">
-                <p class="name text-[#333] cursor-pointer" v-for="value in item.children" :key="value.name" @click="go(value.path)"
-                  >{{ t(value.name) }}
-                  <span v-if="value.isNew" class="px-1 font-[600]! text-[11px] text-white! bg-red-400 rounded-[4px]">New</span></p
-                >
-              </div>
-            </div>
-          </div>
-        </transition>
-      </div>
-    </div>
+    <!-- 顶部导航条 - 根据设备类型显示不同组件 -->
+    <DefaultTab v-if="!isMobile" @login-click="handleLoginClick" />
+    <mobileTab v-else @login-click="handleLoginClick" />
 
     <!-- 第二模块 -->
     <div class="relative w-full h-screen h-svh min-h-[600px]">
@@ -844,12 +782,14 @@
   //import { BlueCloudAnimation } from '@/utils/canvas/blue-cloud-animation.js'
   import Logo from '/src/assets/img/logo.png'
 
+  import { ref, computed, onMounted, onUnmounted } from 'vue'
   import { useI18n } from 'vue-i18n'
   import { LanguageEnum } from '../../enums/appEnum'
   import { changeLanguage } from '@/locales'
-  import { router } from '@/router/index.js'
   import ArtLoginDialog from '@/components/core/dialogs/art-login-dialog/index.vue'
   import Footer from '@/components/core/footer.vue'
+  import DefaultTab from './components/defaultTab.vue'
+  import mobileTab from './components/mobileTab.vue'
 
   // 登录弹窗引用
   const loginDialog = ref<InstanceType<typeof ArtLoginDialog>>()
@@ -863,175 +803,29 @@
     { key: LanguageEnum.EN, name: 'English', code: 'en' }
   ]
 
-  // 切换语言函数
-  const menus = ref([
-    {
-      name: 'home.nav.chat',
-      path: '/'
-    },
-    {
-      name: 'home.nav.wisebase',
-      path: '/wisebase',
-      icon: 'iconsys-xia2',
-      hoverIcon: 'iconsys-shang2'
-    },
-    {
-      name: 'home.nav.tools',
-      path: '/wisebase/agent',
-      icon: 'iconsys-xia2',
-      hoverIcon: 'iconsys-shang2'
-    },
-    {
-      name: 'home.nav.extension',
-      path: '/agents/browser-extension'
-    },
-    /*{
-      name: 'home.nav.app',
-      path: '/setting',
-      icon: 'iconsys-xia2',
-      hoverIcon: 'iconsys-shang2'
-    },*/
-    {
-      name: 'home.nav.pricing',
-      path: '/price'
-    }
-  ])
-
-  const wbData = ref([
-    {
-      name: 'home.appNames.wisebase',
-      path: ''
-    },
-    {
-      name: 'home.appNames.deepResearch',
-      path: '/agents/deep-research?type=1'
-    },
-    {
-      name: 'home.appNames.scholarResearch',
-      path: '/agents/deep-research?type=2'
-    },
-    {
-      name: 'home.appNames.mathSolver',
-      path: '/wisebase'
-    },
-    {
-      name: 'home.appNames.recNote',
-      path: '/wisebase',
-      isNew: true
-    },
-    {
-      name: 'home.appNames.audioToText',
-      path: '/wisebase'
-    },
-    {
-      name: 'home.appNames.gamifiedLearning',
-      path: '/wisebase'
-    },
-    {
-      name: 'home.appNames.interactiveReading',
-      path: '/wisebase'
-    },
-    {
-      name: 'home.appNames.chatPDF',
-      path: '/wisebase'
-    }
-  ])
-
-  const toolData = ref([
-    {
-      title: 'Agents',
-      children: [
-        {
-          name: 'home.nav.deepResearch',
-          path: '/agents/deep-research?type=1'
-        },
-        {
-          name: 'home.nav.scholarResearch',
-          path: '/agents/deep-research?type=2'
-        },
-        {
-          name: 'home.nav.websiteGenerator',
-          path: '/agents/web-creator'
-        },
-        {
-          name: 'home.nav.AIPPT',
-          path: '/agents/ai-slides',
-          isNew: true
-        },
-        {
-          name: 'home.nav.writerMaster',
-          path: '/agents/ai-writer'
-        }
-      ]
-    },
-    {
-      title: '图像',
-      children: [
-        {
-          name: '图片生成',
-          path: '/images/generate'
-        },
-        {
-          name: '背景移除',
-          path: '/images/background-remover'
-        },
-        {
-          name: '背景替换',
-          path: '/images/photo-background-changer'
-        },
-        {
-          name: '区域抹除',
-          path: '/images/photo-eraser'
-        },
-        {
-          name: '文字移除',
-          path: '/images/text-remover'
-        },
-        {
-          name: '局部重绘',
-          path: '/images/inpaint'
-        },
-        {
-          name: '画质提升',
-          path: '/images/image-upscaler'
-        }
-      ]
-    },
-    {
-      title: '翻译器',
-      children: [
-        // {
-        //   name:'home.appNames.agent',
-        //   path: '/wisebase/agent'
-        // },
-      ]
-    }
-  ])
-
   const searchText = ref('')
 
-  const hoveredIndex = ref<number | null>(null)
+  // 响应式数据：当前窗口宽度
+  const windowWidth = ref(window.innerWidth)
 
-  const handleMouseEnter = (index: number) => {
-    hoveredIndex.value = index
+  // 判断是否为移动端设备（宽度小于768px）
+  const isMobile = computed(() => {
+    return windowWidth.value < 768
+  })
+
+  // 窗口大小变化处理函数
+  const handleResize = () => {
+    windowWidth.value = window.innerWidth
   }
 
-  const go = (path: any) => {
-    console.log(path)
-    router.push(path)
-  }
+  // 监听窗口大小变化
+  onMounted(() => {
+    window.addEventListener('resize', handleResize)
+  })
 
-  // 面板鼠标移入时，保持hoveredIndex状态为1
-  const handlePanelMouseEnter = () => {
-    if (hoveredIndex.value === 1) {
-      // 保持hoveredIndex为1，不做任何改变
-    }
-  }
-
-  // 当鼠标完全离开home-header区域时才收起面板
-  const handleHeaderMouseLeave = () => {
-    hoveredIndex.value = null
-  }
+  onUnmounted(() => {
+    window.removeEventListener('resize', handleResize)
+  })
 
   // 处理登录按钮点击
   const handleLoginClick = () => {
